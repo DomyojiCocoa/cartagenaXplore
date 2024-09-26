@@ -14,7 +14,10 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'satoshi': ['Satoshi', 'sans-serif'],
+            },
+            backgroundImage: {
+                'body-bg': "url('/public/img/bglogin.png')",
             },
         },
     },

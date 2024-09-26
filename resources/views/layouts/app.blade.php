@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+        <title>{{ config('app.name', 'CartagenaXplore') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,7 +17,7 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-satoshi antialiased ">
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
