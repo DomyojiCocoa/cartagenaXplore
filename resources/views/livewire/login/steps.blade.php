@@ -19,7 +19,6 @@
                         <input
                             placeholder="Dirección de email"
                             id="email"
-                            name="email"
                             wire:model="email"
                             type="email"
                             autocomplete="email"
