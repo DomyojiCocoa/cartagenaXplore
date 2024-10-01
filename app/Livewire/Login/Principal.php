@@ -13,3 +13,4 @@ class Principal extends Component
         return view('livewire.login.principal');
     }
 }
+
