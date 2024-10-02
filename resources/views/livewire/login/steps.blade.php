@@ -39,36 +39,37 @@
         @break
 
         @case(2)
-            <h2 class="mt-6 text-xl font-bold text-center text-gray-900">Iniciar sesión con:</h2>
-            <p class="text-center text-sm text-gray-600 mb-6">{{ $email }}</p>
+            <h2 class="mt-6 text-2xl md:text-4xl text-center text-gray-900 font-bold pb-3">¡Bienvenido!</h2>
+            <p class="text-center text-sm text-gray-600 mb-4">{{ $email }}</p>
 
-            <div class="mb-4">
-                <button wire:click="atras" class="text-[#a85923] hover:text-[#c9773e] font-medium mb-4">Usar otra cuenta</button>
+            <div class="mb-4 flex justify-center">
+                <button wire:click="atras" class="text-[#a85923] hover:text-[#c9773e] font-medium  ">Usar otra cuenta</button>
             </div>
 
-            <div class="mb-4">
-                <label for="password" class="block text-sm font-medium text-gray-900">Contraseña</label>
-                <div class="mt-1">
+            <div class="">
+                <div class="">
                     <input
                         id="password"
                         name="password"
                         wire:model="password"
                         type="password"
                         autocomplete="current-password"
+                        placeholder="Contraseña"
                         required
-                        class="block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-[#a85923] focus:border-[#a85923] focus:outline-none sm:text-sm"
+                        class="block w-full rounded-md border border-gray-300 px-12 text-gray-900 placeholder-gray-400 focus:ring-[#a85923] focus:border-[#a85923] focus:outline-none sm:text-sm "
                     >
+
                 </div>
             </div>
 
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-sm text-[#a85923] hover:underline">¿Olvidaste la contraseña?</a>
-            </div>
 
             <div class="mt-6">
-                <button wire:click="login" class="w-full bg-[#a85923] hover:bg-[#c9773e] text-white py-2 rounded-md font-semibold text-center shadow-md">
-                    Iniciar sesión
+                <button wire:click="login" class="w-full bg-[#a85923] hover:bg-[#c9773e] text-white py-2 rounded-3xl font-semibold text-center shadow-md">
+                    Continuar
                 </button>
+            </div>
+            <div class="flex justify-center pt-3">
+                <a href="#" class="text-sm text-[#a85923] hover:underline">¿Olvidaste la contraseña?</a>
             </div>
 
             @error('email')
