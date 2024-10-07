@@ -39,38 +39,39 @@
         @break
 
         @case(2)
-            <h2 class="mt-2 text-2xl md:text-4xl text-center text-gray-900 font-bold pb- px-6">¡Bienvenido!</h2>
-            <p class="text-center text-base text-gray-600 mb-4 pt-2">{{ $email }}</p>
-
-            <div class="mb-4 flex justify-center">
-                <button wire:click="atras" class="text-orange-500hover:text-orange-300 font-medium  ">Usar otra cuenta</button>
-            </div>
-
-            <div class="">
-                <div class="">
-                    <input
-                        id="password"
-                        name="password"
-                        wire:model="password"
-                        type="password"
-                        autocomplete="current-password"
-                        placeholder="Contraseña"
-                        required
-                        class="block w-full rounded-md border border-gray-300 px-12 py-3 text-gray-900 placeholder-gray-400 focus:ring-[#a85923] focus:border-[#a85923] focus:outline-none sm:text-sm "
-                    >
-
-                </div>
-            </div>
+        <h2 class="mt-2 text-2xl md:text-4xl text-center text-gray-900 font-bold pb-3 px-6">¡Bienvenido!</h2>
 
 
-            <div class="mt-5">
-                <button wire:click="login" class="w-full bg-orange-500 hover:bg-orange-300 text-white py-2 rounded-3xl font-semibold text-center shadow-md">
-                    Continuar
-                </button>
-            </div>
-            <div class="mt-4 text-center">
-                <a href="#" class="text-sm text-[#a85923] hover:underline">¿Olvidaste la contraseña?</a>
-            </div>
+        <p class="text-center text-base md:text-base text-gray-600  pt-2">{{ $email }}</p>
+
+
+        <div class="mb-3 flex justify-center">
+            <button wire:click="atras" class="text-orange-500 text-base md:text-base hover:text-orange-300 font-medium pt-2">Usar otra cuenta</button>
+        </div>
+
+
+        <div class="mb-4">
+            <input
+                id="password"
+                name="password"
+                wire:model="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Contraseña"
+                required
+                class="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-[#a85923] focus:border-[#a85923] focus:outline-none sm:text-sm"
+            >
+        </div>
+
+        <div class="mt-5">
+            <button wire:click="login" class="w-full bg-orange-500 hover:bg-orange-300 text-white py-2 rounded-3xl font-semibold text-center shadow-md">
+                Continuar
+            </button>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a href="#" class="text-sm text-[#a85923] hover:underline">¿Olvidaste la contraseña?</a>
+        </div>
 
             @error('email')
                 <span class="text-red-600 text-sm">{{ $message }}</span>

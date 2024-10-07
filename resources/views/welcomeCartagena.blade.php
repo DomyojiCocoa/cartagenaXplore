@@ -24,7 +24,7 @@
                             <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                         </a>
                     </div>
-                    
+
                     <div class="flex">
                         <a href="{{ route('login') }}"
                             class="hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 hover:text-orange-500">Inicia Sesion</a>
@@ -224,12 +224,12 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
+
             </div>
         </div>
         <div class="bg-body-bg3 bg-cover bg-center w-full h-[420px] ">
@@ -244,7 +244,7 @@
                 <h6 class="text-white">2024 CartagenaXplore. Todos los derechos reservados</h6>
             </div>
         </div>
-        
+
 
 
 
@@ -252,5 +252,5 @@
 
 
         @endif
-        
+
 </x-guest-layout>
