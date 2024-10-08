@@ -1,8 +1,8 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed w-screen">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed w-screen z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-24 items-center">
             <div class="flex items-center">
-                <a href="{{ route('dashboard') }}">
+                <a href="{{ route('dashboard') }}" class="flex">
                     <div class="bg-black rounded-full w-10 h-10 flex justify-center items-center">
                         <span class="text-white text-xs font-bold">Logo</span>
                     </div>
@@ -59,34 +59,34 @@
                         <div class="block px-4 py-2 text-xs text-gray-400">
                             {{ __('Manage Account') }}
                         </div>
-                    
-                        <x-dropdown-link 
-                            href="{{ route('profile.show' ) }}" 
+
+                        <x-dropdown-link
+                            href="{{ route('profile.show' ) }}"
                             wire:navigate>
                             {{ __('Profile') }}
                         </x-dropdown-link>
-                    
+
                         @role('Administrator')
-                            <x-dropdown-link 
-                                href="{{ route('profile.show' ) }}" 
+                            <x-dropdown-link
+                                href="{{ route('profile.show' ) }}"
                                 wire:navigate>
                                 {{ __('Menu administrador') }}
                             </x-dropdown-link>
                         @endrole
-                    
+
                         <div class="border-t border-gray-200"></div>
-                    
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}" x-data wire:navigate>
                             @csrf
-                    
+
                             <x-dropdown-link href="#" wire:navigate
                                 @click.prevent="$root.submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
-                    
+
                 </x-dropdown>
             </div>
             @else

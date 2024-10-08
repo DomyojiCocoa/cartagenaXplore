@@ -25,5 +25,22 @@ export default {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [
+        function ({ addUtilities }) {
+          addUtilities({
+            '.marker-orange': {
+              'li::marker': {
+                color: '#F97316',
+                fontSize: '1.5rem',
+              },
+            },
+            '.marker-zinc': {
+              'li::marker': {
+                color: '#434343',
+                fontSize: '1.5rem', 
+              },
+            },
+          });
+        },
+      ],
 };
