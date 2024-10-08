@@ -148,7 +148,7 @@
         </div>
         <div class="flex justify-center space-x-6 p-6">
             <div
-                class="relative group duration-500 cursor-pointer overflow-hidden relative text-gray-50 h-72 w-72 rounded-2xl hover:duration-700 duration-700">
+                class="relative group duration-500 cursor-pointer overflow-hidden  text-gray-50 h-72 w-72 rounded-2xl hover:duration-700">
 
                 <div class="w-72 h-72 bg-gray-100 text-gray-800 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px"
@@ -595,7 +595,7 @@
 
         scrollTopButton.addEventListener('click', function() {
             window.scrollTo({
-                top: 0,
+                top: 500,
                 behavior: 'smooth'
             });
         });

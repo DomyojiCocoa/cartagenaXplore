@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcomeCartagena');
-});
+})->name('main');
 
 Route::middleware([
     'auth:sanctum',
@@ -25,7 +25,7 @@ Route::middleware([
     Route::get('/inicio', function () {
         return view('welcomeCartagena');
     })->name('dashboard');
-    Route::get('/servicios', function () {
-        return view('services');
-    })->name('services');
 });
+Route::get('/servicios', function () {
+    return view('services');
+})->name('services');
