@@ -16,7 +16,7 @@
 
                     <!-- Link a iniciar sesión -->
                     <p class="text-center text-sm text-gray-600 mb-6">
-                        ¿Ya tienes cuenta? <a href="#" class="text-orange-500 font-semibold">Iniciar sesión</a>
+                        ¿Ya tienes cuenta? <a href="{{ route('login')}}" class="text-orange-500 font-semibold">Iniciar sesión</a>
                     </p>
 
                     <!-- Formulario de registro -->
@@ -41,7 +41,18 @@
                     </p>
                     @break
                 @case(2)
-
+                    <div class="mb-4">
+                        <input
+                            id="password"
+                            name="password"
+                            wire:model="password"
+                            type="password"
+                            autocomplete="current-password"
+                            placeholder="Contraseña"
+                            required
+                            class="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-[#a85923] focus:border-[#a85923] focus:outline-none sm:text-sm"
+                        >
+                    </div>
                     @break
 
                 @default

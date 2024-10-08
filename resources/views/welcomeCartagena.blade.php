@@ -1,7 +1,8 @@
 
 <x-guest-layout >
     <div class="font-satoshi">
-        @if (Route::has('login'))
+        @livewire('navigation-menu')
+        {{-- @if (Route::has('login'))
             <div class="     ">
                 @auth
                     <div class="flex justify-evenly py-8 sticky top-0 bg-white z-50">
@@ -24,6 +25,12 @@
                         </div>
 
                         <div class="flex">
+                            <a href="" class=" hover:text-orange-500 relative group">Usuarios
+                                <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
+                            </a>
+                            <a href="" class=" hover:text-orange-500 relative group">Sitios
+                                <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
+                            </a>
                             {{ Auth::user()->name}}
                         </div>
                     </div>
@@ -36,13 +43,13 @@
                         <h2 class="text-lg font-bold text-center text-orange-500 ">CartagenaXplore</h2>
                     </div>
                     <div class="justify-between flex">
-                        <a href="" class="pr-4  hover:text-orange-500 relative group">Inicio
+                        <a href="#" wire:navigate class="pr-4  hover:text-orange-500 relative group">Inicio
                             <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-10 transition-all duration-300"></span>
                         </a>
-                        <a href="" class="pr-4  hover:text-orange-500 relative group">Actividades
+                        <a href="#" wire:navigate class="pr-4  hover:text-orange-500 relative group">Actividades
                             <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-20 transition-all duration-300"></span>
                         </a>
-                        <a href="" class=" hover:text-orange-500 relative group">Contactanos
+                        <a href="#" wire:navigate class=" hover:text-orange-500 relative group">Contactanos
                             <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                         </a>
                     </div>
@@ -56,23 +63,22 @@
                     </div>
                 </div>
 
-                @endauth
+                @endauth --}}
             </div>
             <div class="bg-body-bg2 bg-cover bg-center w-full h-[420px] flex justify-center items-center">
                 <div class="flex justify-between items-center w-full max-w-4xl">
                     <div class="h-48 w-36 bg-sky-500 flex flex-col justify-center items-center rounded-lg ">
-                        <livewire:temperature.temperature-main/>
-                        <h1 class="text-white text-4xl pb-2">32°</h1>
+
+                        <h1 class="text-white text-4xl pb-2"><livewire:temperature.temperature-main/></h1>
                         <div class="bg-sky-950 px-3 rounded-lg">
                             <h5 class="text-white text-sm">31°-33°</h5>
                         </div>
                     </div>
                     <div class=" justify-evenly items-center h-full text-center">
-                        <h1 class="text-white text-2xl pb-7 text-5xl font-semibold">Cartagena de Indias</h1>
+                        <h1 class="text-white  pb-7 text-5xl font-semibold">Cartagena de Indias</h1>
                         <div class="flex w-full justify-between ">
                             <h2 class="text-white pr-7 text-xl">Mar, Oct 1</h2>
                             <h2 class="text-white text-xl">Actualización a las 10:22</h2>
-
                         </div>
                     </div>
                 </div>
@@ -274,6 +280,6 @@
     </div>
 
 
-        @endif
+        {{-- @endif --}}
 
 </x-guest-layout>

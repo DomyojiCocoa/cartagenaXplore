@@ -10,7 +10,7 @@
         @case(1)
             <h2 class="mt-6 text-base md:text-4xl text-center text-gray-900 font-bold pb-10">Inicio de sesión</h2>
             <h2 class="text-center text-sm md:text-base text-gray-600">¿No tienes cuenta?
-                <a href="/register" class="text-[#a85923] hover:text-[#c9773e] font-medium">Regístrate</a>
+                <a href="{{ route('register')}}" class="text-[#a85923] hover:text-[#c9773e] font-medium">Regístrate</a>
             </h2>
 
             <div class="mt-6">
