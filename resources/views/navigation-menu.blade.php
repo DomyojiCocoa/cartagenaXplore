@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed w-screen z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-24 items-center">
-            <div class="flex items-center">
+            <div class="flex items-center ">
                 <a href="{{ route('dashboard') }}" class="flex">
                     <div class="bg-black rounded-full w-10 h-10 flex justify-center items-center">
                         <span class="text-white text-xs font-bold">Logo</span>
@@ -12,27 +12,26 @@
 
 
             <div class="hidden sm:flex space-x-8">
-                <a href="/" class="hover:text-orange-500 relative group">Inicio
+                <a href="/" wire:navigate class="hover:text-orange-500 relative group">Inicio
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="{{ route('services') }}" class="hover:text-orange-500 relative group">Servicios
+                <a href="{{ route('services') }}" wire:navigate class="hover:text-orange-500 relative group">Servicios
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="/" class="hover:text-orange-500 relative group">Conócenos
+                <a href="/" wire:navigate class="hover:text-orange-500 relative group">Conócenos
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                 </a>
+                @role('Administrator')
+                <a href="{{ route('sites') }}" wire:navigate class=" hover:text-orange-500 relative group">Sitios
+                    <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="{{ route('users') }}" wire:navigate class=" hover:text-orange-500 relative group">Usuarios
+                    <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                @endrole
             </div>
 
-            @role('Administrator')
-            <div class="flex">
-                <a href="/" wire:navigate class=" hover:text-orange-500 relative group">Usuarios
-                    <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="/" wire:navigate class=" hover:text-orange-500 relative group">Sitios
-                    <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
-                </a>
-            </div>
-            @endrole
+
             @auth
             <div class="ms-3 relative">
                 <x-dropdown align="right" width="48">
