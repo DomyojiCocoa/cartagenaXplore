@@ -20,6 +20,7 @@ export default {
                 'body-bg': "url('/public/img/bglogin.png')",
                 'body-bg2' :"url('/public/img/slider-2.jpg')",
                 'body-bg3' :"url('/public/img/gal1_20210417030436.jpg')",
+                'body-bg4' :"url('/public/img/imagen.jpg')"
             },
         },
     },
