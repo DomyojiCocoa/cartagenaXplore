@@ -44,7 +44,7 @@ class Steps extends Component
 
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
             session()->regenerate();
-            return redirect()->intended('/dashboard');
+            $this->redirectRoute('dashboard');
         }
     }
 
