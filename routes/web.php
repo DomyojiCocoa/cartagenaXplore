@@ -25,4 +25,7 @@ Route::middleware([
     Route::get('/inicio', function () {
         return view('welcomeCartagena');
     })->name('dashboard');
+    Route::get('/servicios', function () {
+        return view('services');
+    })->name('services');
 });

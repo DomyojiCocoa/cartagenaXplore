@@ -16,7 +16,7 @@
                             <a href="/" wire:navigate class="pr-4  hover:text-orange-500 relative group">Inicio
                                 <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-10 transition-all duration-300"></span>
                             </a>
-                            <a href="/"  wire:navigate class="pr-4  hover:text-orange-500 relative group">Actividades
+                            <a href="{{ route('services')}}"  wire:navigate class="pr-4  hover:text-orange-500 relative group">Servicios
                                 <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-20 transition-all duration-300"></span>
                             </a>
                             <a href="/" wire:navigate class=" hover:text-orange-500 relative group">Contactanos
