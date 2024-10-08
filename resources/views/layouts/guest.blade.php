@@ -16,9 +16,12 @@
 
         <!-- Styles -->
         @livewireStyles
+        @livewireScripts
+        
     </head>
     <body>
         <div class="font-satoshi text-gray-900 antialiased">
+            
             {{ $slot }}
         </div>
 
