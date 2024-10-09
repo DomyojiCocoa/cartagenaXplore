@@ -67,7 +67,7 @@
 
             @case(3)
                 <h1 class="text-2xl font-bold text-center text-gray-900 mb-3">Crear su contraseña</h1>
-                <h1 class="text-center pb-2">Correo electrónico</h1>
+                <h1 class="text-center pb-2">{{ $email}}</h1>
 
                 <div>
                     <input wire:model="text" type="text"
@@ -87,7 +87,7 @@
                 </button>
 
                 <p class="text-center text-sm text-gray-600 mt-4">
-                    ¿Ya tienes cuenta? <a href="#" class="text-orange-500 font-semibold">Iniciar sesión</a>
+                    ¿Ya tienes cuenta? <a href="{{ route('login')}}" class="text-orange-500 font-semibold">Iniciar sesión</a>
                 </p>
             @break
 

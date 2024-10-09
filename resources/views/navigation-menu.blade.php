@@ -1,8 +1,8 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 w-screen z-10">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 sticky w-screen z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-24 items-center">
             <div class="flex items-center ">
-                <a href="{{ route('dashboard') }}" class="flex">
+                <a href="{{ route('main') }}" wire:navigate class="flex">
                     <div class="bg-black rounded-full w-10 h-10 flex justify-center items-center">
                         <span class="text-white text-xs font-bold">Logo</span>
                     </div>
