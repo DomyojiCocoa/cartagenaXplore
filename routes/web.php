@@ -25,7 +25,6 @@ Route::middleware([
     Route::get('/inicio', function () {
         return view('welcomeCartagena');
     })->name('dashboard');
-<<<<<<< Updated upstream
     Route::get('/sitios', function () {
         return view('admin.sites');
     })->name('sites');
@@ -33,10 +32,6 @@ Route::middleware([
         return view('admin.users');
     })->name('users');
 });
-=======
-});
-
->>>>>>> Stashed changes
 Route::get('/servicios', function () {
     return view('services');
 })->name('services');

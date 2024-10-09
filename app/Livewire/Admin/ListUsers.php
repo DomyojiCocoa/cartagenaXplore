@@ -11,8 +11,8 @@ class ListUsers extends Component
 {
     use WithPagination;
 
-    public $editModalVisible = false; // Modal de edición
-    public $createModalVisible = false; // Modal de creación
+    public $editModalVisible = false;
+    public $createModalVisible = false;
     public $userIdBeingEdited;
     public $name;
     public $email;
@@ -20,7 +20,6 @@ class ListUsers extends Component
 
     protected $paginationTheme = 'tailwind';
 
-    // Abrir modal de edición
     public function edit($userId)
     {
         $this->editModalVisible = true;
@@ -30,7 +29,6 @@ class ListUsers extends Component
         $this->email = $user->email;
     }
 
-    // Actualizar usuario
     public function update()
     {
         $this->validate([
@@ -47,46 +45,46 @@ class ListUsers extends Component
         $this->reset(['name', 'email', 'userIdBeingEdited']);
     }
 
-    // Cerrar modal de edición
     public function closeModal()
     {
         $this->editModalVisible = false;
         $this->reset(['name', 'email', 'userIdBeingEdited']);
     }
 
-    // Abrir modal de creación
     public function create()
     {
-        $this->reset(['name', 'email', 'password']); // Limpiar campos
+        $this->reset(['name', 'email', 'password']);
         $this->createModalVisible = true;
     }
 
-    // Crear nuevo usuario
     public function store()
     {
         $this->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email|max:255',
-            'password' => 'required|string|min:8', // Validación del password
+            'password' => 'required|string|min:8',
         ]);
 
         User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => Hash::make($this->password), // Hashear el password
+            'password' => Hash::make($this->password),
         ]);
 
         $this->createModalVisible = false;
         $this->reset(['name', 'email', 'password']);
     }
 
-    // Cerrar modal de creación
+    public function delete($userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->delete();
+    }
     public function closeCreateModal()
     {
         $this->createModalVisible = false;
         $this->reset(['name', 'email', 'password']);
     }
-
     public function render()
     {
         return view('livewire.admin.list-users', [
@@ -105,13 +103,7 @@ class ListUsers extends Component
     //     // Lógica para editar el usuario
     // }
 
-    // public function delete($userId)
-    // {
-    //     $user = User::findOrFail($userId);
-    //     $user->delete();
 
-    //     // La paginación se actualiza automáticamente.
-    // }
 
     // public function render()
     // {
