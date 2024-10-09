@@ -40,7 +40,7 @@ class SiteSeeder extends Seeder
             'schedule_open' => '09:00',
             'schedule_close' => '18:00',
             'weather_preferable' => 'clear sky,few clouds,scattered clouds,broken clouds',
-            'url_img' => 'https://scontent-bog2-1.xx.fbcdn.net/v/t39.30808-6/273946196_2073347992834466_3994508678975562115_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=sjczmmPmQhkQ7kNvgHnMwwk&_nc_ht=scontent-bog2-1.xx&oh=00_AYCc1quMVuILvlDvEba52JUyGN5Z2M7_qMWST6JjowMd6A&oe=665570C5',
+            'url_img' => 'https://travelwisenet.com/wp-content/uploads/2023/09/Museo-Historico-de-Cartagena.png',
             'url_map' => 'https://maps.app.goo.gl/xYM2ASDuNJqFWSWP6',
         ]);
         Site::create([
