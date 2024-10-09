@@ -1,5 +1,5 @@
 <x-app-layout >
     <div>
-        <h1>Estas en usuarios</h1>
+        <livewire:admin.list-users/>
     </div>
 </x-app-layout>

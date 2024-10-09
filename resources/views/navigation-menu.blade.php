@@ -58,34 +58,34 @@
                         <div class="block px-4 py-2 text-xs text-gray-400">
                             {{ __('Manage Account') }}
                         </div>
-                    
-                        <x-dropdown-link 
-                            href="{{ route('profile.show' ) }}" 
+
+                        <x-dropdown-link
+                            href="{{ route('profile.show' ) }}"
                             wire:navigate>
                             {{ __('Profile') }}
                         </x-dropdown-link>
-                    
+
                         @role('Administrator')
-                            <x-dropdown-link 
-                                href="{{ route('profile.show' ) }}" 
+                            <x-dropdown-link
+                                href="{{ route('profile.show' ) }}"
                                 wire:navigate>
                                 {{ __('Menu administrador') }}
                             </x-dropdown-link>
                         @endrole
-                    
+
                         <div class="border-t border-gray-200"></div>
-                    
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}" x-data wire:navigate>
                             @csrf
-                    
+
                             <x-dropdown-link href="#" wire:navigate
                                 @click.prevent="$root.submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
-                    
+
                 </x-dropdown>
             </div>
             @else

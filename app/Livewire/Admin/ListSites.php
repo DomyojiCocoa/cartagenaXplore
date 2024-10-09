@@ -17,6 +17,7 @@ class ListSites extends Component
     public $siteMap;
     public $modalAlgo = false;
     public $selectedSiteId;
+    public $modalEdit;
 
     public function mount() {
         $this->sites = Site::all();
@@ -27,8 +28,11 @@ class ListSites extends Component
         $this->modalAlgo = true;
         $this->selectedSiteId = $id;
     }
-
-
+    public function abrirEdit($id)
+    {
+        $this->modalEdit= true;
+        $this->selectedSiteId = $id;
+    }
 
     public function updateInfoSite(Site $site) {
         dd($site);

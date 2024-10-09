@@ -32,8 +32,6 @@ class Steps extends Component
     }
     public function siguiente2() {
         $this->pagina = 3;
-
-
     }
 
     public function atras() {

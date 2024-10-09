@@ -43,7 +43,7 @@
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                             <p class="text-gray-900 whitespace-no-wrap">{{ $site->address }}</p>
                         </td>
-                        
+
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                             <p class="text-gray-900 whitespace-no-wrap">{{ $site->schedule_open }}</p>
                         </td>
@@ -67,9 +67,12 @@
                         <h1>¿Estás seguro de eliminar este sitio?</h1>
                         <button wire:click="eliminar" class="bg-red-500">ELIMINAR</button>
                     </x-modal>
+                    <x-modal wire:model="modalEdit" >
+                        <h1>Estoy en el editando</h1>
+                    </x-modal>
 
 
-                    
+
                     {{-- <div id="modal-edit{{ $site->id }}" class="fixed inset-0 z-50 hidden     bg-opacity-50 flex items-center justify-center">
                         <div class="bg-white p-5 rounded shadow-lg">
                             <h2 class="text-lg font-bold">¿ Estas seguro de eliminar {{ $site->name_site }} ?</h2>
@@ -78,7 +81,7 @@
                                 <button type="button" onclick="closeModal({{ $site->id }})" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
                                     Eliminar
                                 </button>
-                                
+
                             </form>
                         </div>
                     </div> --}}
@@ -131,7 +134,7 @@
             </tbody>
         </table>
     </div>
-        
+
 </div>
 <script>
     function openModal(id) {
