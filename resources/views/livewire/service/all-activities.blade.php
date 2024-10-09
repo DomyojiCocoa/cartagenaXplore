@@ -27,7 +27,6 @@
             <li class="mt-6">
                 Eventos especiales
             </li>
-
         </ul>
     </ul>
 </div>
