@@ -5,9 +5,9 @@ namespace App\Livewire\Temperature;
 use GuzzleHttp\Client;
 use Livewire\Component;
 
-class TemperatureMain extends Component
+class WeatherMain extends Component
 {
-    public $temperature;
+    public $weather;
 
     public function mount() {
         $apiKey = 'c75fdf7c5e7cd7eb463edaac441ed452';
@@ -21,11 +21,11 @@ class TemperatureMain extends Component
 
         $data = json_decode($response->getBody(), true);
 
-        $this->temperature = $data['main']['temp'];
+        $this->weather = $data['weather'][0]['description'];
 
     }
     public function render()
     {
-        return view('livewire.temperature.temperature-main');
+        return view('livewire.temperature.weather-main');
     }
 }

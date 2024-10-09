@@ -1,6 +1,6 @@
 <div class="">
 
-    <div class=" p-4 ml-2 border-l border-black">
+    <div class=" p-4 ml-1 border-l border-black">
         <!-- Barra de búsqueda y filtro -->
         <div class="flex justify-between items-center mb-4">
             <div class="relative w-64 h-	">
@@ -22,61 +22,48 @@
 
 
         <div class="grid grid-cols-3 gap-4 ">
-            <div class="w-full bg-zinc-700 border border-gray-200 rounded-lg shadow-lg relative group">
-                <!-- Imagen -->
-                <div class="h-40 flex items-center justify-center bg-gray-100 rounded-t-lg">
-                    <span class="text-gray-400">Imagen</span>
-                </div>
-                <!-- Título y estrellas -->
-                <div class="flex items-center justify-between ">
-                    <h3 class="text-base font-bold text-white">Título de la actividad</h3>
-                    <div class="flex items-center">
-                        <!-- Estrellas -->
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
+            @foreach ( $sites as $site)
+            <div class="w-full border rounded-lg shadow-lg relative group" style="background-image: url('{{$site->url_img}}'); background-size: cover; background-position: center;">
+                <div class="card shadow-md w-full h-[27rem] group gap-[1.3em] rounded-sm relative flex justify-end flex-col z-[1] overflow-hidden">
+                    <div class="absolute top-0 left-0 h-full w-full">
+                        <div class="w-full h-full transition-transform duration-500 transform group-hover:scale-110">
+                            <img class="w-full h-full object-cover" src="{{$site->url_img}}" alt="{{$site->name_site}}">
+                        </div>
                     </div>
-                </div>
-
-                <!-- Contenido que aparece en hover -->
-                <div class="p-4 opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-y-0 absolute top-16 w-full bg-zinc-700  z-10 rounded-2xl">
-                    <div class="flex">
-                        <h3 class="text-sm font-bold text-white">Título de la actividad</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="16px" fill="#FFFF55">
-                            <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
-                        </svg>
-                    </div>
-                    <div class="flex">
-                        <p class="text-sm text-white mb-4">Lorem ipsum es simplemente el texto de relleno de las imprentas.</p>
-                        <div>
-                            <h1 class="pl-4 text-white">0.0</h1>
-                            <h6 class="text-[7px] text-white">(20 reseñas) </h6>
+                    <div class="container bg-black bg-opacity-35 hover:bg-opacity-85 z-[2] relative font-nunito flex flex-col p-[1.5rem] gap-[0.5rem]">
+                        <div class="h-fit w-full">
+                            <h1 class="text-[1.5rem] font-semibold text-white">
+                                {{ $site->name_site }}
+                            </h1>
+                        </div>
+                        <p class="font-nunito block text-blue-50 text-black font-light relative h-[0em] group-hover:h-[6em] leading-[1.2em] duration-500 overflow-hidden">
+                            {{$site->address}}
+                        </p>
+                        <div class="flex items-center">
+                            <!-- Estrellas -->
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#F1C40F">
+                                <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#F1C40F">
+                                <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#F1C40F">
+                                <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#F1C40F">
+                                <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 -960 960 960" width="1.5rem" fill="#F1C40F">
+                                <path d="m354-287 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-350Z"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
             </div>
+
+            @endforeach
+
+        </div>
+            {{ $sites->links() }}
+
 </div>

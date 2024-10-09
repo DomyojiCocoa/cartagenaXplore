@@ -18,9 +18,7 @@
                 <a href="{{ route('services') }}" wire:navigate class="hover:text-orange-500 relative group">Servicios
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="/" wire:navigate class="hover:text-orange-500 relative group">Conócenos
-                    <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
-                </a>
+
                 @role('Administrator')
                 <a href="{{ route('sites') }}" wire:navigate class=" hover:text-orange-500 relative group">Sitios
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>

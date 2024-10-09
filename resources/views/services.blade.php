@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="flex pt-16 bg-white px-28 ">
         <!-- Barra lateral izquierda -->
-        <div class="bg-gray-100	w-72 rounded-xl">
+        <div class="bg-gray-100	rounded-xl px-5 h-scre">
 
             <h2 class="text-2xl text-center font-bold mb-4">Tipos de servicios</h2>
             <ul>
@@ -39,16 +39,7 @@
             <livewire:service.all-activities />
 
         </div>
-        <!-- Contenido de la derecha -->
 
-
-            <!-- Paginación -->
-            <div class="flex justify-center mt-4">
-                <button class="px-3 py-1 border rounded-l-lg bg-gray-100">Anterior</button>
-                <button class="px-3 py-1 border-t border-b bg-white">1</button>
-                <button class="px-3 py-1 border-t border-b bg-white">2</button>
-                <button class="px-3 py-1 border rounded-r-lg bg-gray-100">Siguiente</button>
-            </div>
         </div>
     </div>
 </x-app-layout>
