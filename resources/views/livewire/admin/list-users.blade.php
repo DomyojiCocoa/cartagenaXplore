@@ -1,27 +1,38 @@
-<div class="container mx-auto mt-8">
-    <div class="overflow-x-auto">
-        <!-- Botón para crear nuevo usuario -->
-        <div class="mb-4">
-            <button wire:click="create" class="bg-green-500 text-white px-4 py-2 rounded">Crear Nuevo Usuario</button>
+<div class="container mx-auto mt-8 px-16">
+    <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+        <!-- Header de tabla con filtros y búsqueda -->
+        <div class="flex items-center justify-between p-4 bg-white border-b">
+            <input type="text" placeholder="Nombre o palabra clave" class="w-1/2 p-2 border border-gray-300 rounded-lg">
+            <div>
+                <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">Añadir usuario</button>
+                <button class="bg-gray-300 text-gray-600 px-4 py-2 rounded hover:bg-gray-400 ml-2">Eliminar usuarios</button>
+            </div>
         </div>
 
         <!-- Tabla de usuarios -->
-        <table class="min-w-full bg-white border border-gray-200">
-            <thead class="bg-gray-200">
-                <tr>
-                    <th class="py-2 px-4 border-b text-center">Nombre</th>
-                    <th class="py-2 px-4 border-b text-center">Correo</th>
-                    <th class="py-2 px-4 border-b text-center">Opciones</th>
+        <table class="min-w-full bg-white border-collapse">
+            <thead>
+                <tr class="bg-gray-200 text-gray-600 text-left">
+                    <th class="py-3 px-6 font-semibold text-center">Nombre</th>
+                    <th class="py-3 px-6 font-semibold text-center">Correo</th>
+                    <th class="py-3 px-6 font-semibold text-center">Estado</th>
+                    <th class="py-3 px-6 font-semibold text-center">Detalles</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($users as $user)
-                <tr>
-                    <td class="py-2 px-4 border-b text-center">{{ $user->name }}</td>
-                    <td class="py-2 px-4 border-b text-center">{{ $user->email }}</td>
-                    <td class="py-2 px-4 border-b text-center">
-                        <button wire:click="edit({{ $user->id }})" class="bg-blue-500 text-white px-4 py-2 rounded">Editar</button>
-                        <button wire:click="delete({{ $user->id }})" class="bg-red-500 text-white px-4 py-2 rounded ml-2">Eliminar</button>
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-4 px-6 text-center">{{ $user->name }}</td>
+                    <td class="py-4 px-6 text-center">{{ $user->email }}</td>
+                    <td class="py-4 px-6 text-center">
+                        @if($user->estado == 'Activo')
+                        <span class="text-green-500 font-semibold">Activo</span>
+                        @else
+                        <span class="text-red-500 font-semibold">Eliminado</span>
+                        @endif
+                    </td>
+                    <td class="py-4 px-6 text-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver</button>
                     </td>
                 </tr>
                 @endforeach
@@ -29,70 +40,8 @@
         </table>
 
         <!-- Paginación -->
-        <div class="mt-4">
+        <div class="p-4 bg-white border-t">
             {{ $users->links() }}
         </div>
     </div>
-
-    <!-- Modal de edición -->
-    @if($editModalVisible)
-    <div class="fixed inset-0 z-10 flex items-center justify-center bg-gray-900 bg-opacity-50">
-        <div class="bg-white p-6 rounded-lg w-1/3">
-            <h2 class="text-xl font-bold mb-4">Editar Usuario</h2>
-
-            <!-- Formulario de edición -->
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2">Nombre:</label>
-                <input type="text" wire:model="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none">
-                @error('name') <span class="text-red-500">{{ $message }}</span> @enderror
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2">Correo:</label>
-                <input type="email" wire:model="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none">
-                @error('email') <span class="text-red-500">{{ $message }}</span> @enderror
-            </div>
-
-            <!-- Botones -->
-            <div class="flex justify-end">
-                <button wire:click="update" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">Actualizar</button>
-                <button wire:click="closeModal" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancelar</button>
-            </div>
-        </div>
-    </div>
-    @endif
-
-    <!-- Modal de creación -->
-    @if($createModalVisible)
-    <div class="fixed inset-0 z-10 flex items-center justify-center bg-gray-900 bg-opacity-50">
-        <div class="bg-white p-6 rounded-lg w-1/3">
-            <h2 class="text-xl font-bold mb-4">Crear Nuevo Usuario</h2>
-
-            <!-- Formulario de creación -->
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2">Nombre:</label>
-                <input type="text" wire:model="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none">
-                @error('name') <span class="text-red-500">{{ $message }}</span> @enderror
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2">Correo:</label>
-                <input type="email" wire:model="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none">
-                @error('email') <span class="text-red-500">{{ $message }}</span> @enderror
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm mb-2">Contraseña:</label>
-                <input type="password" wire:model="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none">
-                @error('password') <span class="text-red-500">{{ $message }}</span> @enderror
-            </div>
-
-            <!-- Botones -->
-            <div class="flex justify-end">
-                <button wire:click="store" class="bg-green-500 text-white px-4 py-2 rounded mr-2">Crear</button>
-                <button wire:click="closeCreateModal" class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancelar</button>
-            </div>
-        </div>
-    </div>
-    @endif
 </div>
