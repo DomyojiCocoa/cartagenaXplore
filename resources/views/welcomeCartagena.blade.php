@@ -117,7 +117,7 @@
         <p class="text-white">2024 CartagenaXplore. Todos los derechos reservados.</p>
     </div>
 
-    
+
     <button id="scrollTopButton" class="fixed bottom-4 right-4 hidden p-3 bg-orange-600 text-white rounded-full shadow-md hover:bg-orange-700">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke="currentColor" class="h-6 w-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
