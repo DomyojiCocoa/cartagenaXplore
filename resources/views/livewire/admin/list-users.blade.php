@@ -70,88 +70,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b">
-                        <td class="p-4 flex items-center ">
-                            <input type="checkbox" class="mr-2"> Daniel Fernández
-                        </td>
-                        <td class="p-4"></td>
-                        <td class=" p-4  flex items-center ">
-                            <div class="border border-green-500 w-20 h-18  rounded-xl">
-                                <p class="text-green-500 text-center">Activo</p>
-                            </div>
-                        </td>
-                        <td class="p-4"><button class="text-slate-700  border border-slate-600 px-8 py-1 rounded-xl">Ver</button></td>
-                    </tr>
-                    <tr class="border-b">
+                    @foreach($users as $user)
+                    <tr class="border-b hover:bg-gray-50">
                         <td class="p-4 flex items-center">
-                            <input type="checkbox" class="mr-2"> Mateo Rodríguez
+                            <input type="checkbox" class="mr-2"> {{ $user->name }}
                         </td>
-                        <td class="p-4"></td>
-                        <td class=" p-4  flex items-center ">
-                            <div class="border border-green-500 w-20 h-18  rounded-xl">
-                                <p class="text-green-500 text-center">Activo</p>
-                            </div>
-                        </td>
-                        <td class="p-4"><button class=" text-slate-700  border border-slate-600 px-8 py-1 rounded-xl">Ver</button></td>
-                    </tr>
-                    <tr class="border-b">
+                        <td class="py-4 px-6 ">{{ $user->email }}</td>
                         <td class="p-4 flex items-center">
-                            <input type="checkbox" class="mr-2"> Valentina Morales
+                            @if($user->estado == 'Activo')
+                            <span class="text-green-500 border border-green-500 font-semibold">Activo</span>
+                            @else
+                            <span class="text-red-500  border border-red-500 font-semibold roude rounded-lg">Eliminado</span>
+                            @endif
                         </td>
-                        <td class="p-4"></td>
-                        <td class=" p-4  flex items-center ">
-                            <div class="border border-green-500 w-20 h-18  rounded-xl">
-                                <p class="text-green-500 text-center">Activo</p>
-                            </div>
+                        <td class="p-4">
+                            <button class="text-slate-700 border border-slate-600 px-8 py-1 rounded-xl">Ver</button>
                         </td>
-                        <td class="p-4"><button class="text-slate-700  border border-slate-600 px-8 py-1 rounded-xl">Ver</button></td>
                     </tr>
-                    <tr class="border-b">
-                        <td class="p-4 flex items-center">
-                            <input type="checkbox" class="mr-2"> Camila Castillo
-                        </td>
-                        <td class="p-4"></td>
-                        <td class=" p-4  flex items-center ">
-                            <div class="border border-green-500 w-20 h-18  rounded-xl">
-                                <p class="text-green-500 text-center">Activo</p>
-                            </div>
-                        </td>
-                        <td class="p-4"><button class="text-slate-700  border border-slate-600 px-8 py-1 rounded-xl">Ver</button></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="p-4 flex items-center">
-                            <input type="checkbox" class="mr-2"> Nicolás López
-                        </td>
-                        <td class="p-4"></td>
-                        <td class=" p-4  flex items-center ">
-                            <div class="border border-green-500 w-20 h-18  rounded-xl">
-                                <p class="text-green-500 text-center">Activo</p>
-                            </div>
-                        </td>
-                        <td class="p-4"><button class="text-slate-700  border border-slate-600 px-8 py-1 rounded-xl">Ver</button></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="p-4 flex items-center">
-                            <input type="checkbox" class="mr-2"> Juan Martínez
-                        </td>
-                        <td class="p-4"></td>
-                        <td class=" p-4  flex items-center ">
-                            <div class="border border-red-500 w-20 h-18  rounded-xl">
-                                <p class="text-red-500 text-center">Eliminado</p>
-                            </div>
-                        </td>
-                        <td class="p-4"><button class="text-slate-700  border border-slate-600 px-8 py-1 rounded-xl">Ver</button></td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
         <div class="flex justify-center items-center mt-4">
-            <button>Anterior</button>
-            <div class="flex items-center">
-                <span class="mx-2">1</span>
-                <span class="mx-2">2</span>
+            <div class="p-4 bg-white border-t">
+                {{ $users->links() }}
             </div>
-            <button class="hover:bg-">Siguiente</button>
         </div>
 
     </div>
