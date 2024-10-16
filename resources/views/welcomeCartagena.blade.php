@@ -1,53 +1,37 @@
 <x-guest-layout>
-    <div class="font-satoshi">
+    <div class="font-satoshi z-50">
         @livewire('navigation-menu')
     </div>
 
-    <div class="bg-body-bg4 bg-cover bg-center w-full h-[550px] flex justify-center items-center">
-        <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-4xl">
-            <div class="h-40 w-40 bg-black flex flex-col justify-center items-center rounded-full text-white">
-                <livewire:temperature.temperature-main />
-                <livewire:temperature.weather-main />
+    <div class="bg-body-bg4 bg-cover bg-center w-full h-screen flex justify-center items-center relative">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl z-10 px-8" style="gap: 25%">
+            <!-- Contenedor del logo -->
+            <div class="flex flex-col justify-center items-center w-full p-4 h-full md:w-80 md:h-80">
+                <div>
+                    <img src="{{ asset('img/Cartagena Xplore final-06.png') }}" alt="" class="">
+                    <img src="{{ asset('') }}" alt="">
+                </div>
             </div>
-
-            <div class="text-center md:text-end pt-10">
-                <h1 class="text-white mb-5 text-4xl md:text-6xl font-extrabold">Encuentra el destino<br>perfecto</h1>
-                <h2 class="text-white text-lg md:text-xl mb-6 font-normal">Conoce a Cartagena de manera única con nuestros<br>servicios personalizados</h2>
-                <div class="mt-4">
-                    <button class="w-40 bg-orange-500 hover:bg-orange-300 text-white py-2 rounded-3xl font-semibold text-center shadow-md">Explorar ahora</button>
+    
+            <!-- Contenedor del texto -->
+            <div class="text-right md:text-left mt-10 md:mt-0">
+                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto</h1>
+                <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con nuestros<br>servicios personalizados</h2>
+                <div class="mt-6">
+                    <button class="w-48 bg-orange-500 hover:bg-orange-400 text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
+                        Explora ahora
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+    
+    
+    
 
     <div class="m-5 md:m-20">
-        <h1 class="text-3xl md:text-4xl font-semibold mb-7">Clima del día</h1>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:px-28">
+        <livewire:weather-forecast />
 
-            <div class="h-48 w-36 bg-sky-500 flex flex-col justify-center items-center rounded-lg shadow-md">
-                <h1 class="text-white text-4xl pb-2">31°</h1>
-                <h6 class="text-white text-sm pb-2">Sol con nubes</h6>
-                <div class="bg-sky-950 px-3 rounded-lg">
-                    <h5 class="text-white text-sm">11:00AM</h5>
-                </div>
-            </div>
-            <div class="h-48 w-36 bg-sky-500 flex flex-col justify-center items-center rounded-lg shadow-md">
-                <h1 class="text-white text-4xl pb-2">31°</h1>
-                <h6 class="text-white text-sm pb-2">Sol con nubes</h6>
-                <div class="bg-sky-950 px-3 rounded-lg">
-                    <h5 class="text-white text-sm">11:00AM</h5>
-                </div>
-            </div>
-
-
-            <div class="h-48 w-36 bg-sky-500 flex flex-col justify-center items-center rounded-lg shadow-md">
-                <h1 class="text-white text-4xl pb-2">33°</h1>
-                <h6 class="text-white text-sm pb-2">Soleado</h6>
-                <div class="bg-sky-950 px-3 rounded-lg">
-                    <h5 class="text-white text-sm">12:00PM</h5>
-                </div>
-            </div>
-        </div>
 
 
         <div class="mt-20">

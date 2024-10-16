@@ -1,15 +1,11 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 sticky w-full z-10">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100  w-full z-50 fixed ">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-24 items-center">
-            <div class="flex items-center ">
+            <div class="flex items-center">
                 <a href="{{ route('main') }}" wire:navigate class="flex">
-                    <div class="bg-black rounded-full w-10 h-10 flex justify-center items-center">
-                        <span class="text-white text-xs font-bold">Logo</span>
-                    </div>
-                    <h2 class="ml-4 text-lg font-bold text-orange-500">CartagenaXplore</h2>
+                    <img src="{{ asset('img/3.png') }}" alt="Logo" class="h-24 mr-4 w-[6rem|]"> <!-- Ajustar tamaño y margen -->
                 </a>
             </div>
-
 
             <div class="hidden sm:flex space-x-8">
                 <a href="/" wire:navigate class="hover:text-orange-500 relative group">Inicio
@@ -20,15 +16,14 @@
                 </a>
 
                 @role('Administrator')
-                <a href="{{ route('sites') }}" wire:navigate class=" hover:text-orange-500 relative group">Sitios
+                <a href="{{ route('sites') }}" wire:navigate class="hover:text-orange-500 relative group">Sitios
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="{{ route('users') }}" wire:navigate class=" hover:text-orange-500 relative group">Usuarios
+                <a href="{{ route('users') }}" wire:navigate class="hover:text-orange-500 relative group">Usuarios
                     <span class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                 </a>
                 @endrole
             </div>
-
 
             @auth
             <div class="ms-3 relative">
