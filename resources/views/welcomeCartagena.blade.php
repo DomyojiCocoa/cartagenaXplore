@@ -14,7 +14,7 @@
             </div>
     
             <!-- Contenedor del texto -->
-            <div class="text-right md:text-left mt-10 md:mt-0">
+            <div class="text-left md:text-left mt-10 md:mt-0">
                 <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto</h1>
                 <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con nuestros<br>servicios personalizados</h2>
                 <div class="mt-6">
@@ -23,6 +23,10 @@
                     </button>
                 </div>
             </div>
+        </div>
+        <div>
+            <livewire:temperature.temperature-main />
+
         </div>
     </div>
     
