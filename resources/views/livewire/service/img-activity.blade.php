@@ -1,3 +1,3 @@
 <div>
-    {{-- Because she competes with no one, no one can compete with her. --}}
+    <h1>Aqui va la imagen y el texto de abajo de la actividad y el boton naranja,(osea lo de la derecha)</h1>
 </div>
