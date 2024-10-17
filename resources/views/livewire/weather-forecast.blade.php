@@ -1,29 +1,20 @@
-<div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-4 text-center">Clima del día</h2>
+<div class="relative w-full">
+    <div class="overflow-x-scroll whitespace-no-wrap flex space-x-4">
+        @foreach($forecasts as $forecast)
 
-    <div class="relative">
-        <div class="flex overflow-hidden">
-            <div class="flex transition-transform duration-500" style="transform: translateX(-{{ $currentGroupIndex * 100 }}%);">
-                @foreach ($pronosticos as $pronostico)
-                    <div class="min-w-[250px] mx-2 p-6 border rounded-lg shadow-lg bg-gradient-to-b from-blue-300 to-blue-500 text-white text-center">
-                        <div class="text-4xl mb-2">{{ $pronostico['emoji'] }}</div>
-                        <h3 class="text-2xl font-semibold">{{ $pronostico['temperatura'] }}°C</h3>
-                        <p class="text-lg">{{ $pronostico['clima'] }}</p>
-                        <p class="text-md mt-2">{{ $pronostico['hora'] }}</p>
-                    </div>
-                @endforeach
+            <div class="inline-block w-1/3 bg-gradient-to-b from-blue-400 to-blue-200 shadow-md rounded-lg p-6 text-center">
+                <div class="flex justify-center mb-4">
+                    <img src="https://openweathermap.org/img/wn/{{ $forecast['icon'] }}@2x.png" alt="{{ $forecast['description'] }}" class="w-16 h-16">
+                </div>
+                <p class="text-5xl font-bold text-white mb-2">{{ $forecast['temp'] }}°C</p>
+                <p class="text-white text-lg mb-2">{{ ucfirst($forecast['description']) }}</p>
+                <p class="bg-blue-700 text-white text-sm px-4 py-1 rounded-full inline-block">{{ \Carbon\Carbon::parse($forecast['time'])->format('g:i A') }}</p>
             </div>
-        </div>
 
-        <button wire:click="prevGroup" class="carousel-button absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-700 transition" {{ $currentGroupIndex === 0 ? 'disabled' : '' }}>
-            &lt;
-        </button>
-        <button wire:click="nextGroup" class="carousel-button absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-700 transition" {{ $currentGroupIndex === count($groupedPronosticos) - 1 ? 'disabled' : '' }}>
-            &gt;
-        </button>
+        @endforeach
     </div>
 
-    @if (count($groupedPronosticos) === 0)
-        <p class="text-center mt-4">No se encontraron pronósticos para el día de hoy.</p>
-    @endif
+    <!-- Botones de navegación (opcional) -->
+    <button class="absolute top-0 bottom-0 left-0 bg-gray-800 text-white px-4 py-2">‹</button>
+    <button class="absolute top-0 bottom-0 right-0 bg-gray-800 text-white px-4 py-2">›</button>
 </div>
