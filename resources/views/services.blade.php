@@ -34,7 +34,7 @@
                 </ul>
             </div>
 
-            
+
             <div class="bg-white rounded-xl shadow-md p-4 lg:p-5 w-full lg:w-3/4 flex-grow">
                 <livewire:service.all-activities />
             </div>

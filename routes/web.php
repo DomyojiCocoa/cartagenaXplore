@@ -32,6 +32,10 @@ Route::middleware([
         return view('admin.users');
     })->name('users');
 });
+Route::get('/site', function () {
+    return view('siteDescription');
+})->name('siteInfo');
+
 Route::get('/servicios', function () {
     return view('services');
 })->name('services');
