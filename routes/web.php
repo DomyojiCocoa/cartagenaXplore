@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,15 +23,24 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/inicio', function () {
+        if(Auth::user()->hasRole('Administrator')) {
+            return redirect()->route('sites');
+        }
         return view('welcomeCartagena');
     })->name('dashboard');
-    Route::get('/sitios', function () {
-        return view('admin.sites');
-    })->name('sites');
-    Route::get('/usuarios', function () {
-        return view('admin.users');
-    })->name('users');
+    Route::prefix('/admin')->middleware('can:admin')->group(function (){
+        Route::get('/', function () {
+            return redirect()->route('sites');
+         });
+         Route::get('/sitios', function () {
+             return view('admin.sites');
+         })->name('sites');
+         Route::get('/usuarios', function () {
+             return view('admin.users');
+         })->name('users');
+    });
 });
 Route::get('/site', function () {
     return view('siteDescription');

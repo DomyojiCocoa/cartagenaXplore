@@ -2,10 +2,7 @@
     <div class="bg-white rounded-lg shadow-lg w-[350px]  p-6 sm:p-10 ">
 
         <div class="flex justify-center items-start mb-10">
-            <div class="bg-black rounded-full flex w-12 h-12 justify-center items-center">
-                <span class="text-white text-xs font-bold">Logo</span>
-            </div>
-            <h2 class="text-lg font-bold text-center text-gray-900 pl-3">CartagenaXplore</h2>
+            <img src="{{asset('')}}" alt="">
         </div>
 
         @switch($pagina)
@@ -66,30 +63,30 @@
             @break
 
             @case(3)
-                <h1 class="text-2xl font-bold text-center text-gray-900 mb-3">Crear su contraseña</h1>
+                <h1 class="text-2xl font-bold text-center text-gray-900 mb-3">Crear su cuenta</h1>
                 <h1 class="text-center pb-2">{{ $email}}</h1>
 
                 <div>
-                    <input wire:model="text" type="text"
+                    <input wire:model="name" type="text"
                         class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 mb-4"
                         placeholder="Nombre completo">
-                    <input wire:model="text" type="text"
+                    <input wire:model="country" type="text"
                         class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 mb-4"
                         placeholder="País">
-                    <input wire:model="" type="date"
-                        class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 mb-4"
-                        placeholder="Fecha de nacimiento">
+                    <input wire:model="birthdate" type="date"
+                        class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 mb-4">
                 </div>
 
-                <button wire:click="siguiente2"
-                    class="w-full bg-orange-500 text-white p-2 rounded-3xl font-semibold hover:bg-orange-600 transition duration-200">
-                    Continuar
+                <button wire:click="crearUsuario"
+                        class="w-full bg-orange-500 text-white p-2 rounded-3xl font-semibold hover:bg-orange-600 transition duration-200">
+                    Crear cuenta
                 </button>
 
                 <p class="text-center text-sm text-gray-600 mt-4">
                     ¿Ya tienes cuenta? <a href="{{ route('login')}}" class="text-orange-500 font-semibold">Iniciar sesión</a>
                 </p>
             @break
+
 
             @default
         @endswitch

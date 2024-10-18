@@ -3,41 +3,29 @@
         @livewire('navigation-menu')
     </div>
 
-    <div class="bg-body-bg4 bg-cover bg-center w-full h-screen flex justify-center items-center relative">
+    <div class="bg-body-bg4 bg-cover bg-center w-full h-screen flex justify-center items-center relative text-right">
         <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl z-10 px-8" style="gap: 25%">
             <!-- Contenedor del logo -->
-            <div class="flex flex-col justify-center items-center w-full p-4 h-full md:w-80 md:h-80">
-                <div>
-                    <img src="{{ asset('img/Cartagena Xplore final-06.png') }}" alt="" class="">
-                    <img src="{{ asset('') }}" alt="">
-                </div>
+            <div>
+                <livewire:temperature.temperature-main />
+
             </div>
-    
+
             <!-- Contenedor del texto -->
-            <div class="text-left md:text-left mt-10 md:mt-0">
+            <div class=" md:text-left mt-10 md:mt-0">
                 <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto</h1>
                 <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con nuestros<br>servicios personalizados</h2>
                 <div class="mt-6">
-                    <button class="w-48 bg-orange-500 hover:bg-orange-400 text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
+                    <a href="{{ route('services') }}" wire:navigate  class="w-48 bg-orange-500 hover:bg-orange-400 curosr-pointer text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
                         Explora ahora
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
-        <div>
-            <livewire:temperature.temperature-main />
-
-        </div>
     </div>
-    
-    
-    
 
     <div class="m-5 md:m-20">
         <livewire:weather-forecast />
-
-
-
         <div class="mt-20">
             <div class="flex justify-between items-center pb-10">
                 <h1 class="text-3xl md:text-4xl font-semibold mb-7">Actividades de hoy</h1>
