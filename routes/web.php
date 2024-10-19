@@ -33,13 +33,13 @@ Route::middleware([
     Route::prefix('/admin')->middleware('can:admin')->group(function (){
         Route::get('/', function () {
             return redirect()->route('sites');
-         });
-         Route::get('/sitios', function () {
-             return view('admin.sites');
-         })->name('sites');
-         Route::get('/usuarios', function () {
-             return view('admin.users');
-         })->name('users');
+            });
+            Route::get('/sitios', function () {
+                return view('admin.sites');
+            })->name('sites');
+            Route::get('/usuarios', function () {
+                return view('admin.users');
+            })->name('users');
     });
 });
 Route::get('/site', function () {
