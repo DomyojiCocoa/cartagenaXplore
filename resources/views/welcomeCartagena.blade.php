@@ -3,7 +3,7 @@
         @livewire('navigation-menu')
     </div>
 
-    <div class="bg-body-bg4 bg-cover bg-center w-full h-screen flex justify-center items-center relative text-right">
+    <div class="bg-body-bg4 bg-cover bg-center w-full min-h-screen flex justify-center items-center relative text-right">
         <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl z-10 px-8" style="gap: 25%">
             <!-- Contenedor del logo -->
             <div class="">
@@ -58,6 +58,39 @@
             </div>
         </div>
 
+        <div class="pt-10">
+            <h1 class="text-3xl md:text-4xl font-semibold mb-7">Sitios para explorar</h1>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-5 grid-rows-5 gap-4">
+
+
+                <div class="md:col-span-3 md:row-span-4">
+                    <img src="img/5.jpg" alt="Imagen grande" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+
+                <div class="md:col-span-2 md:row-span-3 md:col-start-4">
+                    <img src="img/6.jpg" alt="Imagen pequeña" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+
+                <div class="md:col-span-2 md:row-span-2 md:col-start-4 md:row-start-4 p-4">
+                    <h2 class="text-2xl font-bold">CASTILLO DE SAN FELIPE</h2>
+                    <p class="mt-2 text-gray-700">
+                        El Castillo de San Felipe de Barajas en Cartagena, construido en el siglo XVII, es una atracción
+                        turística y símbolo del pasado colonial, con túneles y vistas panorámicas.
+                    </p>
+                    <div class="pt-4 flex justify-center">
+                        <div class="w-60 h-10 text-sm border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-3xl text-center shadow-md flex items-center justify-center">
+                            <button>Acceder a más servicios</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
         <div class="mt-20">
             <h1 class="text-3xl md:text-4xl font-normal mb-10">Experiencia de nuestros clientes</h1>
@@ -95,70 +128,63 @@
     </div>
 
 
-    <div class="bg-body-bg3 bg-cover bg-center w-full h-[420px]">
-        <div class="p-20">
-            <h1 class="text-white text-5xl md:text-7xl font-medium">Cartagena de indias</h1>
-            <h2 class="text-white text-xl md:text-2xl pt-5">Encanto Colonial</h2>
-            <h3>Sumérgete en las calles empedradas y coloridas de una ciudad llena de historia y belleza </h3>
+    <div class="relative w-full h-[40rem] shadow-lg">
+
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="{{ asset('img/3.mp4') }}" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+
+
+        <div class="relative z-10 p-20">
+            <h1 class="text-white text-5xl md:text-7xl font-semibold	 ">Cartagena de Indias</h1>
+            <h2 class="text-white text-3xl md:text-4xl pt-8 font-semibold">Encanto Colonial</h2>
+            <h3 class="text-white text-xl pt-2">
+                Sumérgete en las calles empedradas y coloridas de una ciudad
+            </h3>
+            <h3 class="text-white text-xl pt-1">
+                llena de historia y belleza
+            </h3>
         </div>
+
+
     </div>
 
-    <div class="px-14 pt-6 h-full bg-gray-950 text-white">
-        <div class="flex justify-between items-center  pb-2 mb-2">
-            <div>
-                <h3 class="font-semibold mb-2">
-                    Líneas de atención
-                </h3>
-                <p>
-                    Tel: (+57) 605 123 4567
-                </p>
+
+    <div class="px-14 py-8 sm:h-full bg-gray-950 text-white shadow-lg ">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+            <div class="mb-4 md:mb-0">
+                <h3 class="font-semibold mb-2">Líneas de atención</h3>
+                <p>Tel: (+57) 605 123 4567</p>
+            </div>
+            <div class="mb-4 md:mb-0">
+                <h3 class="font-semibold mb-2">Nuestra ubicación</h3>
+                <p>Carrera 3 #31-23. Centro Histórico</p>
+            </div>
+            <div class="mb-4 md:mb-0">
+                <h3 class="font-semibold mb-2 ">Horarios de atención</h3>
+                <p>Lun - Vie 8:30 A.M. - 5:30 P.M.</p>
             </div>
             <div>
-                <h3 class="font-semibold mb-2">
-                    Nuestra ubicación
-                </h3>
-                <p>
-                    Carrera 3 #31-23. Centro Histórico
-                </p>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-2">
-                    Horarios de atención
-                </h3>
-                <p>
-                    Lun - Vie 8:30 A.M. - 5:30 P.M.
-                </p>
-            </div>
-            <div class="">
-                <img src="{{ asset('img/4.png') }}" alt="Logo" class="w-40 h-20">
+                <img src="{{ asset('img/4.png') }}" alt="Logo" class="w-auto h-20">
             </div>
         </div>
-        <div class="flex justify-between items-center text-sm pt-5 border-t border-gray-700">
-            <p>
-                © 2024 CartagenaXplore. Todos los derechos reservados.
-            </p>
-            <p>
-                ctgXplore@xploreaccount.com
-            </p>
-            <p>
-                Términos del servicio
-            </p>
+        <div class="flex flex-col md:flex-row justify-between items-center text-sm pt-5 border-t border-gray-700  pb-7">
+            <p>© 2024 CartagenaXplore. Todos los derechos reservados.</p>
+            <p>ctgXplore@xploreaccount.com</p>
+            <p>Términos del servicio</p>
             <div class="flex items-center space-x-4">
-
                 <a class="text-white" href="#">
-                    <i class="fab fa-instagram">
-                    </i>
+                    <i class="fab fa-instagram"></i>
                 </a>
                 <a class="text-white" href="#">
-                    <i class="fas fa-times">
-                    </i>
+                    <i class="fas fa-times"></i>
                 </a>
-                <span>
-                    Español
-                </span>
+                <span>Español</span>
             </div>
         </div>
     </div>
+
 
 
     <button id="scrollTopButton"

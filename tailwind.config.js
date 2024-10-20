@@ -20,7 +20,8 @@ export default {
                 'body-bg': "url('/public/img/bglogin.png')",
                 'body-bg2' :"url('/public/img/slider-2.jpg')",
                 'body-bg3' :"url('/public/img/gal1_20210417030436.jpg')",
-                'body-bg4' :"url('/public/img/imagen.jpg')"
+                'body-bg4' :"url('/public/img/imagen.jpg')",
+                'body-bg5' :"url('public/img/3.mp4')"
             },
         },
     },
@@ -32,14 +33,16 @@ export default {
               'li::marker': {
                 color: '#F97316',
                 fontSize: '1.5rem',
+                with: '2rem',
               },
             },
             '.marker-zinc': {
               'li::marker': {
                 color: '#434343',
-                fontSize: '1.5rem', 
+                fontSize: '1.5rem',
               },
             },
+
           });
         },
       ],
