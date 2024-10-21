@@ -1,4 +1,4 @@
-<div class="pt-72 flex">
+<div class=" flex">
 
     <livewire:sidebar />
 
