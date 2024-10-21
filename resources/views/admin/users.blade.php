@@ -1,5 +1,5 @@
-<x-app-layout >
+<x-guest-layout >
     <div>
         <livewire:admin.list-users/>
     </div>
-</x-app-layout>
+</x-guest-layout>

@@ -5,23 +5,21 @@
 
     <div class="bg-body-bg4 bg-cover bg-center w-full min-h-screen flex justify-center items-center relative text-right">
         <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl z-10 px-8" style="gap: 25%">
-            <!-- Contenedor del logo -->
-            <div class="">
+            <div class="flex flex-col justify-center items-center w-full p-4 h-full md:w-80 md:h-80">
+                {{-- <div>
+                    <img src="{{ asset('img/Cartagena Xplore final-06.png') }}" alt="" class="">
+                    <img src="{{ asset('') }}" alt="">
+                </div> --}}
                 <livewire:temperature.temperature-main />
-
             </div>
-
-            <!-- Contenedor del texto -->
-            <div class=" md:text-left mt-10 md:mt-0">
-                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto
-                </h1>
-                <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con
-                    nuestros<br>servicios personalizados</h2>
-                <div class="mt-6 flex justify-end">
-                    <a href="{{ route('services') }}" wire:navigate
-                        class="w-48 bg-orange-500 hover:bg-orange-400 curosr-pointer text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
+    
+            <div class="text-right md:text-right mt-10 md:mt-0">
+                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto</h1>
+                <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con nuestros<br>servicios personalizados</h2>
+                <div class="mt-6">
+                    <button class="w-48 bg-orange-500 hover:bg-orange-400 text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
                         Explora ahora
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -150,40 +148,8 @@
 
     </div>
 
+    <livewire:footer />
 
-    <div class="px-14 py-8 sm:h-full bg-gray-950 text-white shadow-lg ">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-10">
-            <div class="mb-4 md:mb-0">
-                <h3 class="font-semibold mb-2">Líneas de atención</h3>
-                <p>Tel: (+57) 605 123 4567</p>
-            </div>
-            <div class="mb-4 md:mb-0">
-                <h3 class="font-semibold mb-2">Nuestra ubicación</h3>
-                <p>Carrera 3 #31-23. Centro Histórico</p>
-            </div>
-            <div class="mb-4 md:mb-0">
-                <h3 class="font-semibold mb-2 ">Horarios de atención</h3>
-                <p>Lun - Vie 8:30 A.M. - 5:30 P.M.</p>
-            </div>
-            <div>
-                <img src="{{ asset('img/4.png') }}" alt="Logo" class="w-auto h-20">
-            </div>
-        </div>
-        <div class="flex flex-col md:flex-row justify-between items-center text-sm pt-5 border-t border-gray-700  pb-7">
-            <p>© 2024 CartagenaXplore. Todos los derechos reservados.</p>
-            <p>ctgXplore@xploreaccount.com</p>
-            <p>Términos del servicio</p>
-            <div class="flex items-center space-x-4">
-                <a class="text-white" href="#">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="text-white" href="#">
-                    <i class="fas fa-times"></i>
-                </a>
-                <span>Español</span>
-            </div>
-        </div>
-    </div>
 
 
 

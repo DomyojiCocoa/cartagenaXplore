@@ -1,7 +1,4 @@
 <div class=" flex">
-
-    <livewire:sidebar />
-
     <div class="w-4/5 p-8">
         <div class="flex justify-between items-center mb-8">
             <h1 class="text-3xl font-bold">Usuarios</h1>
