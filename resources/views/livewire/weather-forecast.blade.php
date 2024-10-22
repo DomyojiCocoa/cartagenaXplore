@@ -1,4 +1,5 @@
 <div class="relative w-full">
+
     <div class="overflow-x-auto whitespace-nowrap flex space-x-4">
         @foreach($forecasts as $forecast)
 

@@ -12,16 +12,20 @@
                 </div> --}}
                 <livewire:temperature.temperature-main />
             </div>
-    
+
             <div class="text-right md:text-right mt-10 md:mt-0">
-                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto</h1>
-                <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con nuestros<br>servicios personalizados</h2>
+                <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-tight">Encuentra el destino<br>perfecto
+                </h1>
+                <h2 class="text-white text-lg md:text-xl mt-3 md:mt-5 font-normal">Conoce Cartagena de manera única con
+                    nuestros<br>servicios personalizados</h2>
                 <div class="mt-6">
-                    <button class="w-48 bg-orange-500 hover:bg-orange-400 text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
+                    <button
+                        class="w-48 bg-orange-500 hover:bg-orange-400 text-white py-3 px-6 rounded-full font-semibold text-center shadow-lg transition duration-300">
                         Explora ahora
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -80,7 +84,8 @@
                         turística y símbolo del pasado colonial, con túneles y vistas panorámicas.
                     </p>
                     <div class="pt-4 flex justify-center">
-                        <div class="w-60 h-10 text-sm border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-3xl text-center shadow-md flex items-center justify-center">
+                        <div
+                            class="w-60 h-10 text-sm border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-3xl text-center shadow-md flex items-center justify-center">
                             <button>Acceder a más servicios</button>
                         </div>
                     </div>
@@ -128,7 +133,7 @@
 
     <div class="relative w-full h-[40rem] shadow-lg">
 
-        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-auto" disablePictureInPicture>
             <source src="{{ asset('img/3.mp4') }}" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>

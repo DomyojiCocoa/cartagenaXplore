@@ -7,7 +7,12 @@
                 Crear Nuevo Sitio
             </button>
         </div>
-
+        <div>
+            <button wire:click="enviarCorreo" class="text-black">Enviar Correo</button>
+            @if (session()->has('message'))
+                <div>{{ session('message') }}</div>
+            @endif
+        </div>
         <!-- Tabla -->
         <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
             <thead class="bg-gray-300">

@@ -64,7 +64,7 @@
         </div>
 
         <div class="mt-5">
-            <button wire:click="login" class="w-full bg-orange-500 hover:bg-orange-300 text-white py-2 rounded-3xl font-semibold text-center shadow-md">
+            <button wire:click="login" wire:navigate class="w-full bg-orange-500 hover:bg-orange-300 text-white py-2 rounded-3xl font-semibold text-center shadow-md">
                 Continuar
             </button>
         </div>

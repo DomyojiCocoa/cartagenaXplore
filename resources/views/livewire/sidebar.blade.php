@@ -2,6 +2,8 @@
     <div class="text-white text-2xl font-bold mb-8">
         <span>Cartagena</span><span class="text-orange-500">Xplore</span>
     </div>
+
+
     <nav class="text-white space-y-4">
         <x-responsive-nav-link href="{{ route('stadistics') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800
@@ -96,20 +98,21 @@
         </div> --}}
     </nav>
     <div class="mt-auto text-white pt-24">
-        <div class="flex items-center py-2 px-2 rounded-lg hover:bg-slate-700">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                fill="#FFFFFF">
-                <path
-                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
-            </svg>
-            <form method="POST" action="{{ route('logout') }}" x-data wire:navigate>
-                @csrf
+        <form method="POST" action="{{ route('logout') }}" x-data wire:navigate>
+            @csrf
+            <div class="flex items-center py-2 px-2 rounded-lg ">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#FFFFFF">
+                    <path
+                        d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                </svg>
+
 
                 <x-dropdown-link href="#" wire:navigate
                     @click.prevent="$root.submit();">
                     {{ __('Log Out') }}
                 </x-dropdown-link>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>

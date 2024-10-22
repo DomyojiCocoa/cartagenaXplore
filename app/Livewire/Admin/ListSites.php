@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin;
 
 use App\Models\Site;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -24,6 +25,20 @@ class ListSites extends Component
     public $url_map;
 
     protected $paginationTheme = 'tailwind';
+
+    public function enviarCorreo()
+    {
+        try {
+            Mail::raw('pene polla teta culo', function ($message) {
+                $message->to('yrkesteban107@gmail.com')
+                        ->subject('CartagenaXplore')
+                        ->attach(public_path('img/rafa.png'));
+            });
+            return 'Correo enviado con éxito.';
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
 
     // Abrir modal de edición
     public function edit($siteId)

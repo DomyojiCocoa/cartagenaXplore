@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class WeatherForecast extends Component
@@ -48,6 +49,7 @@ class WeatherForecast extends Component
             $this->forecasts = [];
         }
     }
+
 
     public function render()
     {
