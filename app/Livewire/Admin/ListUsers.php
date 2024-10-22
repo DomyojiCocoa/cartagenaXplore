@@ -88,7 +88,7 @@ class ListUsers extends Component
     public function render()
     {
         return view('livewire.admin.list-users', [
-            'users' => User::paginate(10),
+            'users' => User::paginate(7),
         ]);
     }
 }

@@ -41,7 +41,7 @@
             </div>
 
             <div class="flex justify-center space-x-6 p-6">
-                <livewire:welcome.activites-carrousel />
+                {{-- <livewire:welcome.activites-carrousel /> --}}
             </div>
         </div>
 
@@ -56,7 +56,7 @@
             </div>
 
             <div class="flex justify-center space-x-6 p-6">
-                <livewire:welcome.activites-carrousel />
+                {{-- <livewire:welcome.activites-carrousel /> --}}
             </div>
         </div>
 

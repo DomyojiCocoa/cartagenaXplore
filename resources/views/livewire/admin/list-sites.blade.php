@@ -12,6 +12,8 @@
                 </div>
             </div>
         </div>
+        <button class="text-orange-300 text-sm" wire:click="enviarCorreo">Cerrar sesión</button>
+
         <!-- Título de la Página -->
         <div class="flex justify-between items-center mb-5">
             <h1 class="text-3xl font-bold">Usuarios</h1>

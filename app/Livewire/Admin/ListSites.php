@@ -29,9 +29,9 @@ class ListSites extends Component
     public function enviarCorreo()
     {
         try {
-            Mail::raw('pene polla teta culo', function ($message) {
-                $message->to('yrkesteban107@gmail.com')
-                        ->subject('CartagenaXplore')
+            Mail::raw('Prueba enviando correo completada con exito', function ($message) {
+                $message->to('jesusmendozasalcedo2004@gmail.com')
+                        ->subject('Prueba')
                         ->attach(public_path('img/rafa.png'));
             });
             return 'Correo enviado con éxito.';
