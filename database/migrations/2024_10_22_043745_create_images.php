@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sites', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address')->nullable();
-            $table->time('opening_time')->nullable();
-            $table->time('closing_time')->nullable();
+            $table->text('url');
+            $table->unsignedBigInteger('related_id');
+            $table->enum('relation_type', ['site', 'activity', 'event']);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('images');
     }
 };

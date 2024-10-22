@@ -1,5 +1,5 @@
 
-<div>
+<div class="">
     @switch($caso)
         @case(1)
             <livewire:admin.list-users />

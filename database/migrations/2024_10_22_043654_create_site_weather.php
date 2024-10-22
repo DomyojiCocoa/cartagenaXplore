@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sites', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('address')->nullable();
-            $table->time('opening_time')->nullable();
-            $table->time('closing_time')->nullable();
+        Schema::create('site_weather', function (Blueprint $table) {
+            $table->foreignId('site_id')->constrained('sites')->onDelete('cascade');
+            $table->foreignId('weather_id')->constrained('weather_conditions')->onDelete('cascade');
+            $table->primary(['site_id', 'weather_id']);
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('site_weather');
     }
 };

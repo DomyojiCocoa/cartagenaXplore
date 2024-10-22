@@ -3,7 +3,7 @@
         <div class="w-1/5 bg-slate-900 min-h-screen p-4 flex flex-col">
             @include('livewire.sidebar')
         </div>
-        <div>
+        <div class="w-screen">
             @livewire('admin.component-viewer',['caso' => $caso])
         </div>
     </div>
