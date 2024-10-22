@@ -25,14 +25,12 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-
         if (Auth::user()->hasRole('Administrator')) {
             return redirect()->route('stadistics');
+        }else{
+            return redirect()->route('main');
         }
-
-        return view('dashboard');
-    })->name('dashboard');
-
+    });
     Route::prefix('/admin')->middleware('can:admin')->group(function () {
         Route::get('/', function () {
             return redirect()->route('stadistics');
