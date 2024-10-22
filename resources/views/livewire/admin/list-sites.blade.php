@@ -1,149 +1,91 @@
-<div class="container mx-auto mt-8 p-6 bg-gray-100 rounded-lg shadow-md">
-    <div class="overflow-x-auto">
-        <!-- Botón para crear nuevo sitio -->
-        <div class="mb-6 text-left">
-            <button wire:click="create"
-                class="bg-orange-500 hover:bg-orange-500 text-white px-6 py-2 rounded-lg shadow-lg transition-all">
-                Crear Nuevo Sitio
-            </button>
+<div class="w-full">
+    <div class="p-8">
+        <div class="flex items-center justify-end space-x-2 pb-10">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#CCCCCC">
+                <path
+                    d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z" />
+            </svg>
+            <div>
+                <h1 class="text-gray-700 text-lg">admin@gmail.com</h1>
+                <div class="flex justify-end">
+                    <button class="text-orange-300 text-sm">Cerrar sesión</button>
+                </div>
+            </div>
         </div>
-        <div>
-            <button wire:click="enviarCorreo" class="text-black">Enviar Correo</button>
-            @if (session()->has('message'))
-                <div>{{ session('message') }}</div>
-            @endif
+        <!-- Título de la Página -->
+        <div class="flex justify-between items-center mb-5">
+            <h1 class="text-3xl font-bold">Usuarios</h1>
+            <h3>6 usuarios</h3>
         </div>
-        <!-- Tabla -->
-        <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
-            <thead class="bg-gray-300">
-                <tr>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Nombre</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Dirección</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Hora Apertura</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Hora Cierre</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Climas Preferibles</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Imagen</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Mapa</th>
-                    <th class="py-3 px-5 border-b text-center text-sm font-semibold">Opciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($sites as $site)
-                    <tr>
-                        <td class="py-3 px-5 border-b text-center">{{ $site->name_site }}</td>
-                        <td class="py-3 px-5 border-b text-center">{{ $site->address }}</td>
-                        <td class="py-3 px-5 border-b text-center">{{ $site->schedule_open }}</td>
-                        <td class="py-3 px-5 border-b text-center">{{ $site->schedule_close }}</td>
-                        <td class="py-3 px-5 border-b text-center">{{ $site->weather_preferable }}</td>
-                        <td class="py-3 px-5 border-b text-center">
-                            @if ($site->url_img)
-                                <img src="{{ $site->url_img }}" class="h-20 w-20 rounded-lg object-cover shadow-md"
-                                    alt="Imagen del sitio">
-                            @endif
-                        </td>
-                        <td class="py-3 px-5 border-b text-center">
-                            <a href="{{ $site->url_map }}" target="_blank" class="text-blue-500 hover:underline">
-                                Ver Mapa
-                            </a>
-                        </td>
-                        <td class="py-3 px-5 border-b text-center flex">
-                            <div class="pr-2">
-                                <button wire:click="edit({{ $site->id }})"
-                                    class="bg-yellow-500 hover:bg-yellow-300 text-white px-4 py-2   rounded-lg transition-all">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                        width="24px" fill="#FFFFFF">
-                                        <path
-                                            d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
-                                    </svg>
-                                </button>
+        <hr class="border-t-1 border-black my-4">
+        <!-- Barra de Búsqueda y Botones -->
+        <div class="flex justify-between items-center mb-4">
+            <!-- Búsqueda de Usuarios -->
+            <div class="flex items-center">
+                <input type="text" placeholder="Nombre o palabra clave" class="border rounded p-2 mr-4">
+                <label class="flex items-center pl-10">
+                    Seleccionar sitios
+                    <input type="checkbox" class="ml-5">
+                </label>
+            </div>
 
-                            </div>
-                            <button wire:click="confirmDelete({{ $site->id }})"
-                                class="bg-red-500 hover:bg-red-300 text-white px-4 py-2 rounded-lg  transition-all">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                    width="24px" fill="#FFFFFF">
-                                    <path
-                                        d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
-                                </svg>
-                            </button>
+            <!-- Botones de Acción -->
+            <div class="flex items-center">
+                <div class="pl-14">
+                    <button wire:click="create" class="bg-orange-500 text-white px-4 py-2 rounded-xl ">Añadir
+                        sitios</button>
+
+                </div>
+                <div class="pl-14">
+                    <button class="border border-slate-600 text-gray-500 px-4 py-2 rounded-xl mr-2">Eliminar
+                        sitios</button>
+
+                </div>
+
+                <!-- Botón con Icono -->
+                <button class="pl-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#666666">
+                        <path
+                            d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+        <!-- Tabla de Usuarios -->
+        <div class="bg-white shadow rounded-lg overflow-hidden w-full ">
+            <table class="min-w-full w-full">
+                <!-- Encabezado de la Tabla -->
+                <thead class="bg-slate-900 text-white">
+                    <tr>
+                        <th class="p-4 text-left">Sitios</th>
+                        <th class="p-4 text-left">Sector</th>
+                        <th class="p-4 text-left">Detalles</th>
+                    </tr>
+                </thead>
+                <!-- Cuerpo de la Tabla -->
+                <tbody>
+
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="p-4 flex items-center">
+                            <input type="checkbox" class="mr-2">Titulo del sitio
+                        </td>
+                        <td class="py-4 px-6">Arjona</td>
+                        <td class="p-4">
+                            <button class="text-slate-700 border border-slate-600 px-8 py-1 rounded-xl">Ver</button>
                         </td>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
 
-        <!-- Paginación -->
-        <div class="mt-6">
-            {{ $sites->links() }}
+                </tbody>
+            </table>
+        </div>
+        <div class="flex justify-center items-center mt-4">
+            <div class="p-4 bg-white border-t">
+
+            </div>
         </div>
     </div>
 
-    <!-- Modal para crear un nuevo sitio -->
-    <x-dialog-modal wire:model="createModalVisible">
-        <x-slot name="title">Crear Nuevo Sitio</x-slot>
-        <x-slot name="content">
-            <!-- Formulario para creación -->
-            <div class="space-y-4">
-                <input type="text" wire:model="name_site" placeholder="Nombre del Sitio"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="text" wire:model="address" placeholder="Dirección"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="time" wire:model="schedule_open"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="time" wire:model="schedule_close"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="text" wire:model="weather_preferable" placeholder="Climas Preferibles"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="url" wire:model="url_img" placeholder="URL de la Imagen"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="url" wire:model="url_map" placeholder="URL del Mapa"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-            </div>
-        </x-slot>
-        <x-slot name="footer">
-            <button wire:click="closeCreateModal" class="bg-gray-500 text-white px-4 py-2 rounded-lg">Cancelar</button>
-            <button wire:click="store" class="bg-orange-500 text-white px-4 py-2 rounded-lg">Crear</button>
-        </x-slot>
-    </x-dialog-modal>
 
-    <!-- Modal para editar sitio -->
-    <x-dialog-modal wire:model="editModalVisible">
-        <x-slot name="title">Editar Sitio</x-slot>
-        <x-slot name="content">
-            <!-- Formulario para edición -->
-            <div class="space-y-4">
-                <input type="text" wire:model="name_site" placeholder="Nombre del Sitio"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="text" wire:model="address" placeholder="Dirección"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="time" wire:model="schedule_open"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="time" wire:model="schedule_close"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="text" wire:model="weather_preferable" placeholder="Climas Preferibles"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="url" wire:model="url_img" placeholder="URL de la Imagen"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="url" wire:model="url_map" placeholder="URL del Mapa"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-            </div>
-        </x-slot>
-        <x-slot name="footer">
-            <button wire:click="closeModal" class="bg-gray-500 text-white px-4 py-2 rounded-lg">Cancelar</button>
-            <button wire:click="update" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Actualizar</button>
-        </x-slot>
-    </x-dialog-modal>
-
-    <!-- Modal para eliminar sitio -->
-    <x-confirmation-modal wire:model="deleteModalVisible">
-        <x-slot name="title">Eliminar Sitio</x-slot>
-        <x-slot name="content">
-            ¿Estás seguro de que deseas eliminar este sitio? Esta acción no se puede deshacer.
-        </x-slot>
-        <x-slot name="footer">
-            <button wire:click="closeDeleteModal"
-                class="bg-gray-500 text-white px-4 py-2 rounded-lg">Cancelar</button>
-            <button wire:click="delete" class="bg-red-500 text-white px-4 py-2 rounded-lg">Eliminar</button>
-        </x-slot>
-    </x-confirmation-modal>
 </div>
