@@ -20,6 +20,11 @@ class AllActivities extends Component
         return view('livewire.service.all-activities', [
             'activities' => $activity,
         ]);
+
+    }
+    public function updatingPage()
+    {
+        // $this->resetPage();
     }
 
     public function updatedPage()

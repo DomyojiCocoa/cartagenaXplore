@@ -17,6 +17,51 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
+            'url' => 'img/prueba2.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba3.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba3.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba2.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba2.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba2.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba2.jpg',
+        ]);
+        Image::create([
+            'url' => 'img/prueba.jpg',
+        ]);
+        Image::create([
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([

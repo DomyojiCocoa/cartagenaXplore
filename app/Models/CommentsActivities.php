@@ -15,7 +15,6 @@ class CommentsActivities extends Model
         'comment',
         'user_id',
         'activity_id',
-        'title',
     ];
 
     protected $dates = ['deleted_at'];

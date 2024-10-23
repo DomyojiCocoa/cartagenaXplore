@@ -2,16 +2,17 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
+
         <div class="md:col-span-2">
-            <img alt="Group of people on ATVs on the beach" class="w-full h-auto rounded-lg" src="img/7.jpg" />
+            <img alt="Group of people on ATVs on the beach" class="w-full h-auto rounded-lg" src="{{ asset($activityImages[0]->image->url) }}" />
         </div>
 
         <div>
-            <img alt="ATV on the beach with a cloudy sky" class="w-full h-auto rounded-lg" src="img/8.jpg" />
+            <img class="w-full h-auto rounded-lg" src="{{ asset($activityImages[1]->image->url) }}" />
         </div>
 
         <div>
-            <img alt="Multiple ATVs parked on the beach" class="w-full h-auto rounded-lg" src="img/9.jpg" />
+            <img class="w-full h-auto rounded-lg" src="{{ asset($activityImages[2]->image->url) }}" />
         </div>
     </div>
 
@@ -29,7 +30,6 @@
             <button class="">
                 Diseñar un plan
             </button>
-
         </div>
     </div>
 </div>

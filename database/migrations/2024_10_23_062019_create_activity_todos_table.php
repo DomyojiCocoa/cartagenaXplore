@@ -18,6 +18,8 @@ return new class extends Migration
                 ->constrained('activities')
                 ->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
@@ -26,6 +28,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('activity_todos', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
         Schema::dropIfExists('activity_todos');
     }
 };

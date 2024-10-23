@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignId('activity_id')
                 ->constrained('activities')
                 ->onDelete('cascade');
-            $table->string('title');
             $table->softDeletes();
             $table->timestamps();
         });

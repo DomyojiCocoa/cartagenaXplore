@@ -43,10 +43,22 @@ Route::middleware([
     });
 });
 
-Route::get('/site', function () {
-    return view('siteDescription');
+Route::get('/sitio/{id}', function ($id) {
+    return view('siteDescription', ['id' => $id]);
 })->name('siteInfo');
+
+Route::get('/actividad/{id}', function ($id) {
+    return view('activityDescription', ['id' => $id]);
+})->name('activityInfo');
 
 Route::get('/servicios', function () {
     return view('services');
 })->name('services');
+
+Route::get('/conocenos', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/planes', function () {
+    return view('plans');
+})->name('plans');

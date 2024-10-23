@@ -32,6 +32,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ImageSeeder::class);
         $this->call(ActivitiesSeeder::class);
         $this->call(SiteSeeder::class);
-        
+        $this->call(CommentActivitySeeder::class);
+        $this->call(ActivityWhatCoverSeeder::class);
+        $this->call(ActivityTodoSeeder::class);
+        $this->call(ActivitiesImageSeeder::class);
     }
 }
