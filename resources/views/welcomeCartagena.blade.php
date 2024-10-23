@@ -29,6 +29,29 @@
         </div>
     </div>
 
+    <div class="rating flex flex-row-reverse justify-center">
+        <input type="radio" id="star5" name="rate" value="5" class="hidden peer/star5" />
+        <label for="star5" title="5 stars"
+            class="cursor-pointer text-gray-400 text-3xl peer-checked/star5:text-orange-400 hover:text-orange-500">★</label>
+
+        <input type="radio" id="star4" name="rate" value="4" class="hidden peer/star4" />
+        <label for="star4" title="4 stars"
+            class="cursor-pointer text-gray-400 text-3xl peer-checked/star4:text-orange-400 hover:text-orange-500">★</label>
+
+        <input type="radio" id="star3" name="rate" value="3" class="hidden peer/star3" />
+        <label for="star3" title="3 stars"
+            class="cursor-pointer text-gray-400 text-3xl peer-checked/star3:text-orange-400 hover:text-orange-500">★</label>
+
+        <input type="radio" id="star2" name="rate" value="2" class="hidden peer/star2" />
+        <label for="star2" title="2 stars"
+            class="cursor-pointer text-gray-400 text-3xl peer-checked/star2:text-orange-400 hover:text-orange-500">★</label>
+
+        <input type="radio" id="star1" name="rate" value="1" class="hidden peer/star1" />
+        <label for="star1" title="1 star"
+            class="cursor-pointer text-gray-400 text-3xl peer-checked/star1:text-orange-400 hover:text-orange-500">★</label>
+    </div>
+
+
     <div class="m-5 md:m-20">
         <livewire:weather-forecast />
         <div class="mt-20">
@@ -133,7 +156,8 @@
 
     <div class="relative w-full h-[40rem] shadow-lg">
 
-        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-auto" disablePictureInPicture>
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-auto"
+            disablePictureInPicture>
             <source src="{{ asset('img/3.mp4') }}" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>

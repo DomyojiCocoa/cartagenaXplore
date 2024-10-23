@@ -1,3 +1,4 @@
+{{-- Auth es para cuando esta logueado, y el else equivaldria para cuando no lo esta  --}}
 @auth
     <nav x-data="{ open: false }" class="bg-black text-white bg-opacity-75 border-b border-gray-100  w-full z-50 fixed ">
 @else
@@ -9,7 +10,6 @@
                 <a href="{{ route('main') }}" wire:navigate class="flex">
                     @auth
                         <img src="{{ asset('img/Cartagena Xplore final-03.png') }}" alt="Logo" class="h-24 mr-4 w-[6rem|]">
-
                     @else
                         <img src="{{ asset('img/3.png') }}" alt="Logo" class="h-24 mr-4 w-[6rem|]">
                     @endauth
@@ -46,7 +46,6 @@
                             <span class="inline-flex rounded-md">
                                 <button type="button" class="inline-flex text-right items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                     {{ Auth::user()->email }}
-                                    <br >{{ Auth::user()->name }}
 
                                     <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -68,14 +67,6 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        @role('Administrator')
-                            <x-dropdown-link
-                                href="{{ route('sites' ) }}"
-                                wire:navigate>
-                                {{ __('Menu administrador') }}
-                            </x-dropdown-link>
-                        @endrole
-
                         <div class="border-t border-gray-200"></div>
 
                         <!-- Authentication -->
@@ -84,7 +75,7 @@
 
                             <x-dropdown-link href="#" wire:navigate
                                 @click.prevent="$root.submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar sesion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
