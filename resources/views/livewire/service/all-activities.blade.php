@@ -2,7 +2,6 @@
     <div class="p-4 ml-1 border-l border-black">
 
         <div class="flex flex-col sm:flex-row justify-between items-center mb-4 space-y-4 sm:space-y-0">
-
             <div class="relative w-full sm:w-64">
                 <input type="text" placeholder="Nombre o palabra clave"
                     class="border border-gray-300 p-2 pl-10 rounded-2xl w-full" />
@@ -13,30 +12,30 @@
                 </svg>
             </div>
 
-            <h2 class="text-center sm:text-left">{{ $sites->total() }} resultados</h2>
+            <h2 class="text-center sm:text-left">{{ $activities->total() }} resultados</h2>
             <select class="border-0 ring-white">
                 <option>Ordenar clima por: Climas variados</option>
             </select>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            @foreach ($sites as $site)
+            @foreach ($activities as $activity)
                 <a href="{{ route('siteInfo')}}">
-                    <div class="w-full border rounded-lg shadow-lg relative group" style="background-image: url('{{ $site->url_img }}'); background-size: cover; background-position: center;">
+                    <div class="w-full border rounded-lg shadow-lg relative group" style="background-image: url('{{ $activity->url_img }}'); background-size: cover; background-position: center;">
                         <div class="card shadow-md w-full h-[20rem] group gap-[1.3em] rounded-sm relative flex justify-end flex-col z-[1] overflow-hidden">
                             <div class="absolute top-0 left-0 h-full w-full">
-                                <div class="w-full h-full transition-transform duration-500 transform group-hover:scale-110" wire:key="site-{{ $site->id }}">
-                                    <img class="w-full h-full object-cover" src="{{ $site->url_img }}?v={{ now()->timestamp }}" loading="lazy">
+                                <div class="w-full h-full transition-transform duration-500 transform group-hover:scale-110" wire:key="site-{{ $activity->id }}">
+                                    <img class="w-full h-full object-cover" src="{{ $activity->url_img }}?v={{ now()->timestamp }}" loading="lazy">
                                 </div>
                             </div>
                             <div class="container bg-black bg-opacity-35 hover:bg-opacity-85 z-[2] relative font-nunito flex flex-col p-[1.5rem] gap-[0.5rem]">
                                 <div class="h-fit w-full">
                                     <h1 class="text-[1.5rem] font-semibold text-white">
-                                        {{ $site->name_site }}
+                                        {{ $activity->title }}
                                     </h1>
                                 </div>
                                 <p class="font-nunito block text-blue-50 font-light relative h-[0em] group-hover:h-[6em] leading-[1.2em] duration-500 overflow-hidden">
-                                    {{ $site->address }}
+                                    {{ $activity->information_below }}
                                 </p>
                                 <div class="flex items-center">
                                     <!-- Estrellas -->
@@ -53,7 +52,7 @@
             @endforeach
         </div>
         <div class="mt-4">
-            {{ $sites->links() }}
+            {{ $activities->links() }}
         </div>
     </div>
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Service;
 
+use App\Models\Activities;
 use App\Models\Site;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -14,11 +15,10 @@ class AllActivities extends Component
 
     public function render()
     {
-        // Obtén la paginación aquí en lugar de en mount
-        $sites = Site::paginate(3);
+        $activity = Activities::paginate(3);
 
         return view('livewire.service.all-activities', [
-            'sites' => $sites,
+            'activities' => $activity,
         ]);
     }
 

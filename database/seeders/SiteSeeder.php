@@ -28,7 +28,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Una impresionante obra de ingeniería militar del siglo XVII.',
             'history' => 'Construido para proteger la ciudad de los ataques, es un símbolo de resistencia.',
             'extra' => 'Ofrece vistas panorámicas de la ciudad y el mar.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba3.png',
         ]);
 
         Site::create([
@@ -37,7 +37,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Disfruta de playas de arena blanca y aguas cristalinas.',
             'history' => 'Declaradas Parque Nacional Natural, son ideales para el ecoturismo.',
             'extra' => 'Actividades como snorkeling y buceo son imperdibles.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Site::create([

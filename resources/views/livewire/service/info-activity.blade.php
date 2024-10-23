@@ -7,14 +7,7 @@
 
     <div class="flex flex-col md:flex-row items-start md:items-center mt-4 space-y-4 md:space-y-0">
 
-        <div class="flex items-center">
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-            <i class="fas fa-star text-yellow-400"></i>
-        </div>
-        <span class="ml-2 text-base sm:text-lg">0.0 / 5</span>
+
 
 
         <span class="ml-0 md:ml-4 text-base sm:text-lg flex items-center">
@@ -67,7 +60,7 @@
 
     <hr class="my-6" />
 
-    
+
     <div class="mt-4 flex flex-col md:flex-row">
         <div class="flex items-center">
             <h3 class="text-base sm:text-lg font-bold">Sitio que explorarás</h3>
