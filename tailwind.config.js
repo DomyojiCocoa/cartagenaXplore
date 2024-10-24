@@ -21,7 +21,8 @@ export default {
                 'body-bg2' :"url('/public/img/slider-2.jpg')",
                 'body-bg3' :"url('/public/img/gal1_20210417030436.jpg')",
                 'body-bg4' :"url('/public/img/imagen.jpg')",
-                'body-bg5' :"url('public/img/3.mp4')"
+                'body-bg5' :"url('public/img/3.mp4')",
+                'body-bg6' :"url('/public/img/10.jpg')",
             },
         },
     },
