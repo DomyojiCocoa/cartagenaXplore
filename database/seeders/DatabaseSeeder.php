@@ -26,15 +26,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(RoleSeeder::class);
-        $this->call(UserSeeder::class);
-        $this->call(CategorySeeder::class);
-        $this->call(ImageSeeder::class);
-        $this->call(ActivitiesSeeder::class);
-        $this->call(SiteSeeder::class);
-        $this->call(CommentActivitySeeder::class);
-        $this->call(ActivityWhatCoverSeeder::class);
-        $this->call(ActivityTodoSeeder::class);
-        $this->call(ActivitiesImageSeeder::class);
+        $this->call([
+            RoleSeeder::class,
+            UserSeeder::class,
+            CategorySeeder::class,
+            ImageSeeder::class,
+            ActivitiesSeeder::class,
+            SiteSeeder::class,
+            CommentActivitySeeder::class,
+            ActivityWhatCoverSeeder::class,
+            ActivityTodoSeeder::class,
+            ActivitiesImageSeeder::class,
+        ]);
     }
 }

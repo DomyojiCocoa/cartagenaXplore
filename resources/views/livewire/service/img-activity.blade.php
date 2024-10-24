@@ -4,7 +4,7 @@
 
 
         <div class="md:col-span-2">
-            <img alt="Group of people on ATVs on the beach" class="w-full h-auto rounded-lg" src="{{ asset($activityImages[0]->image->url) }}" />
+            <img class="w-full h-auto rounded-lg" src="{{ asset($activityImages[0]->image->url) }}" />
         </div>
 
         <div>

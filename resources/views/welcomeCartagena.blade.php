@@ -29,6 +29,7 @@
         </div>
     </div>
 
+
     <div class="m-5 md:m-20">
         <livewire:weather-forecast />
         <div class="mt-20">

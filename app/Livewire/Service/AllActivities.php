@@ -12,19 +12,20 @@ class AllActivities extends Component
     use WithPagination;
 
     protected $paginationTheme = 'tailwind';
+    public $search = '';
 
     public function render()
     {
-        $activity = Activities::paginate(3);
+        $activity = Activities::inRandomOrder()->paginate(3);
 
         return view('livewire.service.all-activities', [
             'activities' => $activity,
         ]);
 
     }
-    public function updatingPage()
+    public function updatingSearch()
     {
-        // $this->resetPage();
+        $this->resetPage();
     }
 
     public function updatedPage()

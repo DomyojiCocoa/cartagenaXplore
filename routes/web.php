@@ -26,7 +26,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         if (Auth::user()->hasRole('Administrator')) {
-            return redirect()->route('stadistics');
+            return redirect()->route('adminStadistics');
         }else{
             return redirect()->route('main');
         }
@@ -35,12 +35,17 @@ Route::middleware([
         Route::get('/', function () {
             return redirect()->route('stadistics');
         });
-        Route::get('/estadisticas', [ViewAdminController::class, 'estadistics'])->name('stadistics');
-        Route::get('/usuarios', [ViewAdminController::class, 'users'])->name('users');
-        Route::get('/actividades', [ViewAdminController::class, 'activities'])->name('activities');
-        Route::get('/eventos', [ViewAdminController::class, 'events'])->name('events');
-        Route::get('/sitios', [ViewAdminController::class, 'sites'])->name('sites');
+        Route::get('/estadisticas', [ViewAdminController::class, 'estadistics'])->name('adminStadistics');
+        Route::get('/usuarios', [ViewAdminController::class, 'users'])->name('adminUsers');
+        Route::get('/actividades', [ViewAdminController::class, 'activities'])->name('adminActivities');
+        Route::get('/eventos', [ViewAdminController::class, 'events'])->name('adminEvents');
+        Route::get('/sitios', [ViewAdminController::class, 'sites'])->name('adminSites');
     });
+    // Route::prefix('/planes')->group(function () {
+    //     Route::get('/calendario', function () {
+    //         return view('schedule');
+    //     })->name('schedule');
+    // });
 });
 
 Route::get('/sitio/{id}', function ($id) {
@@ -62,3 +67,13 @@ Route::get('/conocenos', function () {
 Route::get('/planes', function () {
     return view('plans');
 })->name('plans');
+
+Route::get('/sitios', function () {
+    return view('sites');
+})->name('sites');
+
+Route::prefix('/planes')->group(function () {
+    Route::get('/calendario', function () {
+        return view('schedule');
+    })->name('schedule');
+});
