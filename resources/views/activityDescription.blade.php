@@ -4,12 +4,16 @@
             <livewire:service.info-activity :activityId="$id"/>
             <livewire:service.img-activity :activityId="$id"/>
         </div>
-        <div class="m-4">
-            <livewire:service.more-recommendations />
+        <div class="m-20">
+            <div>
+                <livewire:service.more-recommendations />
+
+            </div>
+            <div class="mt-44">
+                <livewire:service.comments :activityId="$id"/>
+            </div>
         </div>
-        <div>
-            <livewire:service.comments :activityId="$id"/>
-        </div>
+
     </div>
     <livewire:footer />
 </x-app-layout>

@@ -1,5 +1,5 @@
 <div class="m-10">
-    <h1 class="text-3xl md:text-4xl font-semibold mb-7">Más recomendaciones</h1>
+    <h1 class="lg:text-6xl md:text-4xl font-semibold mb-20">Más recomendaciones</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         @foreach ($activities as $activity)
             <a href="{{ route('activityInfo', $activity->id) }}">

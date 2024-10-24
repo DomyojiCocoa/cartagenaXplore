@@ -4,16 +4,18 @@
 
 
         <div class="md:col-span-2">
-            <img class="w-full h-auto rounded-lg" src="{{ asset($activityImages[0]->image->url) }}" />
+            <img class="w-full h-[25rem] object-cover rounded-lg" src="{{ asset($activityImages[0]->image->url) }}" />
+
         </div>
 
         <div>
-            <img class="w-full h-auto rounded-lg" src="{{ asset($activityImages[1]->image->url) }}" />
+            <img class="w-full h-[20rem] object-cover rounded-lg" src="{{ asset($activityImages[1]->image->url) }}" />
         </div>
 
         <div>
-            <img class="w-full h-auto rounded-lg" src="{{ asset($activityImages[2]->image->url) }}" />
+            <img class="w-full h-[20rem] object-cover rounded-lg" src="{{ asset($activityImages[2]->image->url) }}" />
         </div>
+
     </div>
 
 
