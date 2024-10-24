@@ -16,6 +16,8 @@ class Activities extends Model
         'categories_id',
         'rating',
         'information_below',
+        'start',
+        'end',
         'url_img',
     ];
 

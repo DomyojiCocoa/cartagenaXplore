@@ -11,20 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('activities', function (Blueprint $table) {
+        Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->foreignId('categories_id')
-                ->constrained('categories')
+            $table->foreignId('plan_id')
+                ->constrained('plans')
                 ->onDelete('cascade');
-            $table->integer('rating')->nullable();
-            $table->text('information_below');
-            $table->text('url_img');
-            $table->string('start')->nullable();
-            $table->string('end')->nullable();
+            $table->foreignId('activities_id')
+                ->constrained('activities')
+                ->onDelete('cascade');
+            $table->date('date')->nullable();
             $table->timestamps();
             $table->softDeletes();
-
         });
     }
 
@@ -33,9 +30,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('activities', function (Blueprint $table) {
+        Schema::table('schedules', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
-        Schema::dropIfExists('activities');
+        Schema::dropIfExists('schedules');
     }
 };
