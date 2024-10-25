@@ -10,11 +10,11 @@ class Plan extends Model
 {
     use SoftDeletes;
     use HasFactory;
-    
+
     protected $fillable = [
         'name',
-        'description',
         'user_id',
+        'categories_id',
         'url_img',
     ];
 
@@ -23,5 +23,9 @@ class Plan extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'categories_id');
     }
 }

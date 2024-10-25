@@ -73,7 +73,11 @@ Route::get('/sitios', function () {
 })->name('sites');
 
 Route::prefix('/planes')->group(function () {
-    Route::get('/calendario', function () {
-        return view('schedule');
-    })->name('schedule');
+    Route::get('/{id}', function ($id) {
+        return view('schedule', ['id' => $id]);
+    })->name('planBuilding');
+
+    // Route::get('/calendario', function ($id) {
+    //     return view('calendarioVista', ['id' => $id]);
+    // })->name('schedule');
 });

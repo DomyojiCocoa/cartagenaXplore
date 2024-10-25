@@ -19,6 +19,8 @@
         <!-- Styles -->
         @livewireStyles
         @livewireScripts
+        @livewireScripts
+        @livewireCalendarScripts
 
     </head>
     <body>
@@ -28,5 +30,6 @@
         </div>
 
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>

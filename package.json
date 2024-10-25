@@ -16,6 +16,10 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+<<<<<<< Updated upstream
+        "@fullcalendar/daygrid": "^6.1.15",
+=======
+>>>>>>> Stashed changes
         "flowbite": "^2.5.2",
         "fullcalendar": "^6.1.15",
         "moment": "^2.30.1",

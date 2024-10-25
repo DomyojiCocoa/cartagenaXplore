@@ -1,57 +1,38 @@
-<div class="w-screen">
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/locales/es.js'></script>
-    <script>
-        document.addEventListener('livewire:navigated', function() {
-            var calendarEl = document.getElementById('calendar');
+<div>
+    <h1>Actividades en el plan</h1>
+    <div class="h-72 overflow-y-auto p-4 border border-gray-300 bg-gray-100">
+        @foreach ($activities as $activity)
+            <a href="#"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                    src="/docs/images/blog/image-4.jpg" alt="">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{ $activity->activity->title }}</h5>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </div>
+            </a>
+            <button wire:click="removeActivity({{ $activity->activity_id }})">Quitar</button>
+        @endforeach
+    </div>
 
-            // Función para inicializar el calendario
-            function initializeCalendar() {
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
-                    locale: 'es',
-                    headerToolbar: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'dayGridMonth,dayGridWeek,dayGridDay'
-                    },
-                    dayHeaderFormat: { weekday: 'long' },
-                    editable: true,
-                    events: @json($activities->map(function($activity) {
-                        return [
-                            'title' => $activity->title,
-                            'start' => $activity->start_date ?: null, // Asegúrate de que este campo exista
-                            'description' => $activity->description
-                        ];
-                    })),
-                    eventDrop: function(info) {
-                        var today = new Date().toISOString().split('T')[0];
-                        if (info.event.startStr < today) {
-                            alert('No puedes mover el evento a una fecha anterior a la actual.');
-                            info.revert(); // Regresa el evento a su posición original
-                        } else {
-                            // Emitir evento Livewire para actualizar el evento en el backend
-                            Livewire.emit('updateEvent', info.event.id, info.event.startStr);
-                        }
-                    },
-                    eventClick: function(info) {
-                        alert(info.event.title + ': ' + info.event.extendedProps.description);
-                    },
-                });
-
-                calendar.render();
-            }
-
-            // Inicializa el calendario
-            initializeCalendar();
-
-            // Re-inicializa el calendario después de un cambio en Livewire
-            Livewire.on('calendarUpdated', function() {
-                calendar.destroy(); // Destruye el calendario anterior
-                initializeCalendar(); // Vuelve a inicializar
-            });
-        });
-    </script>
-
-    <div id='calendar' class="w-1/2"></div>
+    <h1>Actividades extras</h1>
+    <div class="h-72 overflow-y-auto p-4 border border-gray-300 bg-gray-100">
+        @foreach ($moreActivities as $activity)
+            <a href="#"
+                class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+                    src="/docs/images/blog/image-4.jpg" alt="">
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        {{ $activity->title }}</h5>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                        technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                </div>
+            </a>
+            <button wire:click="addActivity({{ $activity->id }})">Agregar</button>
+        @endforeach
+    </div>
+    <button wire:click="next">Ver cronograma</button>
 </div>

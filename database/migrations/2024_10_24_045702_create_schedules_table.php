@@ -19,6 +19,9 @@ return new class extends Migration
             $table->foreignId('activities_id')
                 ->constrained('activities')
                 ->onDelete('cascade');
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onDelete('cascade');
             $table->date('date')->nullable();
             $table->timestamps();
             $table->softDeletes();

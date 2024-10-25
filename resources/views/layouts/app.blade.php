@@ -14,11 +14,14 @@
         <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireScripts
+
 
         <!-- Styles -->
         @livewireStyles
     </head>
     <body class="font-satoshi antialiased ">
+
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
@@ -42,5 +45,7 @@
         @stack('modals')
 
         @livewireScripts
+        @stack('scripts')
     </body>
+    @livewireCalendarScripts
 </html>

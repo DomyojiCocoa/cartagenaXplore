@@ -27,4 +27,5 @@ class Activities extends Model
     {
         return $this->belongsTo(Category::class, 'categories_id');
     }
+    
 }
