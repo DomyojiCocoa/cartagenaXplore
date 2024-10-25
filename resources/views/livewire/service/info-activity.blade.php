@@ -37,11 +37,11 @@
     </div>
 
 
-    <div class="mt-4 flex flex-col md:flex-row lg:text-4xl">
-        <div class="flex items-center">
-            <h3 class=" font-bold">Qué realizarás</h3>
+    <div class="mt-4 flex flex-col md:flex-row lg:text-3xl items-start md:items-center">
+        <div class="flex items-center md:items-baseline">
+            <h3 class="font-bold">Qué realizarás</h3>
         </div>
-        <div class="text-sm lg:text-lg pl-0 md:pl-20 mt-8">
+        <div class="text-sm lg:text-lg pl-12">
             <ul class="list-disc list-inside mt-2 marker:text-orange-500">
                 @foreach ($activityTodo as $todo)
                     <li>{{ $todo->info }}</li>
@@ -50,22 +50,22 @@
         </div>
     </div>
 
-
     <hr class="my-6" />
 
-
-    <div class="mt-4 flex flex-col md:flex-row lg:text-4xl">
-        <div class="flex items-center">
-            <h3 class=" font-bold">Qué abarca</h3>
+    <div class="mt-4 flex flex-col md:flex-row lg:text-3xl items-start md:items-center">
+        <div class="flex items-center md:items-baseline">
+            <h3 class="font-bold">Qué abarca</h3>
         </div>
-        <div class="text-sm lg:text-lg sm:text-base pl-0 md:pl-20">
+        <div class="text-sm lg:text-lg pl-20">
             <ul class="list-disc list-inside mt-2 marker:text-orange-500">
                 @foreach ($activityWhatCover as $cover)
-                    <li>{{ $cover->info}}</li>
+                    <li>{{ $cover->info }}</li>
                 @endforeach
             </ul>
         </div>
     </div>
+
+
 
 
     <hr class="my-6" />
