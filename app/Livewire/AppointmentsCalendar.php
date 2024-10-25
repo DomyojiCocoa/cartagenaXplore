@@ -14,11 +14,11 @@ class AppointmentsCalendar extends LivewireCalendar
 {
     public function events(): Collection
     {
-        $actividades = ActivitiesPlan::where('plan_id', 1)->get();
+        $actividades = ActivitiesPlan::where('plan_id', 2)->get();
 
         $fechas = [];
 
-        $fechasActividad = Schedule::where('plan_id', 1)->get();
+        $fechasActividad = Schedule::where('plan_id', 2)->get();
         foreach ($fechasActividad as $fecha) {
 
             $fechas[$fecha->activities_id][] = $fecha->date;
