@@ -5,7 +5,7 @@
 
 
     <nav class="text-white space-y-4">
-        <x-responsive-nav-link href="{{ route('stadistics') }}" wire:navigate
+        <x-responsive-nav-link href="{{ route('adminStadistics') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800
                                     {{ request()->routeIs('stadistics') ? 'bg-green text-gray-800  translate-x-2' : 'text-white' }}">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg ">
@@ -16,7 +16,7 @@
             </span>
             <span class="text-sm font-medium">{{ __('Estadisticas') }}</span>
         </x-responsive-nav-link>
-        <x-responsive-nav-link href="{{ route('users') }}" wire:navigate
+        <x-responsive-nav-link href="{{ route('adminUsers') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800
                                     {{ request()->routeIs('users') ? 'bg-green text-gray-800  translate-x-2' : 'text-white' }}">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg ">
@@ -28,7 +28,7 @@
             </span>
             <span class="text-sm font-medium">{{ __('Usuarios') }}</span>
         </x-responsive-nav-link>
-        <x-responsive-nav-link href="{{ route('activities') }}" wire:navigate
+        <x-responsive-nav-link href="{{ route('adminActivities') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800
                                     {{ request()->routeIs('activities') ? 'bg-green text-gray-800  translate-x-2' : 'text-white' }}">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg ">
@@ -40,7 +40,7 @@
             </span>
             <span class="text-sm font-medium">{{ __('Actividades') }}</span>
         </x-responsive-nav-link>
-        <x-responsive-nav-link href="{{ route('events') }}" wire:navigate
+        <x-responsive-nav-link href="{{ route('adminEvents') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800
                                     {{ request()->routeIs('events') ? 'bg-green text-gray-800  translate-x-2' : 'text-white' }}">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg ">
@@ -52,7 +52,7 @@
             </span>
             <span class="text-sm font-medium">{{ __('Eventos') }}</span>
         </x-responsive-nav-link>
-        <x-responsive-nav-link href="{{ route('sites') }}" wire:navigate
+        <x-responsive-nav-link href="{{ route('adminSites') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800
                                     {{ request()->routeIs('sites') ? 'bg-green text-gray-800  translate-x-2' : 'text-white' }}">
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg ">

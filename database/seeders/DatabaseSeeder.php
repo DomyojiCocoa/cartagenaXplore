@@ -37,6 +37,9 @@ class DatabaseSeeder extends Seeder
             ActivityWhatCoverSeeder::class,
             ActivityTodoSeeder::class,
             ActivitiesImageSeeder::class,
+            PlanSeeder::class,
+            ActivitiesPlanSeeder::class,
+            ScheduleSeeder::class,
         ]);
     }
 }

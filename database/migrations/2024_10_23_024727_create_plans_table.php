@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
             $table->foreignId('user_id')
                 ->constrained('users')
+                ->onDelete('cascade');
+            $table->foreignId('categories_id')
+                ->constrained('categories')
                 ->onDelete('cascade');
             $table->string('url_img');
             $table->softDeletes();

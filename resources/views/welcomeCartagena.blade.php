@@ -3,24 +3,25 @@
         @livewire('navigation-menu')
     </div>
 
-    <div class="bg-body-bg4 bg-cover bg-center w-full min-h-screen flex justify-center items-center ">
-
+    <div class="bg-body-bg4 bg-cover  bg-center w-full min-h-screen flex justify-center items-center ">
+        <div class=" absolute bg-opacity-25 bg-black z-2 w-full h-screen">
+        </div>
 
             <!-- Componente del clima, posicionado en la parte inferior izquierda -->
-            <div class="pl-96 ">
+            <div class="pl-96 z-20">
                 <livewire:temperature.temperature-main />
             </div>
 
             <!-- Sección de texto a la derecha -->
-            <div class="text-center  md:text-right mt-10 md:mt-0 pl-96">
-                <h1 class="text-white lg:text-8xl font-extrabold">
+            <div class="text-center z-20 md:text-right mt-10 md:mt-0 pl-96">
+                <h1 class="text-white z-20 lg:text-8xl font-extrabold">
                     Encuentra el destino<br>perfecto
                 </h1>
-                <h2 class="text-white text-2xl md:text-3xl mt-3 md:mt-5 font-normal">
+                <h2 class="text-white z-20 text-2xl md:text-3xl mt-3 md:mt-5 font-normal">
                     Conoce Cartagena de manera única con nuestros<br>servicios personalizados
                 </h2>
-                <div class="mt-6">
-                    <button class="w-64 bg-orange-500 hover:bg-orange-400 text-white py-4 px-8 rounded-full font-bold text-center text-xl shadow-lg transition duration-300">
+                <div class="mt-6 z-20">
+                    <button class="w-64 z-20 bg-orange-500 hover:bg-orange-400 text-white py-4 px-8 rounded-full font-bold text-center text-xl shadow-lg transition duration-300">
                         Explora ahora
                     </button>
                 </div>
