@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link rel="icon" href="{{ asset('img/1.png') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('img/4.png') }}" type="image/x-icon">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
         <!-- Scripts -->
@@ -24,7 +24,7 @@
 
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen ">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->

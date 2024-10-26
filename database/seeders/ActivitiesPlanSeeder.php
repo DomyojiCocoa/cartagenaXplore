@@ -46,8 +46,6 @@ class ActivitiesPlanSeeder extends Seeder
             'activity_id' => '8',
             'plan_id' => '2',
         ]);
-
-
         ActivitiesPlan::create([
             'activity_id' => '9',
             'plan_id' => '3',

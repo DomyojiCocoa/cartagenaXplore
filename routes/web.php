@@ -33,7 +33,7 @@ Route::middleware([
     });
     Route::prefix('/admin')->middleware('can:admin')->group(function () {
         Route::get('/', function () {
-            return redirect()->route('stadistics');
+            return redirect()->route('adminStadistics');
         });
         Route::get('/estadisticas', [ViewAdminController::class, 'estadistics'])->name('adminStadistics');
         Route::get('/usuarios', [ViewAdminController::class, 'users'])->name('adminUsers');

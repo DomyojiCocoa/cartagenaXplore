@@ -108,5 +108,89 @@ class ActivitiesSeeder extends Seeder
             'information_below' => 'Participa en actividades de turismo responsable.',
             'url_img' => 'img/prueba3.png',
         ]);
+        Activities::create([
+            'title' => 'Paseo en bote',
+            'categories_id' => '1', // Deporte
+            'rating' => '4',
+            'information_below' => 'Navega por las aguas cristalinas de Cartagena.',
+        ]);
+
+        Activities::create([
+            'title' => 'Excursión en kayak',
+            'categories_id' => '2', // Aventura
+            'rating' => '5',
+            'information_below' => 'Explora los manglares y playas cercanas en kayak.',
+        ]);
+
+        Activities::create([
+            'title' => 'Tour de grafitis',
+            'categories_id' => '3', // Cultural
+            'rating' => '5',
+            'information_below' => 'Explora el arte urbano y conoce su historia.',
+        ]);
+
+        Activities::create([
+            'title' => 'Clase de cocina local',
+            'categories_id' => '4', // Gastronomía
+            'rating' => '5',
+            'information_below' => 'Aprende a cocinar platos tradicionales de Cartagena.',
+        ]);
+
+        Activities::create([
+            'title' => 'Recorrido por fortalezas',
+            'categories_id' => '5', // Historia
+            'rating' => '4',
+            'information_below' => 'Descubre las fortalezas y murallas históricas de Cartagena.',
+        ]);
+
+        Activities::create([
+            'title' => 'Avistamiento de aves',
+            'categories_id' => '6', // Naturaleza
+            'rating' => '4',
+            'information_below' => 'Descubre la diversidad de aves en su hábitat natural.',
+        ]);
+
+        Activities::create([
+            'title' => 'Día de spa en la playa',
+            'categories_id' => '7', // Relax
+            'rating' => '5',
+            'information_below' => 'Relájate con masajes y un día de spa frente al mar.',
+        ]);
+
+        Activities::create([
+            'title' => 'Fiesta en barco',
+            'categories_id' => '8', // Vida Nocturna
+            'rating' => '5',
+            'information_below' => 'Disfruta de una fiesta en barco con música en vivo.',
+        ]);
+
+        Activities::create([
+            'title' => 'Parque acuático familiar',
+            'categories_id' => '9', // Familia
+            'rating' => '4',
+            'information_below' => 'Diversión en el agua para todas las edades.',
+        ]);
+
+        Activities::create([
+            'title' => 'Safari fotográfico',
+            'categories_id' => '10', // Fotografía
+            'rating' => '5',
+            'information_below' => 'Captura la vida silvestre y la naturaleza de Cartagena.',
+        ]);
+
+        Activities::create([
+            'title' => 'Concierto al aire libre',
+            'categories_id' => '11', // Eventos
+            'rating' => '4',
+            'information_below' => 'Disfruta de música en vivo en un entorno espectacular.',
+        ]);
+
+        Activities::create([
+            'title' => 'Limpieza de playas',
+            'categories_id' => '12', // Turismo Responsable
+            'rating' => '3',
+            'information_below' => 'Participa en actividades de limpieza y preservación de playas.',
+        ]);
+
     }
 }

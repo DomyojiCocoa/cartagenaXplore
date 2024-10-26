@@ -50,7 +50,7 @@
                         d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z" />
                 </svg>
             </span>
-            <span class="text-sm font-medium">{{ __('Eventos') }}</span>
+            <span class="text-sm font-medium">{{ __('Planes') }}</span>
         </x-responsive-nav-link>
         <x-responsive-nav-link href="{{ route('adminSites') }}" wire:navigate
             class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:text-gray-800

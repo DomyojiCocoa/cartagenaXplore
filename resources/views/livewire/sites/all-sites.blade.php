@@ -1,6 +1,6 @@
 <div class="grid grid-cols-3 gap-8 ">
     @foreach ($sites as $site)
-        <a href="{{ route('siteInfo', $site->id) }}" class="w-full max-w-sm h-auto rounded-lg shadow-lg overflow-hidden group block">
+        <a href="{{ route('siteInfo', $site->id) }}" wire:navigate class="w-full max-w-sm h-auto rounded-lg shadow-lg overflow-hidden group block">
             <div class="overflow-hidden">
                 <img src="{{ asset($site->url_img)}}" alt="."
                     class="w-full h-80 object-cover rounded-lg transform transition duration-500 group-hover:scale-110">

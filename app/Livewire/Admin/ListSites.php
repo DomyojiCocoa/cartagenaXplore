@@ -30,7 +30,7 @@ class ListSites extends Component
     {
         try {
             Mail::raw('Prueba enviando correo completada con exito', function ($message) {
-                $message->to('jesusmendozasalcedo2004@gmail.com')
+                $message->to('felmenyt123@gmail.com')
                         ->subject('Prueba')
                         ->attach(public_path('img/rafa.png'));
             });

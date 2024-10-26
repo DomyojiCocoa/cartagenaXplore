@@ -1,15 +1,17 @@
 <div class="m-10 mt-10">
     <h1 class="lg:text-6xl md:text-4xl font-semibold mb-20">Opiniones de usuarios</h1>
 
-    <div class="mb-4">
-        <textarea placeholder="¿Qué tal te fue?" class="w-full h-28 p-6 text-xl border border-gray-500 rounded-3xl"></textarea>
-    </div>
+    @auth
+        <div class="mb-4">
+            <textarea placeholder="¿Qué tal te fue?" class="w-full h-28 p-6 text-xl border border-gray-500 rounded-3xl"></textarea>
+        </div>
 
-    <div class="flex justify-center">
-        <button class="bg-orange-500 hover:bg-[#c9773e] text-white py-2 px-20 text-xl rounded-3xl font-semibold shadow-md">
-            Enviar
-        </button>
-    </div>
+        <div class="flex justify-center">
+            <button class="bg-orange-500 hover:bg-[#c9773e] text-white py-2 px-20 text-xl rounded-3xl font-semibold shadow-md">
+                Enviar
+            </button>
+        </div>
+    @endauth
 
     @foreach ($comments as $comment)
     <div class="mt-5 p-5 border-b border-gray-300 pb-4">

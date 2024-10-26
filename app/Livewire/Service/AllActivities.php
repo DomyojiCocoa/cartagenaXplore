@@ -16,7 +16,7 @@ class AllActivities extends Component
 
     public function render()
     {
-        $activity = Activities::inRandomOrder()->paginate(3);
+        $activity = Activities::inRandomOrder()->paginate(6);
 
         return view('livewire.service.all-activities', [
             'activities' => $activity,

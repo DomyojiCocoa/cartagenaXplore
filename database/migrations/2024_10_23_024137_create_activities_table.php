@@ -19,7 +19,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->integer('rating')->nullable();
             $table->text('information_below');
-            $table->text('url_img');
+            $table->text('url_img')->default('img/prueba.jpg');
             $table->string('start')->nullable();
             $table->string('end')->nullable();
             $table->timestamps();

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Activities;
 use App\Models\ActivitiesImage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,9 +14,9 @@ class ActivitiesImageSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 10; $i++) {
-            $actividad = rand(1,12);
-            for ($k=0; $k < 3 ; $k++) {
+        for ($i = 0; $i < 100; $i++) {
+            $actividad = rand(1,Activities::count());
+            for ($k=0; $k < 5; $k++) {
                 ActivitiesImage::create([
                     'activities_id' => $actividad,
                     'image_id' => rand(1,20),

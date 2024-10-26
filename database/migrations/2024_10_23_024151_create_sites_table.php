@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('introduction')->nullable();
             $table->text('history')->nullable();
             $table->text('extra')->nullable();
-            $table->text('url_img');
+            $table->text('url_img')->default('img/prueba.jpg');
             $table->softDeletes();
             $table->timestamps();
         });

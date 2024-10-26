@@ -1,7 +1,9 @@
 <x-app-layout>
     <div>
         <div class="bg-body-bg6  bg-cover bg-start w-full h-[55rem] flex flex-col items-center justify-center ">
-            <div>
+            <div class=" absolute bg-opacity-25 bg-black z-10 w-full h-[55rem]">
+            </div>
+            <div class="z-20">
                 <h1 class="text-center text-white text-9xl  font-semibold leading-tight">Tu plan, tu estilo </h1>
                 <h2 class="text-center text-white text-4xl  font-semibold leading-tight">Elige, organiza y disfruta de tu
                     proxima aventura </h2>

@@ -12,6 +12,30 @@ use Omnia\LivewireCalendar\LivewireCalendar as LivewireCalendar;
 
 class AppointmentsCalendar extends LivewireCalendar
 {
+    public $currentYear;
+    public $currentMonth;
+    public $idPlan ;
+
+    public function goToPreviousMonth()
+    {
+        $date = Carbon::create($this->currentYear, $this->currentMonth)->subMonth();
+        $this->currentYear = $date->year;
+        $this->currentMonth = $date->month;
+    }
+
+    public function goToNextMonth()
+    {
+        $date = Carbon::create($this->currentYear, $this->currentMonth)->addMonth();
+        $this->currentYear = $date->year;
+        $this->currentMonth = $date->month;
+    }
+
+    public function goToCurrentMonth()
+    {
+        $this->currentYear = now()->year;
+        $this->currentMonth = now()->month;
+    }
+
     public function events(): Collection
     {
         $actividades = ActivitiesPlan::where('plan_id', 2)->get();
@@ -37,7 +61,6 @@ class AppointmentsCalendar extends LivewireCalendar
                 'date' => $fechas[$activida->id][0],
             ];
         });
-
     }
     public function onDayClick($year, $month, $day)
     {
@@ -71,4 +94,5 @@ class AppointmentsCalendar extends LivewireCalendar
             session()->flash('error', 'No se pudo encontrar el evento en la tabla Schedule.');
         }
     }
+
 }

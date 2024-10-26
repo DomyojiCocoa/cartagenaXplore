@@ -16,10 +16,10 @@ class ActivityTodoSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 200; $i++) {
             ActivityTodo::create([
                 'info'  => $faker->paragraph(3),
-                'activity_id' => rand(1, 12),
+                'activity_id' => rand(1, 24),
             ]);
         }
 
