@@ -2,7 +2,7 @@
 
     <div class="w-1/4 p-8 bg-gradient-to-b from-gray-800 to-gray-600 text-white rounded-lg shadow-lg overflow-y-auto">
         <div class="mb-8">
-            <img src="/path/to/your/image.jpg" alt="Plan image" class="rounded-lg w-full h-48 object-cover">
+            <img src="{{ asset('img/the.png') }}" alt="Plan image" class="rounded-lg w-full h-48 object-cover">
         </div>
         <h2 class="text-4xl font-bold mb-4">Título del plan</h2>
         <p class="text-2xl mb-6">Lorem Ipsum is simply dummy text of the printing and...</p>
@@ -11,7 +11,7 @@
 
 
     <div class="w-3/4 p-8 overflow-y-auto">
-        
+
 
 
         <h1 class="text-3xl font-semibold mb-6">Actividades en el plan</h1>
