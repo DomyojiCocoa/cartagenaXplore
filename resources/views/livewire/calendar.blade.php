@@ -40,13 +40,10 @@
         @break
 
         @case(2)
-
             <div class=" ">
-                <livewire:plans.calendar :plan-id="$idPlan" :key="$idPlan"/>
+                <livewire:plans.calendar :idPlan="$idPlan" />
             </div>
-
             <button wire:click="back">VOLVER</button>
-
         @break
 
         @default

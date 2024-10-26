@@ -9,11 +9,12 @@ class Calendar extends Component
 {
     public $currentYear;
     public $currentMonth;
-
-    public function mount($initialYear = null, $initialMonth = null)
+    public $idPlan;
+    public function mount( $idPlan)
     {
         $this->currentYear = $initialYear ?? now()->year;
         $this->currentMonth = $initialMonth ?? now()->month;
+        $this->idPlan = $idPlan;
     }
 
     public function goToPreviousMonth()
@@ -37,6 +38,6 @@ class Calendar extends Component
     }
     public function render()
     {
-        return view('livewire.componente-prueba');
+        return view('livewire.plans.calendar');
     }
 }

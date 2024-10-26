@@ -7,6 +7,7 @@ use App\Models\ActivitiesPlan;
 use App\Models\Schedule;
 use Carbon\Carbon;
 use Illuminate\Support\Collection; // Cambia esta línea
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Omnia\LivewireCalendar\LivewireCalendar as LivewireCalendar;
 
@@ -15,6 +16,8 @@ class AppointmentsCalendar extends LivewireCalendar
     public $currentYear;
     public $currentMonth;
     public $idPlan ;
+
+
 
     public function goToPreviousMonth()
     {
@@ -36,18 +39,24 @@ class AppointmentsCalendar extends LivewireCalendar
         $this->currentMonth = now()->month;
     }
 
+    public function recibiendoPlan($id) {
+        dd($id);
+        // $this->idPlan =
+    }
+
     public function events(): Collection
     {
-        $actividades = ActivitiesPlan::where('plan_id', 2)->get();
-
+        // dd($this->idPlan);
+        $actividades = ActivitiesPlan::where('plan_id', $this->idPlan)->get();
+        // dd($actividades);
         $fechas = [];
 
-        $fechasActividad = Schedule::where('plan_id', 2)->get();
+        $fechasActividad = Schedule::where('plan_id', $this->idPlan)->get();
         foreach ($fechasActividad as $fecha) {
 
             $fechas[$fecha->activities_id][] = $fecha->date;
         }
-
+// dd($fechasActividad);
         $nose = $fechasActividad->pluck('activities_id');
 
         $Activida = Activities::whereIn('id', $nose)->get();
