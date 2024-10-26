@@ -23,6 +23,7 @@ export default {
                 'body-bg4' :"url('/public/img/imagen.jpg')",
                 'body-bg5' :"url('public/img/3.mp4')",
                 'body-bg6' :"url('/public/img/10.jpg')",
+                'body-bg7' :"url('/public/img/15.jpg')",
 
             },
         },

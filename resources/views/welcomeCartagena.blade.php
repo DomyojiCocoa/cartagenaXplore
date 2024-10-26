@@ -73,7 +73,7 @@
     </div>
 
 
-    <div class="relative w-full h-[40rem] shadow-lg">
+    <div class="relative w-full h-[60rem] shadow-lg">
 
         <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0 pointer-events-auto"
             disablePictureInPicture>
@@ -83,14 +83,27 @@
 
 
         <div class="relative z-10 p-20">
-            <h1 class="text-white text-5xl md:text-7xl font-semibold	 ">Cartagena de Indias</h1>
-            <h2 class="text-white text-3xl md:text-4xl pt-8 font-semibold">Encanto Colonial</h2>
-            <h3 class="text-white text-xl pt-2">
-                Sumérgete en las calles empedradas y coloridas de una ciudad
-            </h3>
-            <h3 class="text-white text-xl pt-1">
-                llena de historia y belleza
-            </h3>
+            <div class="flex items-center  h-screen">
+                <div class="">
+                    <div>
+                        <h1 class="text-white lg:text-9xl md:text-7xl font-semibold">Cartagena de Indias</h1>
+                    </div>
+                    <div>
+                        <h2 class="text-white text-3xl lg:text-8xl md:text-4xl pt-8 font-semibold">Encanto colonial</h2>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl lg:text-4xl md:text-4xl pt-2 font-normal">
+                            Sumérgete en las calles empedradas y coloridas de una ciudad
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl lg:text-4xl md:text-4xl pt-2 font-normal">
+                            llena de historia y belleza
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 

@@ -1,6 +1,6 @@
 <x-app-layout>
     <div>
-        <div class="bg-body-bg6  bg-cover bg-start w-full h-[55rem] flex flex-col items-center justify-center ">
+        <div class="bg-body-bg7  bg-cover bg-start w-full h-[55rem] flex flex-col items-center justify-center ">
             <div class=" absolute bg-opacity-25 bg-black z-10 w-full h-[55rem]">
             </div>
             <div class="z-20">
