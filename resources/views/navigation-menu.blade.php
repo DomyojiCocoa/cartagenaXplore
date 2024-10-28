@@ -32,11 +32,11 @@
                         <span
                             class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
                     </a>
-                    <a href="{{ route('plans') }}" wire:navigate
+                    {{-- <a href="{{ route('plans') }}" wire:navigate
                         class="hover:text-orange-500 relative group">Planes
                         <span
                             class="block h-0.5 bg-orange-500 absolute bottom-0 left-0 w-0 group-hover:w-full transition-all duration-300"></span>
-                    </a>
+                    </a> --}}
                     @auth
                         <a href="{{ route('plans') }}" wire:navigate class="hover:text-orange-500 relative group">Planes
                             <span
@@ -92,8 +92,8 @@
                                     {{ __('Manage Account') }}
                                 </div>
 
-                                <x-dropdown-link href="{{ route('profile.show') }}" wire:navigate>
-                                    {{ __('Profile') }}
+                                <x-dropdown-link href="{{ route('adminStadistics') }}" wire:navigate>
+                                    {{ __('Menu administrador') }}
                                 </x-dropdown-link>
 
                                 <div class="border-t border-gray-200"></div>

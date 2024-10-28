@@ -7,27 +7,28 @@
         <div class=" absolute bg-opacity-25 bg-black z-2 w-full h-screen">
         </div>
 
-            <!-- Componente del clima, posicionado en la parte inferior izquierda -->
-            <div class="pl-96 z-20">
-                <livewire:temperature.temperature-main />
-            </div>
-
-            <!-- Sección de texto a la derecha -->
-            <div class="text-center z-20 md:text-right mt-10 md:mt-0 pl-96">
-                <h1 class="text-white z-20 lg:text-8xl font-extrabold">
-                    Encuentra el destino<br>perfecto
-                </h1>
-                <h2 class="text-white z-20 text-2xl md:text-3xl mt-3 md:mt-5 font-normal">
-                    Conoce Cartagena de manera única con nuestros<br>servicios personalizados
-                </h2>
-                <div class="mt-6 z-20">
-                    <button class="w-64 z-20 bg-orange-500 hover:bg-orange-400 text-white py-4 px-8 rounded-full font-bold text-center text-xl shadow-lg transition duration-300">
-                        Explora ahora
-                    </button>
-                </div>
-            </div>
-
+        <!-- Componente del clima, posicionado en la parte inferior izquierda -->
+        <div class="pl-96 z-20">
+            <livewire:temperature.temperature-main />
         </div>
+
+        <!-- Sección de texto a la derecha -->
+        <div class="text-center z-20 md:text-right mt-10 md:mt-0 pl-96">
+            <h1 class="text-white z-20 lg:text-8xl font-extrabold">
+                Emprende la creacion<br>de tu viaje
+            </h1>
+            <h2 class="text-white z-20 text-2xl md:text-3xl mt-3 md:mt-5 font-normal">
+                Conoce Cartagena de manera única con nuestros<br>servicios personalizados
+            </h2>
+            <div class="mt-6 z-20">
+                <button
+                    class="w-64 z-20 bg-orange-500 hover:bg-orange-400 text-white py-4 px-8 rounded-full font-bold text-center text-xl shadow-lg transition duration-300">
+                    Explora ahora
+                </button>
+            </div>
+        </div>
+
+    </div>
     </div>
 
 
@@ -67,7 +68,7 @@
 
 
         <div class="mt-20">
-            <livewire:welcome.comments/>
+            <livewire:welcome.comments />
         </div>
 
     </div>
@@ -114,7 +115,7 @@
 
 
 
-    <button id="scrollTopButton"
+    <button id="scrollTopButton1"
         class="fixed bottom-4 right-4 hidden p-3 bg-orange-600 text-white rounded-full shadow-md hover:bg-orange-700">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5"
             stroke="currentColor" class="h-6 w-6">
@@ -123,19 +124,21 @@
     </button>
 
     <script>
-        const scrollTopButton = document.getElementById('scrollTopButton');
-        window.onscroll = function() {
-            if (window.scrollY > 100) {
-                scrollTopButton.classList.remove('hidden');
-            } else {
-                scrollTopButton.classList.add('hidden');
-            }
-        };
-        scrollTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        document.addEventListener('livewire:navigated', () => {
+            const scrollTopButton = document.getElementById('scrollTopButton1');
+            window.onscroll = function() {
+                if (window.scrollY > 100) {
+                    scrollTopButton.classList.remove('hidden');
+                } else {
+                    scrollTopButton.classList.add('hidden');
+                }
+            };
+            scrollTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
-        });
+        })
     </script>
 </x-guest-layout>

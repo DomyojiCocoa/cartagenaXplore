@@ -14,19 +14,21 @@ class PlanSeeder extends Seeder
     public function run(): void
     {
         Plan::create([
-            'name' => 'Parchaito',
+            'name' => 'Exploración Cultural en Cartagena',
             'user_id' => 1,
             'categories_id' => '1',
             'url_img' => 'img/prueba.jpg',
         ]);
+
         Plan::create([
-            'name' => 'Fuchibol',
+            'name' => 'Aventura en las Islas del Rosario',
             'user_id' => 1,
             'categories_id' => '2',
             'url_img' => 'img/prueba.jpg',
         ]);
+
         Plan::create([
-            'name' => 'Quemar la u',
+            'name' => 'Gastronomía y Tradición',
             'user_id' => 1,
             'categories_id' => '3',
             'url_img' => 'img/prueba.jpg',

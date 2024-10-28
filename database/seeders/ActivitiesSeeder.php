@@ -14,11 +14,11 @@ class ActivitiesSeeder extends Seeder
     public function run(): void
     {
         Activities::create([
-            'title' => 'Salir',
+            'title' => 'Paseo en Chiva Rumbera',
             'categories_id' => '1',
             'rating' => '3',
             'information_below' => 'No sé',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -26,7 +26,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '2',
             'rating' => '4',
             'information_below' => 'Explora los hermosos paisajes.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -42,7 +42,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '4',
             'rating' => '5',
             'information_below' => 'Degusta los platos típicos de la zona.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -50,7 +50,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '5',
             'rating' => '4',
             'information_below' => 'Aprende sobre la historia del lugar.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -58,7 +58,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '6',
             'rating' => '5',
             'information_below' => 'Disfruta de la naturaleza en un camino.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -66,7 +66,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '7',
             'rating' => '4',
             'information_below' => 'Relájate en la playa y disfruta del sol.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -74,7 +74,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '8',
             'rating' => '5',
             'information_below' => 'Disfruta de la vida nocturna local.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -82,7 +82,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '9',
             'rating' => '4',
             'information_below' => 'Diversión para toda la familia.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -90,7 +90,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '10',
             'rating' => '5',
             'information_below' => 'Captura la belleza del lugar.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -98,7 +98,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '11',
             'rating' => '4',
             'information_below' => 'Disfruta de música en un ambiente local.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Activities::create([
@@ -106,7 +106,7 @@ class ActivitiesSeeder extends Seeder
             'categories_id' => '12',
             'rating' => '3',
             'information_below' => 'Participa en actividades de turismo responsable.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
         Activities::create([
             'title' => 'Paseo en bote',

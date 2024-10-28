@@ -19,7 +19,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Descubre la magia del centro histórico de Cartagena.',
             'history' => 'Fundado en 1533, el centro histórico es un sitio lleno de historia y cultura.',
             'extra' => 'Pasea por sus coloridas calles y disfruta de la arquitectura colonial.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Site::create([
@@ -28,7 +28,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Una impresionante obra de ingeniería militar del siglo XVII.',
             'history' => 'Construido para proteger la ciudad de los ataques, es un símbolo de resistencia.',
             'extra' => 'Ofrece vistas panorámicas de la ciudad y el mar.',
-            'url_img' => 'img/prueba3.png',
+            'url_img' => 'img/prueba3.jpg',
         ]);
 
         Site::create([
@@ -46,7 +46,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Un destino lleno de historia, cultura y belleza arquitectónica.',
             'history' => 'Cartagena fue un puerto clave durante la colonización española.',
             'extra' => 'Visita sus museos y disfruta de su vibrante vida nocturna.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Site::create([
@@ -55,7 +55,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Relájate en una de las playas más hermosas de Cartagena.',
             'history' => 'Un lugar ideal para disfrutar del sol y el mar.',
             'extra' => 'Gastronomía local y deportes acuáticos están disponibles.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Site::create([
@@ -64,7 +64,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Un lugar de paz y espiritualidad con vistas espectaculares.',
             'history' => 'Construido en el siglo XVII, es un símbolo de la fe cartagenera.',
             'extra' => 'Visita su hermoso claustro y la iglesia.',
-            'url_img' => 'img/prueba2.png',
+            'url_img' => 'img/prueba.jpg',
         ]);
     }
 }

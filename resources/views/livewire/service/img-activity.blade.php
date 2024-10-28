@@ -28,10 +28,10 @@
 
 
     <div class="mt-8">
-        <div class="bg-orange-600 text-white py-2 px-4 rounded-full text-sm sm:text-base lg:text-lg w-full lg:w-auto text-center">
-            <button class="">
-                Diseñar un plan
-            </button>
-        </div>
+        <a href="{{route('plans')}}" class="">
+            <div class="bg-orange-600 text-white py-2 px-4 rounded-full text-sm sm:text-base lg:text-lg w-full lg:w-auto text-center">
+                    Diseñar un plan
+            </div>
+        </a>
     </div>
 </div>
