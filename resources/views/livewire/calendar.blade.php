@@ -1,9 +1,8 @@
-<div>
+<div c  >
     @switch($page)
         @case(1)
-            <div class="flex h-screen">
-
-                <div class="w-1/4 p-8 bg-gradient-to-b from-gray-800 to-gray-600 text-white rounded-lg shadow-lg overflow-y-auto">
+            <div class="flex h-screen overflow-hidden">
+                <div class="w-1/4 p-8 bg-gradient-to-b from-gray-800 to-gray-200 text-white rounded-lg shadow-lg overflow-y-auto">
                     <div class="mb-8">
                         <img src="{{ asset($activo->url_img) }}" alt="Plan image" class="rounded-lg w-full h-48 object-cover">
                     </div>

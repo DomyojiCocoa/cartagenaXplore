@@ -1,7 +1,7 @@
 <div>
     <div class="grid grid-cols-3 gap-8 ">
         @foreach ($plansDefault as $default)
-            <a href="{{ route('planBuilding', $default->id) }}" class="w-full max-w-sm h-auto rounded-lg shadow-lg overflow-hidden group block">
+            <a href="{{ route('planBuilding', $default->id) }}" wire:click="prueba({{$default->id}})" class="w-full max-w-sm h-auto rounded-lg shadow-lg overflow-hidden group block">
                 <div class="overflow-hidden">
                     <img src="{{ asset($default->url_img)}}" alt="Blinding Lights"
                         class="w-full h-80 object-cover rounded-lg transform transition duration-500 group-hover:scale-110">

@@ -19,6 +19,7 @@
         <!-- Styles -->
         @livewireStyles
         @livewireScripts
+        @livewireCalendarScripts
 
     </head>
     <body>
@@ -26,7 +27,6 @@
 
             {{ $slot }}
         </div>
-        @livewireCalendarScripts
         @stack('scripts')
     </body>
 </html>

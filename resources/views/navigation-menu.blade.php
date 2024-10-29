@@ -1,8 +1,8 @@
 {{-- Auth es para cuando esta logueado, y el else equivaldria para cuando no lo esta  --}}
 @auth
-    <nav x-data="{ open: false }" class="bg-black text-white bg-opacity-75 border-b border-gray-100  w-full z-50 fixed ">
+    <nav x-data="{ open: false }" class="bg-black text-white bg-opacity-75 border-b border-gray-100  w-full z-50 fixed">
     @else
-        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100  w-full z-50 fixed ">
+        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100  w-full z-50 fixed">
         @endauth
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center">
@@ -10,7 +10,7 @@
                     <a href="{{ route('main') }}" wire:navigate class="flex">
                         @auth
                             <img src="{{ asset('img/Cartagena Xplore final-03.png') }}" alt="Logo"
-                                class="h-24 mr-4 w-[6rem|]">
+                                class="h-24 mr-4 w-[6rem]">
                         @else
                             <img src="{{ asset('img/3.png') }}" alt="Logo" class="h-24 mr-4 w-[6rem|]">
                         @endauth

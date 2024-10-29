@@ -18,6 +18,7 @@
 
 
         <!-- Styles -->
+        @livewireScripts
         @livewireStyles
     </head>
     <body class="font-satoshi antialiased ">
@@ -46,6 +47,5 @@
         @stack('modals')
 
         @stack('scripts')
-        @livewireScripts
     </body>
     </html>
