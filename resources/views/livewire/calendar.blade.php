@@ -44,11 +44,10 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <input type="date" id="fecha($activity->activity->id)" wire:model="dateCalendar"
-                                        data-id-activity="{{ $activity->activity->id }}" wire:change="procesarFecha"
+                                    <input type="date" id="fecha($activity->activity->id)" wire:model="dateCalendar.{{ $activity->activity->id }}"
+                                     
                                         min="{{ now()->toDateString() }}" class="p-2 border rounded">
-                                    <input type="hidden" wire:model="idActividades.{{ $activity->activity->id }}"
-                                        value="{{ $activity->activity->id }}">
+                                    
                                 </div>
                                 <button wire:click="removeActivity({{ $activity->activity_id }})" class="ml-8 text-red-500">
                                     <span>

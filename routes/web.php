@@ -41,6 +41,11 @@ Route::middleware([
         Route::get('/eventos', [ViewAdminController::class, 'events'])->name('adminEvents');
         Route::get('/sitios', [ViewAdminController::class, 'sites'])->name('adminSites');
     });
+    Route::prefix('/planes')->group(function () {
+        Route::get('/{id}', function ($id) {
+            return view('schedule', ['id' => $id]);
+        })->name('planBuilding');
+    });
     // Route::prefix('/planes')->group(function () {
     //     Route::get('/calendario', function () {
     //         return view('schedule');
@@ -72,12 +77,4 @@ Route::get('/sitios', function () {
     return view('sites');
 })->name('sites');
 
-Route::prefix('/planes')->group(function () {
-    Route::get('/{id}', function ($id) {
-        return view('schedule', ['id' => $id]);
-    })->name('planBuilding');
 
-    // Route::get('/calendario', function ($id) {
-    //     return view('calendarioVista', ['id' => $id]);
-    // })->name('schedule');
-});

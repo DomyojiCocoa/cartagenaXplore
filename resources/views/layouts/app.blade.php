@@ -41,11 +41,11 @@
                 {{ $slot }}
             </main>
         </div>
+        @livewireCalendarScripts
 
         @stack('modals')
 
-        @livewireScripts
         @stack('scripts')
+        @livewireScripts
     </body>
-    @livewireCalendarScripts
-</html>
+    </html>
