@@ -31,7 +31,7 @@ class Calendar extends Component
         $this->edit = 1;
         $this->idPlan = $idPlan;
         $this->activo = Plan::find($idPlan);
-        $this->activities = ActivitiesPlan::where('plan_id', $idPlan)->whereIn()->get();
+        $this->activities = ActivitiesPlan::where('plan_id', $idPlan)->get();
         $this->moreActivities = Activities::whereNotIn('id', $this->activities->pluck('activity_id'))->get();
         $id = $this->activities->pluck('id');
 
