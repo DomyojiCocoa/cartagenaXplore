@@ -4,7 +4,7 @@
     </div>
 
     <div class="bg-body-bg4 bg-cover  bg-center w-full min-h-screen flex justify-center items-center ">
-        <div class=" absolute bg-opacity-25 bg-black z-2 w-full h-screen">
+        <div class=" absolute bg-opacity-30 bg-black z-2 w-full h-screen">
         </div>
 
         <!-- Componente del clima, posicionado en la parte inferior izquierda -->
@@ -14,7 +14,7 @@
 
         <!-- Sección de texto a la derecha -->
         <div class="text-center z-20 md:text-right mt-10 md:mt-0 pl-96">
-            <h1 class="text-white z-20 lg:text-8xl font-extrabold">
+            <h1 class="text-white z-20 lg:text-8xl  font-extrabold">
                 Emprende la creacion<br>de tu viaje
             </h1>
             <h2 class="text-white z-20 text-2xl md:text-3xl mt-3 md:mt-5 font-normal">

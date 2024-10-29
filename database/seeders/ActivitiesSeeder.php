@@ -17,7 +17,7 @@ class ActivitiesSeeder extends Seeder
             'title' => 'Paseo en Chiva Rumbera',
             'categories_id' => '1',
             'rating' => '3',
-            'information_below' => 'No sé',
+            'information_below' => 'Disfruta de un paseo acompañado de buena musica',
             'url_img' => 'img/prueba.jpg',
         ]);
 

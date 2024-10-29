@@ -11,50 +11,45 @@ class ListUsers extends Component
 {
     use WithPagination;
 
-    public $editModalVisible = false;
-    public $createModalVisible = false;
+
     public $userIdBeingEdited;
     public $name;
     public $email;
     public $password;
+    public $usernameNew;
+    public $usersList;
 
     protected $paginationTheme = 'tailwind';
 
+    public function mount() {
+
+    }
+
     public function edit($userId)
     {
-        $this->editModalVisible = true;
+
         $user = User::findOrFail($userId);
         $this->userIdBeingEdited = $user->id;
         $this->name = $user->name;
         $this->email = $user->email;
     }
 
-    public function update()
+    public function update($id)
     {
-        $this->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-        ]);
 
-        $user = User::findOrFail($this->userIdBeingEdited);
+        $user = User::findOrFail($id);
         $user->name = $this->name;
         $user->email = $this->email;
         $user->save();
 
-        $this->editModalVisible = false;
         $this->reset(['name', 'email', 'userIdBeingEdited']);
     }
 
-    public function closeModal()
-    {
-        $this->editModalVisible = false;
-        $this->reset(['name', 'email', 'userIdBeingEdited']);
-    }
+
 
     public function create()
     {
         $this->reset(['name', 'email', 'password']);
-        $this->createModalVisible = true;
     }
 
     public function store()
@@ -71,43 +66,27 @@ class ListUsers extends Component
             'password' => Hash::make($this->password),
         ]);
 
-        $this->createModalVisible = false;
         $this->reset(['name', 'email', 'password']);
+
+        $this->redirectRoute('adminUsers');
     }
 
     public function delete($userId)
     {
         $user = User::findOrFail($userId);
         $user->delete();
+        $this->redirectRoute('adminUsers');
+
     }
-    public function closeCreateModal()
-    {
-        $this->createModalVisible = false;
-        $this->reset(['name', 'email', 'password']);
-    }
+
     public function render()
     {
+        $users = User::withTrashed()->paginate(7);
+
         return view('livewire.admin.list-users', [
-            'users' => User::paginate(7),
+            'users' => $users,
         ]);
     }
 }
 
-    // use WithPagination;
 
-    // // Opción para usar el tema de Tailwind en la paginación
-    // protected $paginationTheme = 'tailwind';
-
-    // public function edit($userId)
-    // {
-    //     // Lógica para editar el usuario
-    // }
-
-
-
-    // public function render()
-    // {
-    //     return view('livewire.admin.list-users', [
-    //         'users' => User::paginate(10), // Paginación de 10 usuarios por página
-    //     ]);
-    // }

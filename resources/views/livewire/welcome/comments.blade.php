@@ -17,11 +17,11 @@
             </svg>
 
             <div>
-                <h1 class="text-2xl font-bold">Nombre de usuario</h1> <!-- Aumentado a 2xl -->
-                <p class="text-lg text-orange-500">Hora de comentario</p> <!-- Aumentado a lg -->
+                <h1 class="text-2xl font-bold">Nombre de usuario</h1>
+                <p class="text-lg text-orange-500">Hora de comentario</p>
             </div>
         </div>
-        <p class="text-xl text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste temporibus molestias asperiores rem quasi maiores aliquam voluptas rerum id maxime ea, eligendi quaerat. Pariatur hic assumenda accusantium? Suscipit, soluta nihil.Dolorem sapiente aut cumque laboriosam nemo repudiandae voluptate fugit aspernatur cum explicabo rem officia dolores laborum dolor repellendus doloribus distinctio, tempora beatae, facilis sequi! Nam esse dicta perferendis saepe consectetur?</p> <!-- Aumentado a xl -->
+        <p class="text-xl text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste temporibus molestias asperiores rem quasi maiores aliquam voluptas rerum id maxime ea, eligendi quaerat. Pariatur hic assumenda accusantium? Suscipit, soluta nihil.Dolorem sapiente aut cumque laboriosam nemo repudiandae voluptate fugit aspernatur cum explicabo rem officia dolores laborum dolor repellendus doloribus distinctio, tempora beatae, facilis sequi! Nam esse dicta perferendis saepe consectetur?</p>
     </div>
 
 

@@ -28,7 +28,7 @@ class SiteSeeder extends Seeder
             'introduction' => 'Una impresionante obra de ingeniería militar del siglo XVII.',
             'history' => 'Construido para proteger la ciudad de los ataques, es un símbolo de resistencia.',
             'extra' => 'Ofrece vistas panorámicas de la ciudad y el mar.',
-            'url_img' => 'img/prueba3.jpg',
+            'url_img' => 'img/prueba.jpg',
         ]);
 
         Site::create([

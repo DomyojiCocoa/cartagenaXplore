@@ -20,10 +20,7 @@
 
 
     <p class="mt-8 text-sm sm:text-base lg:text-lg">
-        Descubre la magia de Cartagena de Indias con un recorrido guiado por su centro histórico, playas de
-        ensueño y vibrante cultura caribeña. Explora las coloridas calles coloniales, fortalezas, y
-        maravíllate con el atardecer en la muralla. ¡Un viaje inolvidable lleno de historia y encanto
-        tropical!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis magni recusandae modi quidem. Iusto id sequi numquam possimus pariatur ullam autem? Distinctio deleniti nemo aperiam iste saepe velit itaque autem?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, porro. Quae nemo aspernatur hic, enim culpa blanditiis quod similique dicta ex consequatur nihil non aliquam nulla sapiente eos, omnis repellat.
     </p>
 
 

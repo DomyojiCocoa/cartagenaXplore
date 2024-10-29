@@ -1,7 +1,7 @@
 <div>
     @switch($page)
         @case(1)
-            <div class="flex h-screen">
+            <div class="flex ">
 
                 <div
                     class="w-1/4 p-8 bg-gradient-to-b from-gray-800 to-gray-600 text-white rounded-lg shadow-lg overflow-y-auto">
@@ -109,51 +109,24 @@
     @endswitch
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Selecciona todos los inputs de tipo date
             document.querySelectorAll('input[type="date"]').forEach(input => {
                 input.addEventListener('change', function() {
-                    // Obtener el ID de la actividad desde el atributo data-id-activity
                     const idActivity = input.getAttribute('data-id-activity');
 
-                    // Llamar a Livewire y pasar el ID junto con la fecha seleccionada
                     Livewire.emit('procesarFecha', input.value, idActivity);
                 });
             });
 
-            // Obtener la fecha de hoy en formato YYYY-MM-DD
             const today = new Date().toISOString().split('T')[0];
-            // Asignar la fecha de hoy al atributo 'min' del input
             document.getElementById('fecha').setAttribute('min', today);
         });
     </script>
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Selecciona todos los inputs de tipo date
-            document.querySelectorAll('input[type="date"]').forEach(input => {
-                input.addEventListener('change', function () {
-                    // Obtener el ID de la actividad desde el atributo data-id-activity
-                    const idActivity = input.getAttribute('data-id-activity');
 
-                    // Llamar a Livewire y pasar el ID junto con la fecha seleccionada
-                    Livewire.emit('procesarFecha', input.value, idActivity);
-                });
-            });
-        });
-    </script>
 
     <script>
-        // Obtener la fecha de hoy en formato YYYY-MM-DD
         const today = new Date().toISOString().split('T')[0];
-        // Asignar la fecha de hoy al atributo 'min' del input
         document.getElementById('fecha').setAttribute('min', today);
     </script> --}}
 
 </div>
 
-{{-- <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#999999">
-                                        <path d="M580-240q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29ZM200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"/>
-                                    </svg>
-                                </span> --}}
-
-{{-- <button wire:click="removeActivity({{ $activity->activity_id }})">Quitar</button> --}}

@@ -6,7 +6,7 @@ use App\Models\Activities;
 use App\Models\ActivitiesPlan;
 use App\Models\Schedule;
 use Carbon\Carbon;
-use Illuminate\Support\Collection; // Cambia esta línea
+use Illuminate\Support\Collection;
 use Livewire\Attributes\On;
 use Livewire\Component;
 use Omnia\LivewireCalendar\LivewireCalendar as LivewireCalendar;
@@ -73,33 +73,24 @@ class AppointmentsCalendar extends LivewireCalendar
     }
     public function onDayClick($year, $month, $day)
     {
-        dd('asas1111111');
-        // Lógica para manejar el clic en un día
-        // Por ejemplo, podrías mostrar un formulario para crear un nuevo evento
+        // dd('asas1111111');
     }
 
     public function onEventClick($eventId)
     {
-        dd('345345634634634643');
-        // Lógica para manejar el clic en un evento
-        // Puedes mostrar detalles del evento o permitir editarlo
+        // dd('345345634634634643');
     }
 
     public function onEventDropped($eventId, $year, $month, $day)
     {
-        // Busca el evento por su ID
         $event = Schedule::where('activities_id', $eventId)->first();
 
-        // Verifica si el evento existe en la tabla Schedule
         if ($event) {
-            // Actualiza la fecha del evento en la tabla Schedule
             $event->date = Carbon::create($year, $month, $day);
             $event->save();
 
-            // Mensaje de éxito
             session()->flash('message', 'Fecha del evento actualizada correctamente.');
         } else {
-            // Manejo del caso en el que no se encuentra el evento
             session()->flash('error', 'No se pudo encontrar el evento en la tabla Schedule.');
         }
     }

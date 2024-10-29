@@ -17,14 +17,10 @@
                             {{$category->name}}
                         </li>
                         @endforeach
-
-
                     </ul>
                 </li>
             </ul>
         </div>
-
-        <!-- Contenido principal -->
         <div class="bg-white rounded-xl p-4 lg:p-5 w-full flex-grow">
             <livewire:service.all-activities />
         </div>

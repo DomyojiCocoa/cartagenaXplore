@@ -17,7 +17,7 @@
 
                 <!-- Campo de Email -->
                 <div class="mt-6">
-                    <input placeholder="Dirección de email" id="email" wire:model="email" type="email" autocomplete="email"
+                    <input placeholder="Dirección de email" id="email" wire:model="email" type="email"
                         required
                         class="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-orange-500 focus:border-orange-500 focus:outline-none sm:text-lg lg:text-2xl"
 
@@ -54,7 +54,7 @@
 
                 <!-- Campo de Contraseña -->
                 <div class="mb-4 pt-4">
-                    <input id="password" name="password" wire:model="password" type="password" autocomplete="current-password"
+                    <input id="password" name="password" wire:model="password" type="password" 
                         placeholder="Contraseña" required
                         class="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-orange-500 focus:border-orange-500 focus:outline-none sm:text-lg lg:text-2xl">
                 </div>
