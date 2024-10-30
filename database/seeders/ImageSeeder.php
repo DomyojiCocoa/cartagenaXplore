@@ -20,7 +20,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -29,7 +29,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -80,7 +80,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -89,7 +89,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -140,7 +140,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -149,7 +149,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -200,7 +200,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -209,7 +209,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -260,7 +260,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',
@@ -269,7 +269,7 @@ class ImageSeeder extends Seeder
             'url' => 'img/prueba.jpg',
         ]);
         Image::create([
-            'url' => 'img/prueba3.jpg',
+            'url' => 'img/prueba.jpg',
         ]);
         Image::create([
             'url' => 'img/prueba.jpg',

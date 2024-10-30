@@ -1,8 +1,8 @@
 {{-- Auth es para cuando esta logueado, y el else equivaldria para cuando no lo esta  --}}
 @auth
-    <nav x-data="{ open: false }" class="bg-black text-white bg-opacity-75 border-b border-gray-100  w-full z-50 fixed">
+    <nav x-data="{ open: false }" class="bg-black text-white bg-opacity-75 border-b border-gray-100  w-full z-50 fixed text-xl">
     @else
-        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100  w-full z-50 fixed">
+        <nav x-data="{ open: false }" class="bg-white border-b border-gray-100  w-full z-50 fixed text-xl">
         @endauth
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-24 items-center">
@@ -10,9 +10,9 @@
                     <a href="{{ route('main') }}" wire:navigate class="flex">
                         @auth
                             <img src="{{ asset('img/Cartagena Xplore final-03.png') }}" alt="Logo"
-                                class="h-24 mr-4 w-[6rem]">
+                                class="h-24 mr-4 w-full">
                         @else
-                            <img src="{{ asset('img/3.png') }}" alt="Logo" class="h-24 mr-4 w-[6rem|]">
+                            <img src="{{ asset('img/3.png') }}" alt="Logo" class="h-24 mr-4 w-full">
                         @endauth
                     </a>
                 </div>
@@ -88,15 +88,14 @@
 
                             <x-slot name="content">
                                 <!-- Account Management -->
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    {{ __('Manage Account') }}
-                                </div>
 
-                                <x-dropdown-link href="{{ route('adminStadistics') }}" wire:navigate>
-                                    {{ __('Menu administrador') }}
-                                </x-dropdown-link>
 
-                                <div class="border-t border-gray-200"></div>
+                                @role('Administrator')
+                                    <x-dropdown-link href="{{ route('adminStadistics') }}" wire:navigate>
+                                        {{ __('Menu administrador') }}
+                                    </x-dropdown-link>
+                                @endrole
+
 
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}" x-data wire:navigate>

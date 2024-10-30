@@ -27,11 +27,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <input type="date" id="fecha($activity->activity->id)" wire:model="dateCalendar"
-                                        data-id-activity="{{ $activity->activity->id }}" wire:change="procesarFecha"
+                                    <input type="date" id="fecha($activity->activity->id)" wire:model="dateCalendar.{{ $activity->activity->id }}"
                                         min="{{ now()->toDateString() }}" class="p-2 border rounded">
-                                    <input type="hidden" wire:model="idActividades.{{ $activity->activity->id }}"
-                                        value="{{ $activity->activity->id }}">
                                 </div>
                                 <button wire:click="removeActivity({{ $activity->activity_id }})" class="ml-8 text-red-500">
                                     <span>
@@ -89,7 +86,7 @@
                                 <button wire:click="nextEdit" >Añadir más evento</button>
                             </div>
                             <div  class="bg-white text-gray-800 px-8 py-4 rounded-full mb-6 w-full h-12 text-lg flex justify-center items-center" >
-                                <button wire:click="next">cronograma</button>
+                                <button wire:click="next">Cronograma</button>
 
                             </div>
                             <div class=" border-2 border-white mt-32 text-white px-8 py-4 rounded-full mb-6 w-full h-12 text-lg flex justify-center items-center">

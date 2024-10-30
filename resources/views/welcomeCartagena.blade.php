@@ -4,7 +4,7 @@
     </div>
 
     <div class="bg-body-bg4 bg-cover bg-center w-full min-h-screen flex flex-col justify-center items-center">
-        <div class="absolute bg-opacity-30 bg-black z-2 w-full h-screen"></div>
+        <div class="absolute bg-opacity-25 bg-black z-2 w-full h-screen"></div>
 
         <div class="pl-4 md:pl-12 lg:pl-20 xl:pl-96 z-20 fixed bottom-4 left-4 md:static">
             <livewire:temperature.temperature-main />

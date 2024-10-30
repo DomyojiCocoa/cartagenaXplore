@@ -13,9 +13,11 @@ use Livewire\Component;
 class Organize extends Component
 {
     public $plansDefault;
+    public $planCount;
 
     public function mount() {
         $this->plansDefault = Plan::where('user_id', 1)->get();
+        $this->planCount = Plan::count();
     }
 
     public function prueba($id) {

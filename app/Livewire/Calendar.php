@@ -43,7 +43,6 @@ class Calendar extends Component
                 $this->dateCalendar[$activity->id]  = $sql[$key]->date;
             }
         }
-        // dd($this->dateCalendar);
 
     }
 
@@ -64,7 +63,7 @@ class Calendar extends Component
         Schedule::create([
             'plan_id' => $this->idPlan,
             'activities_id' => $activityId,
-            'user_id' => Auth::user()->id, // Cambia a Auth::id() para usar el usuario autenticado
+            'user_id' => Auth::user()->id,
         ]);
 
         $this->activities = ActivitiesPlan::where('plan_id', $this->idPlan)->get();
