@@ -18,6 +18,7 @@
 
 
         <!-- Styles -->
+        @livewireScripts
         @livewireStyles
     </head>
     <body class="font-satoshi antialiased ">
@@ -41,11 +42,10 @@
                 {{ $slot }}
             </main>
         </div>
+        @livewireCalendarScripts
 
         @stack('modals')
 
-        @livewireScripts
         @stack('scripts')
     </body>
-    @livewireCalendarScripts
-</html>
+    </html>

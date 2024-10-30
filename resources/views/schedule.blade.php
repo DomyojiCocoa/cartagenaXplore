@@ -1,6 +1,9 @@
 <x-app-layout>
-    <div class="flex items-center justify-center h-screen pt-10">
-        <livewire:calendar :idPlan="$id" />
+    <div class="flex items-center justify-center ">
+        <div class="flex items-center justify-center">
+            <livewire:calendar :idPlan="$id" />
+
+        </div>
     </div>
 </x-app-layout>
 

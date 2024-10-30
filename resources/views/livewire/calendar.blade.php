@@ -1,25 +1,8 @@
 <div>
     @switch($page)
         @case(1)
-            <div class="flex ">
+            <div class="flex pt-24  ">
 
-                <div
-                    class="w-1/4 p-8 bg-gradient-to-b from-gray-800 to-gray-600 text-white rounded-lg shadow-lg overflow-y-auto">
-                    <div class="mb-8">
-                        <img src="{{ asset($activo->url_img) }}" alt="Plan image" class="rounded-lg w-full h-48 object-cover">
-                    </div>
-                    <h2 class="text-4xl font-bold mb-4">{{ $activo->name }}</h2>
-                    <p class="text-2xl mb-6">Lorem Ipsum is simply dummy text of the printing and...</p>
-                    @switch($edit)
-                        @case(1)
-                            <button wire:click="nextEdit" class="bg-white text-gray-800 px-8 py-4 rounded-full mb-6 text-2xl">Añadir más evento</button>
-                            @break
-                        @case(2)
-                            <button wire:click="backEdit" class="bg-white text-gray-800 px-8 py-4 rounded-full mb-6 text-2xl">Volver a ver actividades del plan</button>
-                            @break
-                        @default
-                    @endswitch
-                </div>
                 <div class="w-3/4 p-8 overflow-y-auto">
                 @switch($edit)
                     @case(1)
@@ -63,8 +46,7 @@
                             </div>
                         @endforeach
                         </div>
-                        <button wire:click="next" class="mt-8 px-8 py-4 bg-orange-600 text-white rounded-lg shadow text-2xl">Ver
-                            cronograma</button>
+
                     @break
 
                     @case(2)
@@ -94,6 +76,31 @@
 
                     @default
                 @endswitch
+                </div>
+                <div class="w-1/4 h-[50rem] p-8 bg-gradient-to-b from-orange-500 to-orange-300  text-white rounded-lg shadow-lg overflow-y-auto">
+                    <div class="mb-8">
+                        <img src="{{ asset($activo->url_img) }}" alt="Plan image" class="rounded-lg w-full h-48 object-cover">
+                    </div>
+                    <h2 class="text-2xl font-bold mb-4">{{ $activo->name }}</h2>
+                    <p class="text-xl mb-6">Lorem Ipsum is simply dummy text of the printing and...</p>
+                    @switch($edit)
+                        @case(1)
+                            <div class=" bg-gray-900 text-white px-8 py-4 rounded-full mb-6 w-full h-12 text-lg flex justify-center items-center">
+                                <button wire:click="nextEdit" >Añadir más evento</button>
+                            </div>
+                            <div  class="bg-white text-gray-800 px-8 py-4 rounded-full mb-6 w-full h-12 text-lg flex justify-center items-center" >
+                                <button wire:click="next">cronograma</button>
+
+                            </div>
+                            <div class=" border-2 border-white mt-32 text-white px-8 py-4 rounded-full mb-6 w-full h-12 text-lg flex justify-center items-center">
+                                <button>Consultar mis planes</button>
+                            </div>
+                            @break
+                        @case(2)
+                            <button wire:click="backEdit" class="bg-white text-gray-800 px-8 py-4 rounded-full mb-6 text-2xl">Volver a ver actividades del plan</button>
+                            @break
+                        @default
+                    @endswitch
                 </div>
             </div>
         @break
@@ -126,7 +133,7 @@
     <script>
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('fecha').setAttribute('min', today);
-    </script> --}}
+    </script>
 
 </div>
 

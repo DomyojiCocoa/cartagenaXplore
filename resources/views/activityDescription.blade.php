@@ -5,6 +5,7 @@
             <livewire:service.img-activity :activityId="$id"/>
         </div>
         <div class="m-20">
+            <h1 class="lg:text-6xl md:text-4xl font-semibold mb-20">Más recomendaciones</h1>
             <div>
                 <livewire:service.more-recommendations />
 
