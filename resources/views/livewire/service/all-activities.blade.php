@@ -6,9 +6,10 @@
                     <div class="w-full border rounded-lg shadow-lg relative group">
                         <div class="card shadow-md w-full h-[20rem] group gap-[1.3em] rounded-sm relative flex justify-end flex-col z-[1] overflow-hidden">
                             <div class="absolute top-0 left-0 h-full w-full">
-                                <div class="w-full h-full transition-transform duration-500 transform group-hover:scale-110" wire:key="site-{{ $activity->id }}">
+                                <div class="w-full h-full transition-transform duration-1000 transform group-hover:scale-110" wire:key="site-{{ $activity->id }}">
                                     <img class="w-full h-full object-cover" src="{{ asset($activity->url_img) }}?v={{ now()->timestamp }}" loading="lazy">
                                 </div>
+
                             </div>
                             <div class="container bg-black bg-opacity-35 hover:bg-opacity-85 z-[2] relative font-nunito flex flex-col p-[1.5rem] gap-[0.5rem]">
                                 <div class="h-fit w-full">
