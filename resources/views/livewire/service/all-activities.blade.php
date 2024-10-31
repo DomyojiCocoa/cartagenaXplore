@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach ($activities as $activity)
                 <a href="{{ route('activityInfo', $activity->id)}}">
-                    <div class="w-full border rounded-lg shadow-lg relative group" style="background-image: url('{{ $activity->url_img }}'); background-size: cover; background-position: center;">
+                    <div class="w-full border rounded-lg shadow-lg relative group">
                         <div class="card shadow-md w-full h-[20rem] group gap-[1.3em] rounded-sm relative flex justify-end flex-col z-[1] overflow-hidden">
                             <div class="absolute top-0 left-0 h-full w-full">
                                 <div class="w-full h-full transition-transform duration-500 transform group-hover:scale-110" wire:key="site-{{ $activity->id }}">

@@ -27,14 +27,11 @@
                     Continuar
                 </button>
 
-                <!-- Términos del servicio -->
-                <p class="mt-4 text-center text-xs sm:text-sm md:text-base text-gray-500 mb-6 md:mb-10">
-                    Al registrarte, aceptas nuestros <a href="#" class="underline">términos del servicio</a> y <a href="#" class="underline">política de privacidad</a>. Podrás cambiar la configuración de las notificaciones de los correos electrónicos de marketing en tu cuenta CartagenaXplore.
-                </p>
+
             @break
 
             @case(2)
-                <!-- Crear contraseña -->
+
                 <h1 class="mt-6 text-3xl sm:text-4xl md:text-5xl text-center text-gray-900 font-normal pb-6 lg:pb-8">Crear su contraseña</h1>
                 <h1 class="text-center text-sm sm:text-lg lg:text-2xl text-gray-600">Correo electrónico</h1>
 
@@ -46,13 +43,8 @@
                         placeholder="Contraseña">
                 </div>
 
-                <div class="w-full bg-gray-200 h-1 rounded-full mb-2">
-                    <div class="bg-green-500 h-1 rounded-full"></div>
-                </div>
-                <p class="text-sm sm:text-base lg:text-lg text-gray-600 mb-2">Refuerza la contraseña.</p>
-                <p class="text-xs sm:text-sm lg:text-lg text-gray-500 mb-6">
-                    La contraseña debe contener un mínimo de 8 caracteres, letras mayúsculas y minúsculas, y símbolos. Nunca reutilices contraseñas antiguas.
-                </p>
+                
+
 
                 <!-- Botón Crear contraseña -->
                 <button wire:click="siguiente2"
