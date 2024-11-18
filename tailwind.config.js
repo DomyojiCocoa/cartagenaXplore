@@ -9,6 +9,7 @@ export default {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        "./node_modules/flowbite/**/*.js",
     ],
 
     theme: {
@@ -36,7 +37,7 @@ export default {
               'li::marker': {
                 color: '#F97316',
                 fontSize: '1.5rem',
-                with: '2rem',
+                width: '2rem',
               },
             },
             '.marker-zinc': {
@@ -45,8 +46,8 @@ export default {
                 fontSize: '1.5rem',
               },
             },
-
           });
         },
-      ],
+    ],
+
 };

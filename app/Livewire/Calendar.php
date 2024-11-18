@@ -98,7 +98,7 @@ class Calendar extends Component
                     'user_id' => Auth::user()->id,
                 ],
                 [
-                    'date' => $date, 
+                    'date' => $date,
                     'user_id' => Auth::user()->id,
                 ]
             );

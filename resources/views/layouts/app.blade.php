@@ -23,6 +23,8 @@
     </head>
     <body class="font-satoshi antialiased ">
 
+        <script src="{{ asset('js/app.js') }}"></script>
+
         <x-banner />
 
         <div class="min-h-screen ">
@@ -47,5 +49,6 @@
         @stack('modals')
 
         @stack('scripts')
+
     </body>
     </html>
