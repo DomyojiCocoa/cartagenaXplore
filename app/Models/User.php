@@ -28,10 +28,20 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'country', 'birthdate', 'email', 'password' , 'profile_photo_path'
+        'name',
+        'country',
+        'birthdate',
+        'email',
+        'password',
+        'profile_photo_path'
     ];
 
 
+    public function activities()
+    {
+        return $this->belongsToMany(Activities::class)
+            ->withPivot('rating');  // Esto hace que el 'rating' sea accesible
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -61,5 +71,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
 }
