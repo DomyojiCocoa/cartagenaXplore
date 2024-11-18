@@ -26,6 +26,8 @@
 
     </head>
     <body>
+        <script src="{{ asset('js/app.js') }}"></script>
+
         <div class="font-satoshi text-gray-900 antialiased">
 
             {{ $slot }}
