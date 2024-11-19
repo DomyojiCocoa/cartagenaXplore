@@ -1,4 +1,5 @@
-<div class="grid grid-cols-3 gap-8 ">
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
     @foreach ($sites as $site)
         <a href="{{ route('siteInfo', $site->id) }}" wire:navigate class="w-full max-w-sm h-auto rounded-lg shadow-lg overflow-hidden group block">
             <div class="overflow-hidden">

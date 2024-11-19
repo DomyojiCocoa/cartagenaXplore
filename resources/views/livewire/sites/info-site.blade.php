@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="px-40 py-20">
+    <div class="lg:px-40 lg:py-20">
         <div>
             <a href="#" class="flex items-center space-x-2 text-black hover:text-orange-500">
 
@@ -100,8 +100,7 @@
         </div>
         <div class="pt-10">
             <h1 class="text-6xl font-semibold">Mas sitios</h1>
-            <div class="px-32 py-16">
-
+            <div class="flex justify-around items-center">
                 <livewire:sites.more-sites :id="$site->id"/>
             </div>
 
