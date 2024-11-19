@@ -14,7 +14,6 @@ class Plan extends Model
     protected $fillable = [
         'name',
         'user_id',
-        'categories_id',
         'url_img',
     ];
 
@@ -24,8 +23,5 @@ class Plan extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'categories_id');
-    }
+
 }

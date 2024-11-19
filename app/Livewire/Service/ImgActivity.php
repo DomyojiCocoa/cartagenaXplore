@@ -6,7 +6,6 @@ use App\Models\Activities;
 use App\Models\ActivitiesImage;
 use App\Models\ActivityTodo;
 use App\Models\ActivityWhatCover;
-use App\Models\Category;
 use App\Models\Image;
 use Livewire\Component;
 
@@ -14,7 +13,6 @@ class ImgActivity extends Component
 {
     public $id;
     public $activity;
-    public $activityCategory;
     public $activityTodo;
     public $activityWhatCover;
     public $activityImages;
@@ -24,7 +22,6 @@ class ImgActivity extends Component
     {
         $this->id = $activityId;
         $this->activity = Activities::find($activityId);
-        $this->activityCategory = Category::find($this->activity->categories_id);
         $this->activityTodo = ActivityTodo::where('activity_id', $activityId)->get();
         $this->activityWhatCover = ActivityWhatCover::where('activity_id', $activityId)->get();
         $this->activityImages = ActivitiesImage::with('image')->where('activities_id', $activityId)->get();

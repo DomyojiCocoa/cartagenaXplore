@@ -17,9 +17,6 @@ return new class extends Migration
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onDelete('cascade');
-            $table->foreignId('categories_id')
-                ->constrained('categories')
-                ->onDelete('cascade');
             $table->string('url_img')->default('img/prueba.jpg');
             $table->softDeletes();
             $table->timestamps();

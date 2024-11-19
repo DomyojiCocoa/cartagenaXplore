@@ -3,7 +3,6 @@
 namespace App\Livewire\Service;
 
 use App\Models\Activities;
-use App\Models\Category;
 use App\Models\CommentsActivities;
 use App\Models\User;
 use Livewire\Component;

@@ -33,17 +33,7 @@
                 <h1 class="text-3xl md:text-4xl lg:text-6xl font-semibold mb-7">Actividades</h1>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
-                @foreach(['16.jpg' => 'Deportivas', '19.jpg' => 'Culturales', '18.jpg' => 'Naturales', '17.jpg' => 'Gastronómicos'] as $image => $title)
-                    <div class="relative w-full h-48 rounded-lg overflow-hidden shadow-lg group">
-                        <img src="{{ asset('img/' . $image) }}" alt="{{ $title }}"
-                            class="w-full h-full object-cover blur-sm transition duration-300 ease-in-out group-hover:blur-none" />
-                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white font-semibold text-lg">
-                            {{ $title }}
-                        </div>
-                    </div>
-                @endforeach
-            </div>
+                <livewire:map />
 
             <div class="flex items-center justify-center mt-6">
                 <div class="w-40 md:w-60 h-10 text-sm border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white rounded-3xl text-center shadow-md flex items-center justify-center">

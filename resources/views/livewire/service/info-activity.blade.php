@@ -20,7 +20,6 @@
             @endfor
         </div>
         <h3 class="font-bold px-4">{{ $rating  }} / 5</h3>
-        <h3 class="font-bold px-1">{{ $activityCategory->name }}</h3>
 
     </div>
 

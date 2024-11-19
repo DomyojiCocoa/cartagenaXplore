@@ -69,52 +69,54 @@
                     <!-- Cuerpo de la Tabla -->
                     <tbody>
                         @foreach ($actividades as $actividad)
-                        <tr class="border-b hover:bg-gray-50">
-                            <td class="p-4 flex items-center">
-                                <input type="checkbox" class="mr-2">{{ $actividad->title }}
-                            </td>
-                            <td class="p-4">
-                                @if ($actividad->trashed())
-                                    <span class="text-red-500 border border-red-500 font-semibold px-2 py-1 rounded-lg">
-                                        Eliminado
-                                    </span>
-                                @else
-                                    <span class="text-green-500 border border-green-500 font-semibold px-2 py-1 rounded-lg">
-                                        Activo
-                                    </span>
-                                @endif
-                            </td>
-                            <td class="p-4">
-                                <button
-                                    class="text-slate-700 border border-slate-600 px-4 py-1 rounded-xl hover:bg-slate-100 transition"
-                                    @click="showModal = true; actividadDetalle = '{{ $actividad->title }}'">
-                                    Ver
-                                </button>
-                            </td>
-                        </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-4 flex items-center">
+                                    <input type="checkbox" class="mr-2">{{ $actividad->title }}
+                                </td>
+                                <td class="p-4">
+                                    @if ($actividad->trashed())
+                                        <span
+                                            class="text-red-500 border border-red-500 font-semibold px-2 py-1 rounded-lg">
+                                            Eliminado
+                                        </span>
+                                    @else
+                                        <span
+                                            class="text-green-500 border border-green-500 font-semibold px-2 py-1 rounded-lg">
+                                            Activo
+                                        </span>
+                                    @endif
+                                </td>
+                                <td class="p-4">
+                                    <button
+                                        class="text-slate-700 border border-slate-600 px-4 py-1 rounded-xl hover:bg-slate-100 transition"
+                                        wire:click="mostrarActividad({{ $actividad->id }})">
+                                        Ver
+                                    </button>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
-            
                 <!-- Modal -->
-                <div
-                    x-show="showModal"
-                    class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
-                    x-cloak>
+                <div x-data="{ showModal: @entangle('mostrarModal') }" x-show="showModal"
+                    class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" x-cloak>
                     <div class="bg-white w-1/3 rounded-lg shadow-lg p-6">
                         <h2 class="text-xl font-bold mb-4">Detalles de la Actividad</h2>
-                        <p class="text-gray-700 mb-6" x-text="actividadDetalle"></p>
+                        <p class="text-gray-700 mb-2">{{ $actividadDetalle->title ?? 'N/A' }}
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            {{ $actividadDetalle->description ?? 'N/A' }}</p>
+                        <p class="text-gray-700 mb-6">{{ $actividadDetalle->price ?? 'N/A' }}
+                        </p>
                         <div class="flex justify-end">
-                            <button
-                                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
-                                @click="showModal = false">
+                            <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+                                @click="$wire.set('mostrarModal', false)">
                                 Cerrar
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
 
         <!-- Paginación -->
@@ -124,36 +126,5 @@
             </div>
         </div>
     </div>
-    <x-dialog-modal wire:model="createActivityModalVisible">
-        <x-slot name="title">Crear Nueva Actividad</x-slot>
-        <x-slot name="content">
-            <div class="space-y-4">
-                <input type="text" wire:model="activity_name" placeholder="Nombre de la Actividad"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="text" wire:model="activity_description" placeholder="Descripción"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="date" wire:model="activity_date"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-                <input type="time" wire:model="activity_time"
-                    class="block w-full border-gray-300 rounded-lg shadow-sm">
-            </div>
-        </x-slot>
-        <x-slot name="footer">
-            <button wire:click="closeCreateActivityModal"
-                class="bg-gray-500 text-white px-4 py-2 rounded-lg">Cancelar</button>
-            <button wire:click="storeActivity" class="bg-orange-500 text-white px-4 py-2 rounded-lg">Crear</button>
-        </x-slot>
-    </x-dialog-modal>
-    <x-dialog-modal wire:model="deleteActivityModalVisible">
-        <x-slot name="title">Eliminar Actividad</x-slot>
-        <x-slot name="content">
-            <p>¿Estás seguro de que quieres eliminar esta actividad?</p>
-        </x-slot>
-        <x-slot name="footer">
-            <button wire:click="closeDeleteActivityModal"
-                class="bg-gray-500 text-white px-4 py-2 rounded-lg">Cancelar</button>
-            <button wire:click="confirmDeleteActivity"
-                class="bg-red-500 text-white px-4 py-2 rounded-lg">Eliminar</button>
-        </x-slot>
-    </x-dialog-modal>
+    
 </div>

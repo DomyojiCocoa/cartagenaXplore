@@ -14,9 +14,6 @@ return new class extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignId('categories_id')
-                ->constrained('categories')
-                ->onDelete('cascade');
             $table->integer('rating')->nullable();
             $table->text('information_below');
             $table->text('url_img')->default('img/prueba.jpg');

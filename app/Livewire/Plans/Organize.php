@@ -4,7 +4,6 @@ namespace App\Livewire\Plans;
 
 use App\Models\Activities;
 use App\Models\ActivitiesPlan;
-use App\Models\Category;
 use App\Models\Plan;
 use App\Models\User;
 use Auth;
@@ -27,7 +26,6 @@ class Organize extends Component
         $planCreated = Plan::create([
             'name' => $plan->name,
             'user_id' => Auth::user()->id,
-            'categories_id' => $plan->categories_id,
             'url_img' => $plan->url_img,
         ]);
         

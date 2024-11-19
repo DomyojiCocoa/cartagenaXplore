@@ -13,7 +13,6 @@ class Activities extends Model
 
     protected $fillable = [
         'title',
-        'categories_id',
         'rating',
         'information_below',
         'start',
@@ -23,10 +22,7 @@ class Activities extends Model
 
     protected $dates = ['deleted_at'];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class, 'categories_id');
-    }
+
 
     public function users()
     {

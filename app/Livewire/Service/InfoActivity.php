@@ -7,7 +7,6 @@ use App\Models\Activities;
 use App\Models\ActivitiesImage;
 use App\Models\ActivityTodo;
 use App\Models\ActivityWhatCover;
-use App\Models\Category;
 use App\Models\RatingActivities;
 use App\Models\User;
 use Auth;
@@ -19,7 +18,6 @@ class InfoActivity extends Component
 {
     public $id;
     public $activity;
-    public $activityCategory;
     public $activityTodo;
     public $activityWhatCover;
     public $activityImages;
@@ -31,7 +29,6 @@ class InfoActivity extends Component
         $this->user_id = Auth::user()->id;
         $this->id = $activityId;
         $this->activity = Activities::find($activityId);
-        $this->activityCategory = Category::find($this->activity->categories_id);
         $this->activityTodo = ActivityTodo::where('activity_id', $activityId)->get();
         $this->activityWhatCover = ActivityWhatCover::where('activity_id', $activityId)->get();
 
