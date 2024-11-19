@@ -102,12 +102,15 @@
                     class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center" x-cloak>
                     <div class="bg-white w-1/3 rounded-lg shadow-lg p-6">
                         <h2 class="text-xl font-bold mb-4">Detalles de la Actividad</h2>
-                        <p class="text-gray-700 mb-2">{{ $actividadDetalle->title ?? 'N/A' }}
-                        </p>
-                        <p class="text-gray-700 mb-2">
-                            {{ $actividadDetalle->description ?? 'N/A' }}</p>
-                        <p class="text-gray-700 mb-6">{{ $actividadDetalle->price ?? 'N/A' }}
-                        </p>
+                        <div>
+                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre de la actividad</label>
+                            <input type="text" id="last_name" value="{{ $actividadDetalle->title ?? 'N/A' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+                        </div>
+                        <div>
+                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 ">Descripcion de la actividad</label>
+                            <input type="text"  value="{{ $actividadDetalle->information_below ?? 'N/A' }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" required />
+                        </div>
+                        <img src="{{ asset($actividadDetalle->url_img) }}" alt="">
                         <div class="flex justify-end">
                             <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
                                 @click="$wire.set('mostrarModal', false)">
@@ -122,6 +125,7 @@
         <!-- Paginación -->
         <div class="flex justify-center items-center mt-4">
             <div class="p-4 bg-white border-t">
+                {{ $actividades->links() }}
 
             </div>
         </div>
