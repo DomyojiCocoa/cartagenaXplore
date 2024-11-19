@@ -1,9 +1,9 @@
-<div class="m-10 mt-10">
+<div class=" mt-10">
     <h1 class="lg:text-6xl md:text-4xl font-semibold mb-20">Opiniones de usuarios</h1>
 
     @auth
         <div class="mb-4">
-            <textarea placeholder="¿Qué tal te fue?" class="w-full h-28 p-6 text-xl border border-gray-500 rounded-3xl"></textarea>
+            <textarea placeholder="¿Qué tal te fue?" class="w-full h-28  text-xl border border-gray-500 rounded-3xl"></textarea>
         </div>
 
         <div class="flex justify-center">
@@ -14,7 +14,7 @@
     @endauth
 
     @foreach ($comments as $comment)
-    <div class="mt-5 p-5 border-b border-gray-300 pb-4">
+    <div class="mt-5  border-b border-gray-300 pb-4">
         <div class="flex items-center mb-4">
 
             <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="#666666">
@@ -24,7 +24,7 @@
 
             <div class="ml-4">
                 <h1 class="text-2xl font-bold">{{ $comment->user->name }}</h1>
-                <p class="text-lg text-orange-500">{{ $comment->user->created_at->format('d M Y') }}</p> <!-- Formato de fecha mejorado -->
+                <p class="text-lg text-orange-500">{{ $comment->user->created_at->format('d M Y') }}</p>
             </div>
         </div>
 
