@@ -27,6 +27,6 @@ class Activities extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)
-            ->withPivot('rating');  
+            ->withPivot('rating');
     }
 }
