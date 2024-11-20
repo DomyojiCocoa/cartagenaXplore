@@ -24,7 +24,7 @@
             </h3>
         </div>
         <div class="pt-20">
-            <h1 class="text-6xl font-semibold pb-10">Where does it come from?</h1>
+            <h1 class="text-6xl font-semibold pb-10">Historia</h1>
             <h3 class="text-3xl">{{$site->history}}
             </h3>
         </div>

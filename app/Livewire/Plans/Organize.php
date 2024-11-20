@@ -11,50 +11,57 @@ use Livewire\Component;
 
 class Organize extends Component
 {
-    public $modal = false;
+    public $modalPlans = false;
+    public $modalBuy = false;
+
     public $plans = [
         [
             'name' => 'Plan Gratuito',
             'description' => 'Perfecto para empezar',
             'price' => '0',
             'features' => [
-                '5 GB de almacenamiento',
-                'Acceso a la comunidad',
-                'Widgets básicos',
-                'Soporte por email',
+                'Acceder a informacion basica de la ciudad',
             ],
-            'cta' => 'Comenzar Gratis',
+            'cta' => 'Tienes este plan',
             'is_premium' => false,
         ],
         [
             'name' => 'Plan Premium',
             'description' => 'Para usuarios exigentes',
-            'price' => '20.000',
+            'price' => '20000',
             'features' => [
-                'Almacenamiento ilimitado',
-                'Acceso prioritario a nuevas funciones',
-                'Widgets avanzados y personalizables',
-                'Soporte prioritario 24/7',
-                'Integración con herramientas premium',
-                'Reportes y análisis avanzados',
+                'Acceder a informacion de la ciudad',
+                'Acceso al creador de planes',
+                'Poder crear tu propio plan a tu ritmo!',
+                'Calificar actividades',
+                'Comentar en la pagina principal',
             ],
             'cta' => 'Obtener Premium',
             'is_premium' => true,
         ],
     ];
 
-
     public $plansDefault;
     public $planCount;
-
-    public function mostrarModal()
+    public function mostrarModal4()
     {
-        $this->modal = true;  // Establecer en true para mostrar el modal
+        Auth::user()->update(['membership' => 'premium']);
+        $this->modalBuy = true;  // Establecer en true para mostrar el modal
     }
 
-    public function ocultarModal()
+    public function ocultarModal4()
     {
-        $this->modal = false;  // Establecer en false para ocultar el modal
+        $this->modalBuy = false;
+        $this->modalPlans = false;   // Establecer en false para ocultar el modal
+    }
+    public function mostrarModal3()
+    {
+        $this->modalPlans = true;  // Establecer en true para mostrar el modal
+    }
+
+    public function ocultarModal3()
+    {
+        $this->modalPlans = false;  // Establecer en false para ocultar el modal
     }
     public function mount() {
         $this->plansDefault = Plan::where('user_id', 1)->get();

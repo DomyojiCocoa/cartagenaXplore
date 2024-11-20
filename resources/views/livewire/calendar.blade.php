@@ -58,8 +58,7 @@
                                         <div class="w-full md:w-24 h-24 bg-gray-300 rounded-lg flex-shrink-0"></div>
                                         <div class="ml-0 md:ml-8 flex-grow mt-4 md:mt-0">
                                             <h3 class="text-xl md:text-2xl font-bold">{{ $activity->title }}</h3>
-                                            <p class="text-lg md:text-xl text-gray-700">Lorem Ipsum is the industry's standard dummy
-                                                text...</p>
+                                            <p class="text-lg md:text-xl text-gray-700">{{ $activity->information_below }}</p>
                                             <div class="flex items-center text-lg md:text-xl text-gray-500 mt-4">
                                                 <span class="material-icons mr-3">schedule</span>
                                             </div>

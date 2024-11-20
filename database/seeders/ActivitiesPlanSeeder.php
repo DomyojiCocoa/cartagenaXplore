@@ -42,25 +42,25 @@ class ActivitiesPlanSeeder extends Seeder
             'activity_id' => '7',
             'plan_id' => '2',
         ]);
-        ActivitiesPlan::create([
-            'activity_id' => '8',
-            'plan_id' => '2',
-        ]);
-        ActivitiesPlan::create([
-            'activity_id' => '9',
-            'plan_id' => '3',
-        ]);
-        ActivitiesPlan::create([
-            'activity_id' => '10',
-            'plan_id' => '3',
-        ]);
-        ActivitiesPlan::create([
-            'activity_id' => '11',
-            'plan_id' => '3',
-        ]);
-        ActivitiesPlan::create([
-            'activity_id' => '12',
-            'plan_id' => '3',
-        ]);
+        // ActivitiesPlan::create([
+        //     'activity_id' => '8',
+        //     'plan_id' => '2',
+        // ]);
+        // ActivitiesPlan::create([
+        //     'activity_id' => '9',
+        //     'plan_id' => '3',
+        // ]);
+        // ActivitiesPlan::create([
+        //     'activity_id' => '10',
+        //     'plan_id' => '3',
+        // ]);
+        // ActivitiesPlan::create([
+        //     'activity_id' => '11',
+        //     'plan_id' => '3',
+        // ]);
+        // ActivitiesPlan::create([
+        //     'activity_id' => '12',
+        //     'plan_id' => '3',
+        // ]);
     }
 }
