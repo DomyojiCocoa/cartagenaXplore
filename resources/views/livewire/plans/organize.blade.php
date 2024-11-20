@@ -5,16 +5,42 @@
             <div class="container mx-auto py-12">
                 <h2 class="text-3xl font-bold text-center mb-8">Nuestros Planes</h2>
                 <div class="grid md:grid-cols-2 gap-6">
-                    @foreach ($plans as $plan)
                         <div
-                            class="bg-white rounded-lg shadow-lg overflow-hidden {{ $plan['is_premium'] ? 'border-2 border-orange-500' : '' }}">
+                            class="bg-white rounded-lg shadow-lg overflow-hidden {{ $plans[0]['is_premium'] ? 'border-2 border-orange-500' : '' }}">
                             <div class="px-6 py-8">
-                                <h3 class="text-2xl font-semibold text-gray-800">{{ $plan['name'] }}</h3>
-                                <p class="mt-2 text-gray-600">{{ $plan['description'] }}</p>
+                                <h3 class="text-2xl font-semibold text-gray-800">{{ $plans[0]['name'] }}</h3>
+                                <p class="mt-2 text-gray-600">{{ $plans[0]['description'] }}</p>
                                 <p class="mt-4 text-4xl font-bold text-gray-800">
-                                    ${{ number_format($plan['price'], 0, ',', '.') }} COP</p>
+                                    ${{ number_format($plans[0]['price'], 0, ',', '.') }} COP</p>
                                 <ul class="mt-6 space-y-4">
-                                    @foreach ($plan['features'] as $feature)
+                                    @foreach ($plans[0]['features'] as $feature)
+                                        <li class="flex items-start">
+                                            <svg class="flex-shrink-0 h-6 w-6 text-green-500" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span class="ml-3 text-gray-600">{{ $feature }}</span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <div class="px-6 py-8 bg-gray-50">
+                                <button 
+                                    class="w-full px-4 py-2 text-white font-semibold bg-orange-500 rounded hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 transition-colors duration-200">
+                                    {{ $plans[0]['cta'] }}
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden {{ $plans[1]['is_premium'] ? 'border-2 border-orange-500' : '' }}">
+                            <div class="px-6 py-8">
+                                <h3 class="text-2xl font-semibold text-gray-800">{{ $plans[1]['name'] }}</h3>
+                                <p class="mt-2 text-gray-600">{{ $plans[1]['description'] }}</p>
+                                <p class="mt-4 text-4xl font-bold text-gray-800">
+                                    ${{ number_format($plans[1]['price'], 0, ',', '.') }} COP</p>
+                                <ul class="mt-6 space-y-4">
+                                    @foreach ($plans[1]['features'] as $feature)
                                         <li class="flex items-start">
                                             <svg class="flex-shrink-0 h-6 w-6 text-green-500" fill="none"
                                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -29,11 +55,10 @@
                             <div class="px-6 py-8 bg-gray-50">
                                 <button wire:click="mostrarModal4"
                                     class="w-full px-4 py-2 text-white font-semibold bg-orange-500 rounded hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 transition-colors duration-200">
-                                    {{ $plan['cta'] }}
+                                    {{ $plans[1]['cta'] }}
                                 </button>
                             </div>
                         </div>
-                    @endforeach
                 </div>
             </div>
         </x-slot>

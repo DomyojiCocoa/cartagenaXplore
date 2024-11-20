@@ -2,15 +2,33 @@
     <h1 class="lg:text-6xl md:text-4xl font-semibold mb-20">Opiniones de usuarios</h1>
 
     @auth
+    <div>
+        @if (session()->has('message'))
+            <div class="text-green-500 mb-4">
+                {{ session('message') }}
+            </div>
+        @endif
+    
         <div class="mb-4">
-            <textarea placeholder="¿Qué tal te fue?" class="w-full h-28  text-xl border border-gray-500 rounded-3xl"></textarea>
+            <textarea 
+                wire:model.live="comment"
+                placeholder="¿Qué tal te fue?" 
+                class="w-full h-28 text-xl border border-gray-500 rounded-3xl">
+            </textarea>
+            @error('comment') 
+                <span class="text-red-500">{{ $message }}</span> 
+            @enderror
         </div>
-
+    
         <div class="flex justify-center">
-            <button class="bg-orange-500 hover:bg-[#c9773e] text-white py-2 px-20 text-xl rounded-3xl font-semibold shadow-md">
+            <button 
+                wire:click="submit" 
+                class="bg-orange-500 hover:bg-[#c9773e] text-white py-2 px-20 text-xl rounded-3xl font-semibold shadow-md">
                 Enviar
             </button>
         </div>
+    </div>
+    
     @endauth
 
     @foreach ($comments as $comment)

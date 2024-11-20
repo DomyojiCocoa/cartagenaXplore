@@ -8,6 +8,7 @@ use App\Models\Plan;
 use App\Models\User;
 use Auth;
 use Livewire\Component;
+use Mail;
 
 class Organize extends Component
 {
@@ -47,6 +48,16 @@ class Organize extends Component
     {
         Auth::user()->update(['membership' => 'premium']);
         $this->modalBuy = true;  // Establecer en true para mostrar el modal
+        try {
+            Mail::raw('Usted ha realizado con exito la compra del Plan Premium de CartagenaXplore', function ($message) {
+                $message->to('felmenyt123@gmail.com')
+                        ->subject('Compra en CartagenaXplore')
+                        ->attach(public_path('img/shop.png'));
+            });
+            return 'Correo enviado con éxito.';
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
     }
 
     public function ocultarModal4()
