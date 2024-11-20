@@ -40,7 +40,7 @@
 
                 <!-- Imagen -->
                 <div class="">
-                    <img src="{{ asset( $site->url_img) }}" alt="Castillo San Felipe" class="rounded-lg shadow-lg">
+                    <img src="{{ asset( $site->url_img) }}" alt="Castillo San Felipe" class="rounded-lg shadow-lg  w-[45rem] h-[45rem]">
                 </div>
             </div>
         </div>
