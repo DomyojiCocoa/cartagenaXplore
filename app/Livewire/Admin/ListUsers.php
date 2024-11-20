@@ -13,9 +13,9 @@ class ListUsers extends Component
 
 
     public $userIdBeingEdited;
-    public $name;
-    public $email;
-    public $password;
+    public $name = '';
+    public $email = '';
+    public $password = '';
     public $usernameNew;
     public $usersList;
 

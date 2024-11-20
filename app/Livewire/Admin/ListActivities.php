@@ -11,10 +11,18 @@ class ListActivities extends Component
     public $mostrarModal = false;
     public $actividadDetalle;
 
+    public function open() {
+        $this->mostrarModal = true;
+    }
+
     public function mostrarActividad($id)
     {
         $this->actividadDetalle = Activities::find($id);
         $this->mostrarModal = true;
+    }
+
+    public function prueba() {
+        dd($this->actividadDetalle);
     }
 
     public function delete($activityId)
@@ -24,6 +32,7 @@ class ListActivities extends Component
         $this->redirectRoute('adminActivities');
 
     }
+
 
     public function render()
     {

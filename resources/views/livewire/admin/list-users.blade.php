@@ -29,14 +29,7 @@
 
         <!-- Barra de Búsqueda y Botones -->
         <div class="flex justify-between items-center mb-4">
-            <!-- Búsqueda de Usuarios -->
-            <div class="flex items-center">
-                <input type="text" placeholder="Nombre o palabra clave" class="border rounded p-2 mr-4">
-                <label class="flex items-center pl-10">
-                    Seleccionar usuarios
-                    <input type="checkbox" class="ml-5">
-                </label>
-            </div>
+
 
             <!-- Botones de Acción -->
             <div class="flex items-center">
@@ -77,19 +70,6 @@
                 </div>
             </div>
 
-            <div class="pl-14">
-                <button class="border border-slate-600 text-gray-500 px-4 py-2 rounded-xl mr-2">Eliminar
-                    usuarios</button>
-
-            </div>
-            <!-- Botón con Icono -->
-            <button class="pl-20">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#666666">
-                    <path
-                        d="M440-120v-240h80v80h320v80H520v80h-80Zm-320-80v-80h240v80H120Zm160-160v-80H120v-80h160v-80h80v240h-80Zm160-80v-80h400v80H440Zm160-160v-240h80v80h160v80H680v80h-80Zm-480-80v-80h400v80H120Z" />
-                </svg>
-            </button>
         </div>
     </div>
 
