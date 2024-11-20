@@ -15,6 +15,8 @@
             </div>
         </div>
 
+
+
         <!-- Título de la Página -->
         <div class="flex justify-between items-center mb-5">
             <h1 class="text-3xl font-bold">Actividad</h1>
@@ -76,37 +78,17 @@
                                     @endif
                                 </td>
                                 <td class="p-4">
-                                    <button @click="showModal = true; actividadDetalle = @js($actividad)"
+                                    <button wire:click="pruebanoc({{$actividad}})"
                                         class="text-slate-700 border border-slate-600 px-4 py-1 rounded-xl hover:bg-slate-100 transition">
                                         Ver
                                     </button>
                                 </td>
+
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
 
-                <!-- Modal -->
-                <div x-show="showModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-                    x-cloak>
-                    <div class="bg-white w-1/3 rounded-lg shadow-lg p-6 space-y-4">
-                        <h2 class="text-xl font-bold">Detalles de la Actividad</h2>
-                        <div>
-                            <label class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
-                            <input type="text" x-model="actividadDetalle.title"
-                                class="w-full p-2 border rounded-lg">
-                        </div>
-                        <div>
-                            <label class="block mb-2 text-sm font-medium text-gray-900">Descripción</label>
-                            <input type="text" x-model="actividadDetalle.information_below"
-                                class="w-full p-2 border rounded-lg">
-                        </div>
-                        <div class="flex justify-end space-x-4">
-                            <button @click="showModal = false"
-                                class="bg-orange-500 text-white px-4 py-2 rounded-lg">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -115,4 +97,32 @@
             {{ $actividades->links() }}
         </div>
     </div>
+
+    <x-dialog-modal wire:model="mostrarModal2" >
+        <x-slot name='title' ></x-slot>
+        <x-slot name='content' >
+            <div class="">
+                <h2 class="text-xl font-bold">Detalles de la Actividad</h2>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
+                    <input type="text" wire:model.live="name"
+                        class="w-full p-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Descripción</label>
+                    <input type="text" wire:model="description"
+                        class="w-full p-2 border rounded-lg">
+                </div>
+                <div>
+                    <label class="block mb-2 text-sm font-medium text-gray-900">Imagen</label>
+                    <img src="{{asset($img)}}" alt="">
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button
+                        class="bg-orange-500 text-white px-4 py-2 rounded-lg">Cerrar</button>
+                </div>
+            </div>
+        </x-slot>
+        <x-slot name='footer' ></x-slot>
+    </x-dialog-modal>
 </div>
