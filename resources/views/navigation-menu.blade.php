@@ -93,7 +93,7 @@
                                 </div>
 
                                 @role('Administrator')
-                                    <x-dropdown-link href="{{ route('adminStadistics') }}" wire:navigate>
+                                    <x-dropdown-link href="{{ route('adminUsers') }}" wire:navigate>
                                         {{ __('Menu administrador') }}
                                     </x-dropdown-link>
                                 @endrole

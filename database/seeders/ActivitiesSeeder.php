@@ -17,49 +17,49 @@ class ActivitiesSeeder extends Seeder
             'title' => 'Paseo en Chiva Rumbera',
             'rating' => '3',
             'information_below' => 'Disfruta de un paseo acompañado de buena música',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/chiva.jpg',
         ]);
 
         Activities::create([
             'title' => 'Excursión a la naturaleza',
             'rating' => '4',
             'information_below' => 'Explora los hermosos paisajes.',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/paseo.jpg',
         ]);
 
         Activities::create([
             'title' => 'Visita a museos',
             'rating' => '5',
             'information_below' => 'Conoce la historia de la región.',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/paseomuseo.jpg',
         ]);
 
         Activities::create([
             'title' => 'Cata de comida local',
             'rating' => '5',
             'information_below' => 'Degusta los platos típicos de la zona.',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/comida.jpg',
         ]);
 
         Activities::create([
             'title' => 'Recorrido histórico',
             'rating' => '4',
             'information_below' => 'Aprende sobre la historia del lugar.',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/histo.jpg',
         ]);
 
         Activities::create([
             'title' => 'Senderismo',
             'rating' => '5',
             'information_below' => 'Disfruta de la naturaleza en un camino.',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/sende.jpg',
         ]);
 
         Activities::create([
             'title' => 'Día de playa',
             'rating' => '4',
             'information_below' => 'Relájate en la playa y disfruta del sol.',
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/playa.jpg',
         ]);
 
         // Activities::create([

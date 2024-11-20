@@ -47,10 +47,11 @@ class Organize extends Component
     public function mostrarModal4()
     {
         Auth::user()->update(['membership' => 'premium']);
-        $this->modalBuy = true;  // Establecer en true para mostrar el modal
+        $this->modalBuy = true; 
+        
         try {
             Mail::raw('Usted ha realizado con exito la compra del Plan Premium de CartagenaXplore', function ($message) {
-                $message->to('felmenyt123@gmail.com')
+                $message->to(Auth::user()->email)
                         ->subject('Compra en CartagenaXplore')
                         ->attach(public_path('img/shop.png'));
             });

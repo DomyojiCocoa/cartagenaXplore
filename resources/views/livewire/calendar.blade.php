@@ -11,7 +11,7 @@
                                 @foreach ($activities as $activity)
                                     <div
                                         class="flex flex-col md:flex-row items-start md:items-center bg-white p-6 md:p-8 rounded-lg shadow border border-gray-200">
-                                        <div class="w-full md:w-24 h-24 bg-gray-300 rounded-lg flex-shrink-0"></div>
+                                            <img src="{{ asset($activity->activity->url_img) }}" alt="" class="w-full md:w-24 h-24 rounded-lg flex-shrink-0">
                                         <div class="ml-0 md:ml-8 flex-grow mt-4 md:mt-0">
                                             <h3 class="text-xl md:text-2xl font-bold">{{ $activity->activity->title }}{{ $idActividad }}
                                             </h3>
@@ -55,13 +55,11 @@
                                 @foreach ($moreActivities as $activity)
                                     <div
                                         class="flex flex-col md:flex-row items-start md:items-center bg-white p-6 md:p-8 rounded-lg shadow border border-gray-200">
-                                        <div class="w-full md:w-24 h-24 bg-gray-300 rounded-lg flex-shrink-0"></div>
+                                        <img src="{{ asset($activity->url_img) }}" alt="" class="w-full md:w-24 h-24 rounded-lg flex-shrink-0">
                                         <div class="ml-0 md:ml-8 flex-grow mt-4 md:mt-0">
                                             <h3 class="text-xl md:text-2xl font-bold">{{ $activity->title }}</h3>
                                             <p class="text-lg md:text-xl text-gray-700">{{ $activity->information_below }}</p>
-                                            <div class="flex items-center text-lg md:text-xl text-gray-500 mt-4">
-                                                <span class="material-icons mr-3">schedule</span>
-                                            </div>
+                                            
                                         </div>
                                         <button wire:click="addActivity({{ $activity->id }})"
                                             class="ml-8 mt-4 md:mt-0 text-green-500 text-3xl">
@@ -84,7 +82,6 @@
                         <img src="{{ asset($activo->url_img) }}" alt="Plan image" class="rounded-lg w-full h-48 object-cover">
                     </div>
                     <h2 class="text-xl md:text-2xl font-bold mb-4">{{ $activo->name }}</h2>
-                    <p class="text-lg md:text-xl mb-6">Lorem Ipsum is simply dummy text of the printing and...</p>
                     @switch($edit)
                         @case(1)
                             <div

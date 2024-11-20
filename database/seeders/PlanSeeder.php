@@ -16,19 +16,19 @@ class PlanSeeder extends Seeder
         Plan::create([
             'name' => 'Exploración Cultural en Cartagena',
             'user_id' => 1,
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/plan1.png',
         ]);
 
         Plan::create([
             'name' => 'Aventura en las Islas del Rosario',
             'user_id' => 1,
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/plan2.png',
         ]);
 
         Plan::create([
             'name' => 'Gastronomía y Tradición',
             'user_id' => 1,
-            'url_img' => 'img/prueba.jpg',
+            'url_img' => 'img/plan3.png',
         ]);
     }
 }
