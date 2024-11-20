@@ -36,12 +36,11 @@
         </div>
         <div class="text-sm lg:text-lg pl-12">
             <ul class="list-disc list-inside mt-2 marker:text-orange-500">
-                <li>{{ $activityTodo[0]->info }}</li>
-                <li>{{ $activityTodo[1]->info }}</li>
+                @foreach ($activityTodo as $act)
+                    <li>{{ $act->info }}</li>
 
-                <li>{{ $activityTodo[2]->info }}</li>
+                @endforeach
 
-                <li>{{ $activityTodo[3]->info }}</li>
 
 
             </ul>

@@ -1,4 +1,17 @@
 <div>
+    <button wire:click="mostrarModal">PrUEBAAAAAAAAAAA</button>
+
+    <x-dialog-modal wire:model="modal" >
+        <x-slot name="title" ></x-slot>
+        <x-slot name="content" >
+            <div class="container mx-auto py-12">
+                <h2 class="text-3xl font-bold text-center mb-8">Nuestros Planes</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                </div>
+            </div>
+        </x-slot>
+        <x-slot name="footer" ></x-slot>
+    </x-dialog-modal>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach ($plansDefault as $default)
             @auth
@@ -41,7 +54,9 @@
                 <h3 class="text-2xl md:text-3xl pb-3 font-bold">Crea tu propio plan</h3>
             </div>
         </a>
+
     </div>
+
 </div>
 
 {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}

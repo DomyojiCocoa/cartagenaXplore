@@ -33,7 +33,7 @@ class InfoActivity extends Component
         $this->activityWhatCover = ActivityWhatCover::where('activity_id', $activityId)->get();
 
         $rating = RatingActivities::where('activity_id', $activityId)->where('user_id', $this->user_id)->first();
-        $this->rating = ($rating && $rating->rating !== null) ? $rating->rating : 0;
+        $this->rating = $this->activity->rating;
 
         $this->activityImages = ActivitiesImage::where('activities_id', $activityId)->get();
     }
@@ -49,7 +49,10 @@ class InfoActivity extends Component
                 'rating' => $index // Valor por defecto si el registro no existe
             ]
         );
-        $this->rating = $a->rating;
+        $avr = round(RatingActivities::where('activity_id', $this->activity->id)->avg('rating'));
+        $this->activity->rating = $avr ;
+
+        $this->rating = $this->activity->rating;
     }
 
     public function render()
